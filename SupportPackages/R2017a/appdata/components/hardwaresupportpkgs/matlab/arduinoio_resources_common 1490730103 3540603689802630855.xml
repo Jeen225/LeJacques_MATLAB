@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>hardwaresupportpkgs/matlab/arduinoio_resources</componentBaseName>
+    <componentFileName>hardwaresupportpkgs/matlab/arduinoio_resources_common_1490730103.zip</componentFileName>
+    <componentName>hardwaresupportpkgs/matlab/arduinoio_resources_common</componentName>
+    <componentVersion>1490730103</componentVersion>
+    <instrset>0</instrset>
+    <locale />
+    <locationId>1</locationId>
+    <numFiles>1</numFiles>
+    <platformList>
+      <platform>glnxa64</platform>
+      <platform>maci64</platform>
+      <platform>win64</platform>
+    </platformList>
+    <releaseFamily>R2017a</releaseFamily>
+    <size>8080</size>
+    <type />
+    <uncompressedBytes>33692</uncompressedBytes>
+  </component>
+</componentData>
+

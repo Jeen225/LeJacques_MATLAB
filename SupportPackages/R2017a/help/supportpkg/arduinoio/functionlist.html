@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>MATLAB Support Package for Arduino Hardware</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="cat">
+<meta name="infotype" itemprop="infotype" content="list" />
+
+<meta name="description" itemprop="description" content="MATLAB Support Package for Arduino Hardware enables you to use MATLAB to communicate with an Arduino board." />
+<script type="text/javascript" src="includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="includes/product/css/site6.css?201706221412" rel="stylesheet" type="text/css">
+<link href="includes/product/css/site6_lg.css?201706221412" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="includes/product/css/site6_md.css?201706221412" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="includes/product/css/site6_sm+xs.css?201706221412" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="includes/product/css/site6_sm.css?201706221412" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="includes/product/css/site6_xs.css?201706221412" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="includes/product/css/site6_offcanvas.css?201706221412" rel="stylesheet" type="text/css">
+
+<script src="includes/shared/scripts/l10n.js"></script>
+<script src="includes/shared/scripts/docscripts.js"></script>
+<script src="includes/shared/scripts/f1help.js"></script>
+<script src="includes/product/scripts/docscripts.js"></script>
+<script src="includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="includes/shared/scripts/jquery.highlight.js"></script>
+<script src="includes/product/scripts/underscore-min.js"></script>
+<script src="includes/product/scripts/examples.js"></script>
+<script src="includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="includes/product/scripts/suggest.js"></script>
+<script src="includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="includes/product/scripts/global.js"></script>
+<link href="includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+<li class="product"><a href="index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">MATLAB Support Package for Arduino Hardware Functions</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-article">On this page</li>
+<li><a href="#setup000" class="intrnllnk">Setup and Configuration</a></li>
+<li><a href="#buivnfd-1" class="intrnllnk">Read and Write Data</a></li>
+<li><a href="#buivnnf-1" class="intrnllnk">I2C Devices</a></li>
+<li><a href="#buivnr9-1" class="intrnllnk">SPI Devices</a></li>
+<li><a href="#bvg66h4" class="intrnllnk">Shift Registers</a></li>
+<li><a href="#bvjro63" class="intrnllnk">Quadrature Encoders</a></li>
+<li><a href="#buivns4-1" class="intrnllnk">Servo Motors</a></li>
+<li><a href="#bulf0lb-1" class="intrnllnk">Adafruit Motor Shield V2</a></li>
+<li><a href="#bu5f2_c-1" class="intrnllnk">Custom Arduino Libraries</a></li>
+</ul>
+</nav>
+<script src="includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><h1 itemprop="title" class="r2017a">MATLAB Support Package for Arduino Hardware Functions</h1>
+<div class="row">
+<div class="col-xs-12 col-sm-5 col-lg-4">
+<form class="form-horizontal">
+<div class="form-group">
+<label for="data_view" class="col-sm-2 control-label remove_text_wrapping">Show:</label>
+<div class="col-sm-10">
+<select id="data_view" class="form-control" onchange="window.location=this.options[this.selectedIndex].value"><option value="functionlist.html" selected="">Functions</option>
+<option value="classeslist.html">Classes</option>
+<option value="propertylist.html">Properties</option>
+</select>
+</div>
+</div>
+</form>
+</div>
+<div class="col-xs-12 col-sm-6 col-sm-offset-1 col-lg-5 col-lg-offset-3"><div class="btn-group btn-group-justified add_margin_20"><a href="functionlist-alpha.html" class="btn btn-default">Alphabetical List</a>
+<span class="btn btn_primary">By Category</span>
+</div>
+</div>
+</div>
+<h2 id="setup000">
+Setup and Configuration</h2>
+<div class="doc_functionsgroup_container">
+<div class="doc_function_block">
+<table class="table tablecondensed">
+<tr><td class="term"><a href="../../supportpkg/arduinoio/ref/arduinosetup.html"><code>arduinosetup</code></a></td>
+<td class="description"> Launch Arduino hardware setup interface</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/arduino.html"><code>arduino</code></a></td>
+<td class="description">Connect to Arduino hardware</td></tr></table>
+</div>
+</div>
+<h2 id="buivnfd-1">
+Read and Write Data</h2>
+<div class="doc_functionsgroup_container">
+<div class="doc_function_block">
+<table class="table tablecondensed">
+<tr><td class="term"><a href="../../supportpkg/arduinoio/ref/configurepin.html"><code>configurePin</code></a></td>
+<td class="description">Arduino pin mode</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/readdigitalpin.html"><code>readDigitalPin</code></a></td>
+<td class="description">Read data from digital pin on Arduino hardware</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/writedigitalpin.html"><code>writeDigitalPin</code></a></td>
+<td class="description">Write to digital pin on Arduino hardware</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/writepwmvoltage.html"><code>writePWMVoltage</code></a></td>
+<td class="description">Write digital pin PWM voltage value</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/writepwmdutycycle.html"><code>writePWMDutyCycle</code></a></td>
+<td class="description">Set digital pin PWM duty cycle</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/playtone.html"><code>playTone</code></a></td>
+<td class="description">Play tone on piezo speaker using digital pin</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/readvoltage.html"><code>readVoltage</code></a></td>
+<td class="description">Read Arduino analog pin voltage</td></tr></table>
+</div>
+</div>
+<h2 id="buivnnf-1">
+I2C Devices</h2>
+<div class="doc_functionsgroup_container">
+<div class="doc_function_block">
+<table class="table tablecondensed">
+<tr><td class="term"><a href="../../supportpkg/arduinoio/ref/i2cdev.html"><code>i2cdev</code></a></td>
+<td class="description">Device connected on Arduino I2C
+bus</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/readregister.html"><code>readRegister</code></a></td>
+<td class="description">Read data from I2C device register</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/writeregister.html"><code>writeRegister</code></a></td>
+<td class="description">Write to I2C device register</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/scani2cbus.html"><code>scanI2CBus</code></a></td>
+<td class="description">Scan Arduino hardware for I2C bus address</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/read.html"><code>read</code></a></td>
+<td class="description">Read data from I2C bus</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/write.html"><code>write</code></a></td>
+<td class="description">Write data to I2C bus</td></tr></table>
+</div>
+</div>
+<h2 id="buivnr9-1">
+SPI Devices</h2>
+<div class="doc_functionsgroup_container">
+<div class="doc_function_block">
+<table class="table tablecondensed">
+<tr><td class="term"><a href="../../supportpkg/arduinoio/ref/spidev.html"><code>spidev</code></a></td>
+<td class="description">Connect to SPI device</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/writeread.html"><code>writeRead</code></a></td>
+<td class="description">Write and read data from SPI device</td></tr></table>
+</div>
+</div>
+<h2 id="bvg66h4">
+Shift Registers</h2>
+<div class="doc_functionsgroup_container">
+<div class="doc_function_block">
+<table class="table tablecondensed">
+<tr><td class="term"><a href="../../supportpkg/arduinoio/ref/shiftregister.html"><code>shiftRegister</code></a></td>
+<td class="description">Connect to shift register</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/shiftregisterread.html"><code>shiftRegister/read</code></a></td>
+<td class="description">Read data from shift register</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/shiftregisterwrite.html"><code>shiftRegister/write</code></a></td>
+<td class="description">Write data to shift register</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/reset.html"><code>reset</code></a></td>
+<td class="description">Clear all outputs of shift register</td></tr></table>
+</div>
+</div>
+<h2 id="bvjro63">
+Quadrature Encoders</h2>
+<div class="doc_functionsgroup_container">
+<div class="doc_function_block">
+<table class="table tablecondensed">
+<tr><td class="term"><a href="../../supportpkg/arduinoio/ref/rotaryencoder.html"><code>rotaryEncoder</code></a></td>
+<td class="description">Connect to quadrature encoder</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/resetcount.html"><code>resetCount</code></a></td>
+<td class="description">Set count value to zero or user-specified value</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/readcount.html"><code>readCount</code></a></td>
+<td class="description">Read current count value from encoder with X4 decoding</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/readspeed.html"><code>readSpeed</code></a></td>
+<td class="description">Read current rotational speed</td></tr></table>
+</div>
+</div>
+<h2 id="buivns4-1">
+Servo Motors</h2>
+<div class="doc_functionsgroup_container">
+<div class="doc_function_block">
+<table class="table tablecondensed">
+<tr><td class="term"><a href="../../supportpkg/arduinoio/ref/servo.html"><code>servo</code></a></td>
+<td class="description">Create connection to servo motor</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/readposition.html"><code>readPosition</code></a></td>
+<td class="description">Read servo motor position</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/writeposition.html"><code>writePosition</code></a></td>
+<td class="description">Write position of servo motor</td></tr></table>
+</div>
+</div>
+<h2 id="bulf0lb-1">
+Adafruit Motor Shield V2</h2>
+<div class="doc_functionsgroup_container">
+<div class="doc_function_block">
+<table class="table tablecondensed">
+<tr><td class="term"><a href="../../supportpkg/arduinoio/ref/addon.html"><code>addon</code></a></td>
+<td class="description">Create add-on device connection to Adafruit Motor
+Shield V2</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/dcmotor.html"><code>dcmotor</code></a></td>
+<td class="description">Create DC motor connection</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/start.html"><code>start</code></a></td>
+<td class="description">Start DC motor attached to Adafruit Motor Shield</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/stop.html"><code>stop</code></a></td>
+<td class="description">Stop DC motor</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/stepper.html"><code>stepper</code></a></td>
+<td class="description">Create stepper motor connection</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/move.html"><code>move</code></a></td>
+<td class="description">Rotate stepper motor</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/release.html"><code>release</code></a></td>
+<td class="description">Release stepper motor</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/servo_addon.html"><code>servo</code></a></td>
+<td class="description">Create servo motor connection</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/addon_readposition.html"><code>readPosition</code></a></td>
+<td class="description">Read servo motor position</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/addon_writeposition.html"><code>writePosition</code></a></td>
+<td class="description">Write servo motor position</td></tr></table>
+</div>
+</div>
+<h2 id="bu5f2_c-1">
+Custom Arduino Libraries</h2>
+<div class="doc_functionsgroup_container">
+<div class="doc_function_block">
+<table class="table tablecondensed">
+<tr><td class="term"><a href="../../supportpkg/arduinoio/ref/arduinoio.librarybase-class.html"><code>arduinoio.LibraryBase</code></a></td>
+<td class="description">Abstract class for deriving Arduino add-on libraries</td></tr>
+<tr><td class="term"><a href="../../supportpkg/arduinoio/ref/sendcommand.html"><code>sendCommand</code></a></td>
+<td class="description">Send message to Arduino device from MATLAB</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/configurepinresource.html"><code>configurePinResource</code></a></td>
+<td class="description">Set resource owner and mode of pin</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/decrementresourcecount.html"><code>decrementResourceCount</code></a></td>
+<td class="description">Decrement count of number of instances of resource</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/incrementresourcecount.html"><code>incrementResourceCount</code></a></td>
+<td class="description">Increment current resource count</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getterminalsfrompins.html"><code>getTerminalsFromPins</code></a></td>
+<td class="description">Get terminal numbers from pins</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/listarduinolibraries.html"><code>listArduinoLibraries</code></a></td>
+<td class="description">Display a list of installed Arduino libraries</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getresourcecount.html"><code>getResourceCount</code></a></td>
+<td class="description">Number of instances of a resource</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getfreeresourceslot.html"><code>getFreeResourceSlot</code></a></td>
+<td class="description">Get first free slot of resource</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/setsharedresourceproperty.html"><code>setSharedResourceProperty</code></a></td>
+<td class="description">Set shared resource property</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getsharedresourceproperty.html"><code>getSharedResourceProperty</code></a></td>
+<td class="description">Get shared resource property</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getresourceowner.html"><code>getResourceOwner</code></a></td>
+<td class="description">Get terminal resource owner</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/validatepin.html"><code>validatePin</code></a></td>
+<td class="description">Validate that pin supports specific functionality</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getpinsfromterminals.html"><code>getPinsFromTerminals</code></a></td>
+<td class="description">Get pin numbers from terminal</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getterminalmode.html"><code>getTerminalMode</code></a></td>
+<td class="description">Get current terminal mode</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/isterminaldigital.html"><code>isTerminalDigital</code></a></td>
+<td class="description">Check if terminal can be used as a digital pin</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/isterminalanalog.html"><code>isTerminalAnalog</code></a></td>
+<td class="description">Check if terminal can be used as an analog pin</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getservoterminals.html"><code>getServoTerminals</code></a></td>
+<td class="description">Get terminals that have servo functionality</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/geti2cterminals.html"><code>getI2CTerminals</code></a></td>
+<td class="description">Get terminals with I2C functionality</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getspiterminals.html"><code>getSPITerminals</code></a></td>
+<td class="description">Get terminals that have SPI functionality</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getpwmterminals.html"><code>getPWMTerminals</code></a></td>
+<td class="description">Get terminals with PWM functionality</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getmcu.html"><code>getMCU</code></a></td>
+<td class="description">Get microcontroller of Arduino board</td></tr><tr><td class="term"><a href="../../supportpkg/arduinoio/ref/getpinalias.html"><code>getPinAlias</code></a></td>
+<td class="description">Get alias pin number</td></tr></table>
+</div>
+</div>
+
+</section>
+
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:12:46 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-4"><h5><a href="index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-4"><h5><a href="../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-4"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

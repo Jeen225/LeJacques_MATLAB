@@ -1,0 +1,2 @@
+adafruitmotorshieldv2.instrset<@>Adafruit Motor Shield V2 Library
+arduinoide.instrset<@>Arduino software

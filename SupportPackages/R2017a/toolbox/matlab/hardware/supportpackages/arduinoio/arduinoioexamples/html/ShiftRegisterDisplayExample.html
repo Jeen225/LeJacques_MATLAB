@@ -1,0 +1,216 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Control 7-Segment Display with 74HC595 Shift Register</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-07-29"><meta name="DC.source" content="ShiftRegisterDisplayExample.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Control 7-Segment Display with 74HC595 Shift Register</h1><!--introduction--><p>This example shows how to use the MATLAB&reg; Support Package for Arduino&reg; Hardware to control a 1-Digit 7-Segment display with a 74HC595 8-bit serial-in-parallel-out shift register.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Hardware Requirements</a></li><li><a href="#2">Hardware Setup</a></li><li><a href="#3">Create Shift Register Object</a></li><li><a href="#6">Display Numbers</a></li><li><a href="#8">Clean Up</a></li></ul></div><h2 id="1">Hardware Requirements</h2><div><ul><li>Arduino board</li><li>Common anode 7-segment display</li><li>74HC595 8-bit serial-in-parallel-out shift register</li><li>Eight 330 ohm resistors</li><li>Breadboard and wires</li></ul></div><h2 id="2">Hardware Setup</h2><p>Connect the 7-Segment display and 74HC595 shift register to Arduino hardware:</p><div><ul><li>Connect Vcc pin on 74HC595 to 5V pin on Arduino hardware.</li></ul></div><div><ul><li>Connect GND and OE pins on 74HC595 to GND pin on Arduino hardware.</li></ul></div><div><ul><li>Connect DS or SER pin on 74HC595 to digital pin 8 on Arduino hardware.</li></ul></div><div><ul><li>Connect SHCP or SRCLK pin on 74HC595 to digital pin 10 on Arduino hardware.</li></ul></div><div><ul><li>Connect STCP or RCLK pin on 74HC595 to digital pin 9 on Arduino hardware.</li></ul></div><div><ul><li>Connect Q0-Q6 or QA-QG pin on 74HC595 to pin A-G on 7-segment display.</li></ul></div><div><ul><li>Connect Q7 or QH pin on 74HC595 to pin DP on 7-segment display.</li></ul></div><div><ul><li>Connect common anode pins (pin 3 and 8 on the diagram) on 7-segment display to 5V pin on Arduino hardware.</li></ul></div><p><img vspace="5" hspace="5" src="ShiftRegisterDisplayExample_01.png" alt=""> </p><h2 id="3">Create Shift Register Object</h2><p>Create an arduino object, and include the ShiftRegister library.</p><pre class="codeinput">   a = arduino(<span class="string">'COM7'</span>, <span class="string">'Uno'</span>, <span class="string">'Libraries'</span>, <span class="string">'ShiftRegister'</span>)
+</pre><pre class="codeoutput">
+a = 
+
+  arduino with properties:
+
+                    Port: 'COM7'
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'ShiftRegister'}
+
+</pre><p>Create shift register object for the display module, specifying the connected data pin, clock pin, and latch pin.</p><pre class="codeinput">   dataPin = <span class="string">'D8'</span>;
+   clockPin = <span class="string">'D10'</span>;
+   latchPin = <span class="string">'D9'</span>;
+   register = shiftRegister(a, <span class="string">'74HC595'</span>, dataPin, clockPin, latchPin)
+</pre><pre class="codeoutput">
+register = 
+
+  shiftRegister with properties:
+
+           Model: '74HC595'      
+         DataPin: 'D8'           
+        ClockPin: 'D10'          
+        LatchPin: 'D9'           
+        ResetPin: Not specified
+
+</pre><h2 id="6">Display Numbers</h2><p>Each segment of the 7-segment display is controlled by a pin corresponding to the segment, including pin A-G and pin DP. Common anode 7-segment display means the segment pin needs to be low to turn it on. Here is the mapping between the segments and the pins, including shift register outputs.</p><p><img vspace="5" hspace="5" src="ShiftRegisterDisplayExample_02.png" alt=""> </p><p>Create a table of binary character vectors for all single digit numbers.</p><pre class="codeinput">   digitTable = {<span class="keyword">...</span>
+        <span class="string">'11000000'</span>, <span class="keyword">...</span><span class="comment">  % 0</span>
+        <span class="string">'11001111'</span>, <span class="keyword">...</span><span class="comment">  % 1</span>
+  	<span class="string">'10100100'</span>, <span class="keyword">...</span><span class="comment">  % 2</span>
+  	<span class="string">'10110000'</span>, <span class="keyword">...</span><span class="comment">  % 3</span>
+  	<span class="string">'10011001'</span>, <span class="keyword">...</span><span class="comment">  % 4</span>
+  	<span class="string">'10010010'</span>, <span class="keyword">...</span><span class="comment">  % 5</span>
+  	<span class="string">'10000010'</span>, <span class="keyword">...</span><span class="comment">  % 6</span>
+  	<span class="string">'11111000'</span>, <span class="keyword">...</span><span class="comment">  % 7</span>
+  	<span class="string">'10000000'</span>, <span class="keyword">...</span><span class="comment">  % 8</span>
+  	<span class="string">'10010000'</span>  <span class="keyword">...</span><span class="comment">  % 9</span>
+};
+</pre><p>To display a number on the module, write the corresponding 8-bit character vector to the shift register, which will get reflected on its outputs, therefore controlling the on and off of the segments. Here is the code to loop through the ten digits on the display,</p><pre class="codeinput">   <span class="keyword">for</span> iLoop = 1:10
+       digit = digitTable{iLoop};
+       write(register, digit);
+       pause(0.5);
+   <span class="keyword">end</span>
+</pre><h2 id="8">Clean Up</h2><p>When the connection is no longer needed, clear the shift register and arduino object.</p><pre class="codeinput">  clear <span class="string">register</span> <span class="string">a</span>
+</pre><p class="footer">Copyright 2016 The MathWorks, Inc.<br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Control 7-Segment Display with 74HC595 Shift Register
+%
+% This example shows how to use the MATLAB(R) Support Package for
+% Arduino(R) Hardware to control a 1-Digit 7-Segment display with
+% a 74HC595 8-bit serial-in-parallel-out shift register.
+ 
+% Copyright 2016 The MathWorks, Inc.
+
+
+%% Hardware Requirements
+% * Arduino board
+% * Common anode 7-segment display
+% * 74HC595 8-bit serial-in-parallel-out shift register
+% * Eight 330 ohm resistors
+% * Breadboard and wires
+%
+
+%% Hardware Setup
+% 
+% Connect the 7-Segment display and 74HC595 shift register to Arduino 
+% hardware:
+%
+% * Connect Vcc pin on 74HC595 to 5V pin on Arduino hardware.
+%
+% * Connect GND and OE pins on 74HC595 to GND pin on Arduino hardware.
+%
+% * Connect DS or SER pin on 74HC595 to digital pin 8 on Arduino hardware.
+%
+% * Connect SHCP or SRCLK pin on 74HC595 to digital pin 10 on Arduino hardware.
+%
+% * Connect STCP or RCLK pin on 74HC595 to digital pin 9 on Arduino hardware.
+%
+% * Connect Q0-Q6 or QA-QG pin on 74HC595 to pin A-G on 7-segment display.
+%
+% * Connect Q7 or QH pin on 74HC595 to pin DP on 7-segment display.
+%
+% * Connect common anode pins (pin 3 and 8 on the diagram) on 7-segment display to 5V pin on Arduino hardware.
+%
+% <<ShiftRegisterDisplayExample_01.png>>
+
+
+%% Create Shift Register Object
+% Create an arduino object, and include the ShiftRegister library. 
+%
+   a = arduino('COM7', 'Uno', 'Libraries', 'ShiftRegister')
+%%
+%
+% Create shift register object for the display module, specifying the
+% connected data pin, clock pin, and latch pin. 
+%
+   dataPin = 'D8';
+   clockPin = 'D10';
+   latchPin = 'D9';
+   register = shiftRegister(a, '74HC595', dataPin, clockPin, latchPin)
+%%
+   
+%% Display Numbers
+% Each segment of the 7-segment display is controlled by a pin corresponding
+% to the segment, including pin A-G and pin DP. Common anode 7-segment
+% display means the segment pin needs to be low to turn it on. Here is the 
+% mapping between the segments and the pins, including shift register outputs.
+%
+% <<ShiftRegisterDisplayExample_02.png>>
+%
+% Create a table of binary character vectors for all single digit 
+% numbers.
+%
+   digitTable = {...
+        '11000000', ...  % 0
+        '11001111', ...  % 1
+  	'10100100', ...  % 2
+  	'10110000', ...  % 3
+  	'10011001', ...  % 4
+  	'10010010', ...  % 5
+  	'10000010', ...  % 6
+  	'11111000', ...  % 7
+  	'10000000', ...  % 8
+  	'10010000'  ...  % 9
+};
+%%
+% To display a number on the module, write the corresponding 8-bit
+% character vector to the shift register, which will get reflected on its
+% outputs, therefore controlling the on and off of the segments.
+% Here is the code to loop through the ten digits on the display,
+   for iLoop = 1:10
+       digit = digitTable{iLoop};
+       write(register, digit);
+       pause(0.5);
+   end 
+   
+
+%% Clean Up
+% When the connection is no longer needed, clear the shift register and 
+% arduino object.
+
+  clear register a
+ 
+displayEndOfDemoMessage(mfilename) 
+ 
+
+##### SOURCE END #####
+--></body></html>

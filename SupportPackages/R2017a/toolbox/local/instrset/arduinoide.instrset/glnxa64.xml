@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<instructions>
+    <platform>glnxa64</platform>
+    <downloadInstruction>
+        <downloadUrl>https://downloads.arduino.cc/arduino-1.6.13-linux64.tar.xz</downloadUrl>
+        <archive>arduino-1.6.13-linux64.tar.xz</archive>
+    </downloadInstruction> 
+    <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="InstallationInstruction">
+        <command>mkdir</command>
+        <command>-p</command>
+        <command>$IS_ROOT_DIR</command>
+        <passingReturnCodes>
+            <codes>0</codes>
+        </passingReturnCodes>
+    </installInstructions>
+    <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="InstallationInstruction">
+        <command>tar</command>
+		<command>-xf</command>
+		<command>$IS_DOWNLOADED_FILE</command>
+        <command>-C</command>
+		<command>$IS_ROOT_DIR</command>
+        <passingReturnCodes> 
+            <codes>0</codes> 
+        </passingReturnCodes> 
+   </installInstructions>
+    <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="InstallationInstruction">
+        <command>mkdir</command>
+        <command>-p</command>
+        <command>$IS_ROOT_DIR$IS_FILE_SEPidepkgs</command>
+        <returnCodeChecks>
+            <code>0</code>
+            <message>Successfully mkdir idepkgs</message>
+        </returnCodeChecks>
+        <passingReturnCodes>
+            <codes>0</codes>
+        </passingReturnCodes>
+    </installInstructions>    
+    <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="InstallationInstruction">
+        <command>$IS_ROOT_DIR$IS_FILE_SEParduino-1.6.13$IS_FILE_SEParduino</command>
+        <command>--pref</command>
+        <command>settings.path=$IS_ROOT_DIR$IS_FILE_SEPidepkgs</command>
+        <command>--save-prefs</command>
+        <returnCodeChecks>
+            <code>0</code>
+            <message>Successfully configured Arduino SAM package installation path.</message>
+        </returnCodeChecks>
+        <passingReturnCodes>
+            <codes>0</codes>
+        </passingReturnCodes>
+    </installInstructions>
+    <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="InstallationInstruction">
+        <command>$IS_ROOT_DIR$IS_FILE_SEParduino-1.6.13$IS_FILE_SEParduino</command>
+        <command>--install-boards</command>
+        <command>arduino:sam:1.6.7</command>
+        <returnCodeChecks>
+            <code>0</code>
+            <message>Successfully installed Arduino SAM package</message>
+            <code>255</code>
+            <message>Arduino SAM package is already installed on your machine.</message>
+        </returnCodeChecks>
+        <passingReturnCodes>
+            <codes>0</codes>
+            <codes>255</codes>            
+        </passingReturnCodes>
+   </installInstructions>
+   <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="InstallationInstruction">
+        <command>$IS_ROOT_DIR$IS_FILE_SEParduino-1.6.13$IS_FILE_SEParduino</command>
+        <command>--install-boards</command>
+        <command>arduino:samd:1.6.11</command>
+        <returnCodeChecks>
+            <code>0</code>
+            <message>Successfully installed Arduino SAMD package</message>
+            <code>255</code>
+            <message>Arduino SAMD package is already installed on your machine.</message>
+        </returnCodeChecks>
+        <passingReturnCodes>
+            <codes>0</codes>
+            <codes>255</codes>            
+        </passingReturnCodes>
+    </installInstructions>
+    <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="InstallationInstruction">
+        <command>$IS_ROOT_DIR$IS_FILE_SEParduino-1.6.13$IS_FILE_SEParduino</command>
+        <command>--install-library</command>
+        <command>WiFi101:0.12.0</command>
+        <returnCodeChecks>
+            <code>0</code>
+            <message>Successfully installed Arduino WiFi101 Library</message>
+            <code>255</code>
+            <message>WiFi101 Library is already installed on your machine.</message>
+        </returnCodeChecks>
+        <passingReturnCodes>
+            <codes>0</codes>
+            <codes>255</codes>            
+        </passingReturnCodes>
+    </installInstructions>
+    <displayName>Arduino software</displayName>
+    <licenseUrl>http://www.mathworks.com/supportfiles/roth/License_ArduinoIDE.txt</licenseUrl>
+    <checksum>9e3d873d3d9eb84a9b5209e60dde92cf</checksum>
+</instructions>

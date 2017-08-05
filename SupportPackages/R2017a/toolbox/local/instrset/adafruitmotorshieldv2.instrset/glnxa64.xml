@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<instructions>
+    <downloadInstruction>
+        <downloadUrl>https://codeload.github.com/adafruit/Adafruit_Motor_Shield_V2_Library/zip/1.0.4</downloadUrl>
+        <archive>1.0.4.zip</archive>
+    </downloadInstruction>
+    <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ExtractInstruction">
+        <archiveType>ZIP_ARCHIVE</archiveType>
+        <archiveName>$IS_DOWNLOADED_FILE</archiveName>
+    </installInstructions>
+    <displayName>Adafruit Motor Shield V2 Library</displayName>
+    <licenseUrl>http://www.mathworks.com/supportpackages/license/adamslv2</licenseUrl>
+    <checksum>b15f0084c026f309d7a1635d49cf60e6</checksum>
+</instructions>

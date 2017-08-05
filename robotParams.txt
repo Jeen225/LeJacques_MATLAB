@@ -1,0 +1,11 @@
+% alphas
+45 135
+
+% betas
+0 180
+
+% Link lengths
+200 300
+
+% Radii
+50 50

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productData>
+  <altDependencies>
+    <product>
+      <isControllingProduct>true</isControllingProduct>
+      <productBaseCode>ML</productBaseCode>
+      <productName>MATLAB</productName>
+      <productNumber>1</productNumber>
+      <productVersion>9.2</productVersion>
+      <releaseDescription>R2017a</releaseDescription>
+      <releaseFamily>R2017a</releaseFamily>
+    </product>
+  </altDependencies>
+  <dependsOn>
+    <component>
+      <name>hardwaresupportpkgs/licenses/asla_license_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1455818359</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/matlab/arduinoio_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1498671419</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/matlab/arduinoio_resources_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1490730103</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/matlab/arduinoio_examples_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1498154578</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/matlab/hwshared_resources_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1473774744</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/arduinoio_doc_en_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1498155268</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/targets/rttarduinoide_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1487297077</version>
+    </component>
+  </dependsOn>
+  <installerUsage>
+    <usage>professional</usage>
+  </installerUsage>
+  <isControllingProduct>false</isControllingProduct>
+  <licenseAgreementType>ASLA</licenseAgreementType>
+  <platformList>
+    <platform>glnxa64</platform>
+    <platform>maci64</platform>
+    <platform>win64</platform>
+  </platformList>
+  <productBaseCode>ML_ARDUINO</productBaseCode>
+  <productName>MATLAB Support Package for Arduino Hardware</productName>
+  <productNumber>2089</productNumber>
+  <productVersion>17.1.2</productVersion>
+  <releaseDescription>R2017a</releaseDescription>
+  <releaseFamily>R2017a</releaseFamily>
+  <requiredProducts />
+</productData>
+

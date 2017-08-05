@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Arduino Bluetooth Setup Tips</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="ug">
+<meta name="infotype" itemprop="infotype" content="trbl" />
+
+<meta name="description" itemprop="description" content="If you are unable to configure your Arduino hardware to use Bluetooth communication, try these tips." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html" itemprop="url"><span itemprop="title">Troubleshooting in MATLAB Support Package for Arduino Hardware</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Arduino Bluetooth Setup Tips</a></li>
+<li class="nav_scrollspy_title">On this page</li>
+
+<li><a href="#bvsdjfm" class="intrnllnk">Failure to Program Arduino  Board</a></li>
+<li><a href="#bvsdjh_" class="intrnllnk">Unable to see Bluetooth Serial COM Port</a></li>
+<li><a href="#bvspd2j" class="intrnllnk">Configure a 5 V HC-05 or HC-06</a></li>
+<li><a href="#bvsdjn6" class="intrnllnk">Find FTDI Serial Port</a>
+<ul>
+<li><a href="#bvspd31" class="intrnllnk">Windows</a></li>
+<li><a href="#bvspd4m" class="intrnllnk">Mac</a></li>
+</ul>
+</li>
+<li><a href="#bvsdjmt" class="intrnllnk">Supported Boards for Adafruit Bluefruit EZ-Link Shield and Programmer</a>
+<ul>
+<li><a href="#bvsnl5l" class="intrnllnk">Adafruit Bluefruit EZ-Link Shield</a></li>
+<li><a href="#bvsnl55-1" class="intrnllnk">Adafruit Bluefruit EZ-Link Programmer</a></li>
+</ul>
+</li>
+<li><a href="#zmw57dd0e4938" class="intrnllnk">Related Topics</a>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-topic">
+<span id="bvr7efv" class="anchor_target"></span><h2 class="title r2017a" itemprop="title content" id="bvr7efv">Arduino Bluetooth Setup Tips</h2><div class="clearfix"></div><div itemprop="content"><p>Try these tips to troubleshoot issues that you face while configuring Arduino<sup>&#x00AE;</sup> Bluetooth<sup>&#x00AE;</sup> setup.</p></div><div class="clearfix"></div><div itemprop="content"><span id="bvsdjfm" class="anchor_target"></span><h3 class="title" id="bvsdjfm">Failure to Program Arduino  Board</h3><p>Connect Arduino hardware to your computer using an USB
+cable. Make sure that you do not have your Bluetooth device connected
+to Arduino hardware when you <b>Program</b> the
+board.</p></div><div class="clearfix"></div><div itemprop="content"><span id="bvsdjh_" class="anchor_target"></span><h3 class="title" id="bvsdjh_">Unable to see Bluetooth Serial COM Port</h3><p>If you are using the Adafruit<sup>&#x00AE;</sup> Bluefruit EZ-Link shield
+or programmer, and you do not see the Bluetooth device serial
+port in the drop-down menu as shown, click <b>Refresh</b> and
+wait few seconds for the list to update.</p><p>
+<img src="pairbtdevice.png" height="512" width="682" alt=""></p><p>The updated list shows
+the serial port:</p><p>
+<img src="comportselect.png" height="512" width="682" alt=""></p><p>If you are still unable
+to see the serial port in the drop-down menu, follow these steps:</p><ul type="disc"><li><p>Remove the Bluetooth device from <b>Control
+Panel &gt; Devices and Printers</b>.</p><p class="listimage">
+<img src="unpair.png" height="253" width="337" alt=""></p></li><li><p>Reconnect the Bluetooth device and click <b>Refresh</b>.
+Check that the Bluetooth serial port appears in the list.</p><ul type="circle"><li><p>If these steps do not work, restart MATLAB<sup>&#x00AE;</sup>.</p></li></ul></li></ul></div><div class="clearfix"></div><div itemprop="content"><span id="bvspd2j" class="anchor_target"></span><h3 class="title" id="bvspd2j">Configure a 5 V HC-05 or HC-06</h3><p>When you configure your 5 V HC-05 or HC-06, use a 5 V FTDI adaptor
+and connect them, as shown:</p><p>
+<img src="5vftdi.png" height="160" width="430" alt=""></p></div><div class="clearfix"></div><div itemprop="content"><span id="bvsdjn6" class="anchor_target"></span><h3 class="title" id="bvsdjn6">Find FTDI Serial Port</h3><span id="bluetooth_ftdi" class="anchor_target"></span><span id="bvspd31" class="anchor_target"></span><h4 class="title" id="bvspd31">Windows</h4><p>On Windows<sup>&#x00AE;</sup>, find the FTDI serial port listed as <b>USB
+Serial Port</b> under <b>Ports (COM &amp; LPT)</b> in
+the <b>Device Manager</b>, as shown:</p><p>
+<img src="ftdi_port.png" height="90" width="354" alt=""></p><span id="bvspd4m" class="anchor_target"></span><h4 class="title" id="bvspd4m">Mac</h4><p>On Mac, type <code>ls /dev/cu.*</code> in the Terminal
+to find the FTDI serial port, as shown:</p><p>
+<img src="ftdi_port_mac.png" height="62" width="414" alt=""></p></div><div class="clearfix"></div><div itemprop="content"><span id="bvsdjmt" class="anchor_target"></span><h3 class="title" id="bvsdjmt">Supported Boards for Adafruit Bluefruit EZ-Link Shield and Programmer</h3><span id="bvsnl5l" class="anchor_target"></span><h4 class="title" id="bvsnl5l">Adafruit Bluefruit EZ-Link Shield</h4><p>If you are using Adafruit Bluefruit EZ-Link shield, only
+the following boards are supported:</p><ul type="disc"><li><p>Arduino Uno</p></li><li><p>Arduino Mega 2560</p></li><li><p>Arduino Mega ADK</p></li><li><p>Arduino Due</p></li></ul><span id="bvsnl55-1" class="anchor_target"></span><h4 class="title" id="bvsnl55-1">Adafruit Bluefruit EZ-Link Programmer</h4><p>If you are using Adafruit Bluefruit EZ-Link Programmer,
+only the following boards are supported:</p><ul type="disc"><li><p>Arduino Uno</p></li><li><p>Arduino Mega 2560</p></li><li><p>Arduino Mega ADK</p></li><li><p>Arduino Due</p></li><li><p>Arduino Leonardo</p></li><li><p>Arduino Micro</p></li><li><p>Arduino Nano</p></li></ul></div>
+<h2 id="zmw57dd0e4938">Related Topics</h2><ul><li><a href="arduino-connection-failure.html">Arduino USB, Bluetooth, and WiFi Connection Failure</a></li></ul>
+
+</div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:07 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

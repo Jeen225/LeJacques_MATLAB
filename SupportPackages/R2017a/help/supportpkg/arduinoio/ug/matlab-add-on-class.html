@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>MATLAB Add-On Class</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="ug">
+<meta name="infotype" itemprop="infotype" content="ex" />
+
+<meta name="description" itemprop="description" content="Learn how to configure a MATLAB add-on class for your custom MATLAB Arduino add-on library." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../custom-arduino-libraries.html" itemprop="url"><span itemprop="title">Custom Arduino Libraries</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">MATLAB Add-On Class</a></li>
+<li class="nav_scrollspy_title">On this page</li>
+
+<li><a href="#bu7z4vj" class="intrnllnk">Command Identifiers</a></li>
+<li><a href="#bu7z6v4" class="intrnllnk">Library Specification</a></li>
+<li><a href="#bu70boj" class="intrnllnk">Constructor</a></li>
+<li><a href="#bu70ede" class="intrnllnk">Destructor</a></li>
+<li><a href="#bu71hjj" class="intrnllnk">Resource Ownership</a></li>
+</li><li><a href="#zmw57dd0e3189" class="intrnllnk">See Also</a>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-topic">
+<span id="bu7z4iu" class="anchor_target"></span><h2 class="title r2017a" itemprop="title content" id="bu7z4iu">MATLAB Add-On Class</h2><div class="clearfix"></div><div itemprop="content"><p>The MATLAB<sup>&#x00AE;</sup> class for your library must inherit from the <a href="../../../supportpkg/arduinoio/ref/arduinoio.librarybase-class.html"><code>arduinoio.LibraryBase</code></a> class: </p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">classdef</span> MyAddon &lt; arduinoio.LibraryBase
+    &#8230;
+<span style="color:#0000FF">end</span>  
+</pre></div></div></div></div><div class="clearfix"></div><div itemprop="content"><ul><span id="zmw57dd0e2926" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+Use only ASCII characters for class, package, function, script,
+and variable names in your MATLAB class.</p></td></tr></table></ul></div><div class="clearfix"></div><div itemprop="content"><p>The <code>arduinoio.LibraryBase</code> class includes a variety
+of properties and methods. The following diagram shows a typical class
+inheritance for your add-on:</p></div><div class="clearfix"></div><div itemprop="content"><p>
+<img src="umlforsdk_add-on.png" height="271" width="497" alt=""></p></div><div class="clearfix"></div><div itemprop="content"><p>To implement your MATLAB add-on
+class, you must override the following properties and method:</p></div><div class="clearfix"></div><div itemprop="content"><ul type="disc"><li><p><a href="matlab-add-on-class.html#bu7z4vj" class="intrnllnk">Command Identifiers</a></p></li><li><p><a href="matlab-add-on-class.html#bu7z6v4" class="intrnllnk">Library Specification</a></p></li><li><p><a href="matlab-add-on-class.html#bu70boj" class="intrnllnk">Constructor</a></p></li></ul></div><div class="clearfix"></div><div itemprop="content"><p>Depending on the design of your add-on, you may also be required
+to override the following property and method:</p></div><div class="clearfix"></div><div itemprop="content"><ul type="disc"><li><p><a href="matlab-add-on-class.html#bu71hjj" class="intrnllnk">Resource Ownership</a></p></li><li><p><a href="matlab-add-on-class.html#bu70ede" class="intrnllnk">Destructor</a></p></li></ul></div><div class="clearfix"></div><div itemprop="content"><span id="bu7z4vj" class="anchor_target"></span><h3 class="title" id="bu7z4vj">Command Identifiers</h3><p>The command identifiers, typically named <code>commandID</code>,
+are 8-bit hexadecimal values. The <code>commandID</code> is
+used in the <a href="../../../supportpkg/arduinoio/ref/sendcommand.html"><code>sendCommand</code></a> to
+provide a consistent mapping to the <a href="../../../supportpkg/arduinoio/ug/c-header-file.html#bu7z3_r">commandHandler</a> method
+in the <a href="c-header-file.html">C++ Header File</a>.</p><p>Use the following syntax to specify a <code>commandID</code> property
+in your MATLAB class:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>properties(Access = private, Constant = true)
+    ADDON_OPERATION = hex2dec(cmdID)
+    &#8230;
+<span style="color:#0000FF">end</span>  
+</pre></div></div></div><p>The <a href="add-lcd-library.html">Create LCD Add-on</a> example
+shows the <code>commandID</code>s in the <code>LCDAddon.m</code> classdef
+file as:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>properties(Access = private, Constant = true)
+    LCD_CREATE     = hex2dec(<span style="color:#A020F0">'00'</span>)
+    LCD_INITIALIZE = hex2dec(<span style="color:#A020F0">'01'</span>)
+    LCD_CLEAR      = hex2dec(<span style="color:#A020F0">'02'</span>)
+    LCD_PRINT      = hex2dec(<span style="color:#A020F0">'03'</span>)
+    LCD_DELETE     = hex2dec(<span style="color:#A020F0">'04'</span>)
+<span style="color:#0000FF">end</span>
+</pre></div></div></div><p>Similarly, the <code>LCDAddon.h</code> defines the <code>commandID</code>s:</p><div class="code_responsive"><pre class="programlisting">#define LCD_CREATE      0x00
+#define LCD_INITIALIZE  0x01
+#define LCD_CLEAR       0x02
+#define LCD_PRINT       0x03
+#define LCD_DELETE      0x04
+</pre></div><ul><span id="zmw57dd0e3016" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+For consistent behavior, the command identifiers in theMATLAB class must match the <code>commandID</code>s
+used in the <a href="../../../supportpkg/arduinoio/ug/c-header-file.html#bu7z3_r">commandHandler</a> method from the C++
+header file.</p></td></tr></table></ul></div><div class="clearfix"></div><div itemprop="content"><span id="bu7z6v4" class="anchor_target"></span><h3 class="title" id="bu7z6v4">Library Specification</h3><p>The library specification defines the name of the add-on and
+locations of the required C++ source files and libraries. The library
+specification is a property set with this code:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>properties(Access = protected, Constant = true)
+    LibraryName = <span style="color:#A020F0">'MyAddonFolder/MyAddon'</span>
+    DependentLibraries = {}
+    ArduinoLibraryHeaderFiles = {}
+    CppHeaderFile = fullfile(arduinoio.FilePath(mfilename(<span style="color:#A020F0">'fullpath'</span>)), <span style="color:#A020F0">'src'</span>, <span style="color:#A020F0">'MyAddon.h'</span>)
+    CppClassName = <span style="color:#A020F0">'MyAddon'</span>
+<span style="color:#0000FF">end</span>
+</pre></div></div></div><p>The five library specification properties must be defined as
+in <code>arduinoio.LibraryBase</code> or as shown in the following
+table.</p><div class="table-responsive"><table class="table table-condensed" border="2"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr valign="top"><th valign="top">Property</th><th valign="top">Description</th></tr>
+</thead><tbody><tr valign="top"><td><code>LibraryName</code></td><td><p>Name of your add-on library as a string. The string uses
+the same syntax as your add-on folder structure: &lt;AddonFolder&gt;/&lt;AddonName&gt;</p></td></tr>
+<tr valign="top"><td><code>DependentLibraries</code></td><td><p>Other add-on libraries required by your add-on as a cell
+array of strings.</p></td></tr>
+<tr valign="top"><td><code>ArduinoLibraryHeaderFiles</code></td><td><p>Any C++ header files needed by your add-on. See <a href="c-header-file.html#bu7wvcd">LibraryBase</a> for details on including header
+files.</p></td></tr>
+<tr valign="top"><td><code>CppHeaderFile</code></td><td><p>Full path and name of your add-on C++ header file as
+a string.</p></td></tr>
+<tr valign="top"><td><code>CppClassName</code></td><td><p>Name of the class in your C++ header file as a string.</p></td></tr>
+</tbody></table></div><p></p><p>The <a href="add-lcd-library.html">Create LCD Add-on</a> sample
+library shows a typical naming of these properties:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>properties(Access = protected, Constant = true)
+    LibraryName = <span style="color:#A020F0">'ExampleLCD/LCDAddon'</span>
+    DependentLibraries = {}
+    ArduinoLibraryHeaderFiles = <span style="color:#A020F0">'LiquidCrystal/LiquidCrystal.h'</span>
+    CppHeaderFile = fullfile(arduinoio.FilePath(mfilename(<span style="color:#A020F0">'fullpath'</span>)), <span style="color:#A020F0">'src'</span>, <span style="color:#A020F0">'LCD.h'</span>)
+    CppClassName = <span style="color:#A020F0">'LCD'</span>
+<span style="color:#0000FF">end</span>
+</pre></div></div></div><p>If your add-on requires <code>I2C</code> support, then <div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>DependentLibraries = {<span style="color:#A020F0">'i2c'</span>};</pre></div></div></div></p></div><div class="clearfix"></div><div itemprop="content"><span id="bu70boj" class="anchor_target"></span><h3 class="title" id="bu70boj">Constructor</h3><p>The constructor for your add-on must initialize the add-on object
+in two ways:</p><ul type="disc"><li><p>Parent the add-on object to the Arduino<sup>&#x00AE;</sup> object.</p></li><li><p>Define the set of hardware pins used by the add-on</p></li></ul><p>Here is the minimum form of the constructor:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>methods
+
+    <span style="color:#0000FF">function</span> obj = AddonName(parentObj)            
+        obj.Parent = parentObj;
+        obj.Pins = [];
+    <span style="color:#0000FF">end</span>
+
+    &#8230;
+<span style="color:#0000FF">end</span>
+</pre></div></div></div><p>Typically, the add-on constructor registers add-on resources
+with the parent Arduino object. Similarly, checks can also be
+performed to ensure that add-ons do not generate resource usage conflicts.
+The constructor in the <a href="add-lcd-library.html">Create LCD Add-on</a> example
+shows how a resource can be checked and then acquired to prevent two
+LCD add-ons existing simultaneously:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% InputPins is user input and contains the pins that connect the LCD and the arduino</span>
+<span style="color:#0000FF">function</span> obj = LCDAddon(parentObj,inputPins)
+    obj.Parent = parentObj;
+    obj.Pins = inputPins;
+    count = getResourceCount(obj.Parent,obj.ResourceOwner);
+    <span style="color:#228B22">% Since this example allows implementation of only 1 LCD</span>
+    <span style="color:#228B22">% shield, error out if resource count is more than 0</span>
+    <span style="color:#0000FF">if</span> count &gt; 0
+        error(<span style="color:#A020F0">'You can only have 1 LCD shield'</span>);
+    <span style="color:#0000FF">end</span> 
+    incrementResourceCount(obj.Parent,obj.ResourceOwner);    
+    createLCD(obj,inputPins);
+<span style="color:#0000FF">end</span>
+</pre></div></div></div></div><div class="clearfix"></div><div itemprop="content"><span id="bu70ede" class="anchor_target"></span><h3 class="title" id="bu70ede">Destructor</h3><p>By default, you do not need to write a destructor for your add-on.
+The destructor from the <a href="../../../supportpkg/arduinoio/ref/arduinoio.librarybase-class.html"><code>arduinoio.LibraryBase</code></a> class is called implicitly.
+Add-ons that use hardware resources from the parent Arduino object
+or allocate memory in the C++ header must call an add-on destructor
+to release these resources.</p><ul><span id="zmw57dd0e3139" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Warning:</b>&nbsp;&nbsp;
+
+
+Not releasing resources in the destructor can cause memory leaks
+and failure during the creation of a new instance of your add-on.</p></td></tr></table></ul><p>A destructor for your add-on class must:</p><ul type="disc"><li><p>Override the delete method of the <a href="../../../supportpkg/arduinoio/ref/arduinoio.librarybase-class.html"><code>arduinoio.LibraryBase</code></a> class.</p></li><li><p>Execute a command in your C++ <a href="../../../supportpkg/arduinoio/ug/c-header-file.html#bu7z3_r">commandHandler</a> method
+to deallocate any memory resources used by your library.</p></li><li><p>Not throw an error or exception. To prevent errors
+or exceptions being thrown during the destructor, wrap the contents
+in a <code>try-catch</code> statement.</p></li></ul><p>The destructor in the <a href="add-lcd-library.html">Create LCD Add-on</a> example shows how resource can be checked
+and released safely:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><code>methods</code>(Access = protected)
+    function delete(obj)
+        try
+            parentObj = obj.Parent;
+            
+            % Clear the pins that have been configured to the LCD shield
+            for iLoop = obj.Pins
+                configurePinResource(parentObj,iLoop{:},obj.ResourceOwner,'Unset');
+            end
+            
+            % Decrement the resource count for the LCD
+            decrementResourceCount(parentObj, obj.ResourceOwner);
+            cmdID = obj.LCD_DELETE;
+            inputs = [];
+            sendCommand(obj, obj.LibraryName, cmdID, inputs);
+        catch
+            % Do not throw errors on destroy.
+            % This may result from an incomplete construction.
+        end
+    end  
+end
+</pre></div></div></div></div><div class="clearfix"></div><div itemprop="content"><span id="bu71hjj" class="anchor_target"></span><h3 class="title" id="bu71hjj">Resource Ownership</h3><p>Your add&#8211;on can optionally specify certain hardware resources
+that are unique and cannot be shared. The<a href="add-lcd-library.html">Create LCD Add-on</a> can only have a single instance since only
+one LCD shield can be attached to the Arduino device at a time.</p><ul><span id="zmw57dd0e3180" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+Explicitly defining hardware resource ownership of your add-on
+prevents resource acquisition and usage conflicts during runtime. </p></td></tr></table></ul><p>You can specify the resource ownership through the following
+set of properties in your add-on class:</p><div class="code_responsive"><pre class="programlisting">properties(Access = private)
+    ResourceOwner = 'ExampleLCD/LCDAddon';
+end
+</pre></div></div>
+<h2 id="zmw57dd0e3189">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="create-custom-folder-structure.html"><span itemprop="name">Add-On Package Folder</span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="c-header-file.html"><span itemprop="name">C++ Header File</span></a></span></p>
+
+</div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:07 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

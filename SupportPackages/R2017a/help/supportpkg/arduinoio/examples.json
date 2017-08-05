@@ -1,0 +1,95 @@
+
+[
+      
+{
+    "title": "Getting Started with MATLAB Support Package for Arduino Hardware",
+    "description": "This example shows how to use MATLAB® Support Package for Arduino® Hardware to perform basic operations on the hardware such as turning an LED on and off, blinking LEDs and playing sound on a speaker.",
+    "thumbnail_url": "../../examples/arduinoio_product/win64/ArduinoGettingStartedExample_03.png",
+    "url": "../../supportpkg/arduinoio/examples/getting-started-with-matlab-support-package-for-arduino-hardware.html",
+    "type": "Script",
+    "open_command": ""
+}
+   ,
+{
+    "title": "Control Servo Motors",
+    "description": "This example shows how to use the MATLAB® Support Package for Arduino® Hardware to control a hobby servo motor.",
+    "thumbnail_url": "../../examples/arduinoio_product/win64/ServoMotorExample_01.png",
+    "url": "../../supportpkg/arduinoio/examples/control-servo-motors.html",
+    "type": "Script",
+    "open_command": ""
+}
+   ,
+{
+    "title": "Measure Temperature From I2C Device on Arduino® Hardware",
+    "description": "This example shows how to use the MATLAB® Support Package for Arduino® Hardware and the I2C interface to communicate with I2C devices.",
+    "thumbnail_url": "../../examples/arduinoio_product/win64/I2CTemperatureSensorExample_01.png",
+    "url": "../../supportpkg/arduinoio/examples/measure-temperature-from-i2c-device-on-arduino-hardware.html",
+    "type": "Script",
+    "open_command": ""
+}
+   ,
+{
+    "title": "Communicate with SPI Device on Arduino® Hardware",
+    "description": "This example shows how to use the MATLAB® Support Package for Arduino® Hardware to use SPI interface to communicate with MCP42010 Digital Potentiometer.",
+    "thumbnail_url": "../../examples/arduinoio_product/win64/SPIPotentiometerExample_01.png",
+    "url": "../../supportpkg/arduinoio/examples/communicate-with-spi-device-on-arduino-hardware.html",
+    "type": "Script",
+    "open_command": ""
+}
+   ,
+{
+    "title": "Push Button Control with 74HC165 Shift Register",
+    "description": "This example shows how to use the MATLAB® Support Package for Arduino® Hardware to collect large number of push button states with a 74HC165 8-bit paralle-in-serial-out shift register. This example uses four push buttons.",
+    "thumbnail_url": "../../examples/arduinoio_product/win64/ShiftRegisterControlExample_01.png",
+    "url": "../../supportpkg/arduinoio/examples/push-button-control-with-74hc165-shift-register.html",
+    "type": "Script",
+    "open_command": ""
+}
+   ,
+{
+    "title": "Control 7-Segment Display with 74HC595 Shift Register",
+    "description": "This example shows how to use the MATLAB® Support Package for Arduino® Hardware to control a 1-Digit 7-Segment display with a 74HC595 8-bit serial-in-parallel-out shift register.",
+    "thumbnail_url": "../../examples/arduinoio_product/win64/ShiftRegisterDisplayExample_02.png",
+    "url": "../../supportpkg/arduinoio/examples/control-7-segment-display-with-74hc595-shift-register.html",
+    "type": "Script",
+    "open_command": ""
+}
+   ,
+{
+    "title": "Control LEDs with 74HC595 Shift Register",
+    "description": "This example shows how to use the MATLAB® Support Package for Arduino® Hardware to control multiple LEDs with two 74HC595 8-bit serial-in-parallel-out shift registers.",
+    "thumbnail_url": "../../examples/arduinoio_product/win64/ShiftRegisterLEDExample_01.png",
+    "url": "../../supportpkg/arduinoio/examples/control-leds-with-74hc595-shift-register.html",
+    "type": "Script",
+    "open_command": ""
+}
+   ,
+{
+    "title": "Control Motors Using Adafruit® Motor Shield V2",
+    "description": "This example shows how to use the MATLAB® Support Package for Arduino® Hardware to control servo motors, DC motors and stepper motors using Adafruit motor shield v2.",
+    "thumbnail_url": "../../examples/arduinoio_product/win64/AdafruitMotorShieldV2Example_01.png",
+    "url": "../../supportpkg/arduinoio/examples/control-motors-using-adafruit-motor-shield-v2.html",
+    "type": "Script",
+    "open_command": ""
+}
+   ,
+{
+    "title": "Control Rotary Encoder Knob",
+    "description": "This example shows how to use the MATLAB® Support Package for Arduino® Hardware to control a 12-step rotary encoder with a built-in push button.",
+    "thumbnail_url": "../../examples/arduinoio_product/win64/RotaryEncoderKnobExample_01.png",
+    "url": "../../supportpkg/arduinoio/examples/control-rotary-encoder-knob.html",
+    "type": "Script",
+    "open_command": ""
+}
+   ,
+{
+    "title": "Steer Two-Wheel Robot",
+    "description": "This example shows how to use the MATLAB® Support Package for Arduino® Hardware to steer a two-wheel Arduino-based robot with closed-loop control.",
+    "thumbnail_url": "../../examples/arduinoio_product/win64/RotaryEncoderSpeedExample_02.png",
+    "url": "../../supportpkg/arduinoio/examples/steer-two-wheel-robot.html",
+    "type": "Script",
+    "open_command": ""
+}
+   
+]
+    

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2014-2017 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="MATLAB">
+  <message>
+      <!-- Arduino IDE -->
+      <entry key="IDENotInstalled">Arduino IDE is not installed. Open &lt;a href="matlab: matlab.addons.supportpackage.internal.explorer.showSupportPackages(''ML_ARDUINO'', ''tripwire'');&quot;&gt;Add&#8209;On Explorer&lt;/a&gt; to reinstall MATLAB Support Package for Arduino Hardware.</entry>
+      <entry key="invalidIDEPath">Arduino IDE at folder ''{0}'' is corrupt. Open &lt;a href="matlab: matlab.addons.supportpackage.internal.explorer.showSupportPackages(''ML_ARDUINO'', ''tripwire'')&quot;&gt;Add&#8209;On Explorer&lt;/a&gt; to reinstall MATLAB Support Package for Arduino Hardware.</entry>
+      <entry key="invalidIDEPathNoLink">Arduino IDE at folder ''{0}'' is inaccessible or corrupt.</entry>
+
+      <!-- Arduino Construction -->
+      <entry key="programmingArduino">Updating server code on board {0} ({1}). Please wait (might take a few minutes).</entry>
+      <entry key="boardNotDetected">Cannot detect Arduino hardware. Make sure original Arduino hardware is properly plugged in. Otherwise, please specify both port and board type. For more information, see &lt;a href=&quot;matlab:helpview(arduinoio.internal.getDocMap, ''arduinoio_troubleshooting'')&quot;&gt;Arduino Hardware Troubleshooting&lt;/a&gt;.</entry>
+      <entry key="invalidPort">Cannot find Arduino hardware on port {0}. Make sure Arduino hardware is properly plugged in. Otherwise, please specify both port and board type. For more information, see &lt;a href=&quot;matlab:helpview(arduinoio.internal.getDocMap, ''arduinoio_troubleshooting'')&quot;&gt;Arduino Hardware Troubleshooting&lt;/a&gt;.</entry>
+      <entry key="connectionExists">MATLAB connection to Arduino {0} at {1} exists in your workspace. To create a new connection, clear the existing object.</entry>
+      <entry key="failedUpload">Cannot program board {0} ({1}). Please make sure the board is supported and the port and board type are correct. For more information, see &lt;a href=&quot;matlab:helpview(arduinoio.internal.getDocMap, ''arduinoio_troubleshooting'')&quot;&gt;Arduino Hardware Troubleshooting&lt;/a&gt;.</entry>
+      <entry key="failedUploadVerbose">Vendor returned error messages:\n{0}</entry>
+      <entry key="outOfFlashMemory">Cannot upload libraries {1} to board {0} due to flash memory size. Please remove unused libraries or turn off trace and try again.</entry>
+      <entry key="openFailed">Failed to open a connection at {0} {1}. Make sure the port or address is correct and the Arduino hardware is properly plugged in. For troubleshooting, see &lt;a href=&quot;matlab:helpview(arduinoio.internal.getDocMap, ''arduinoio_troubleshooting'')&quot;&gt;Arduino Hardware Troubleshooting&lt;/a&gt;.</entry>
+      <entry key="portWithNoBoard">Specify both port number and board type parameters.</entry>
+      <entry key="paramNotInPairs">Specify both port and board values before specifying other name-value pairs.</entry>
+      <entry key="invalidPortType" note="stringDatatypeUpdate">Invalid port type. Specify port as a character vector or string.</entry>
+      <entry key="invalidPortValue">Invalid value ''{0}'' for port. Specify port as ''com*'' on Windows or ''/dev/*'' on Mac and Linux.</entry>    
+      <entry key="invalidParam">Invalid input parameter {0} for arduino function. Valid parameters are ''Libraries'' and ''TraceOn''.</entry>
+      <entry key="missingParamValue">No value specified for parameter {0}.</entry>      
+      <entry key="invalidBoardType" note="stringDatatypeUpdate">Invalid type for board. Specify board as a character vector or string.</entry>
+      <entry key="invalidBoardName">''{0}'' is not recognized as a supported board.\n Possible board values are:\n {1}.</entry>
+      <entry key="ambiguousBoardName">The provided board ''{0}'' matched following supported board types ''{1}''. Specify the full board name.</entry>
+      <entry key="invalidLibrariesType" note="stringDatatypeUpdate">Invalid Libraries type. Specify '''' or a character vector of comma separated list of library names.</entry>
+      <entry key="invalidLibrariesValue">Invalid value ''{0}'' for Libraries. Valid libraries are\n''{1}''.</entry>
+      <entry key="invalidAddonLibraryType" note="stringDatatypeUpdate">Invalid Library type. The type must be a character vector or string.</entry>
+      <entry key="invalidAddonLibraryValue">Invalid add-on Library value ''{0}''. Valid libraries are ''{1}''.</entry>
+      <entry key="noAddonLibraryUploaded">No add-on library uploaded to the board. Please clear and recreate the current arduino object to include the appropriate library. For a list of available libraries, type ''listArduinoLibraries''.</entry>
+      <entry key="libraryNotUploaded">Library ''{0}'' is not uploaded to the board. Please clear the current arduino object and recreate it to include the appropriate library. For a list of available libraries, type ''listArduinoLibraries''.</entry>
+      <entry key="missingDependentLibraries">Failed to add library ''{0}''. The library is dependent on the unavailable library ''{1}''.</entry>
+      <entry key="addonLibraryNotInstalled">The Arduino source ''{0}'' for libraries ''{1}'' cannot be found. Install the 3P library source first and try again.</entry>
+      <entry key="firstTimeSetup">Call arduinosetup to setup the board first.</entry>
+      <entry key="missingICT">Connecting to Arduino wirelessly via Bluetooth requires Instrument Control Toolbox.</entry>
+      <entry key="invalidAddressPCMac">Unable to find Arduino hardware at {0}. First argument must be a valid serial port, IP address/hostname or Bluetooth address/name.</entry>
+      <entry key="invalidAddressLinux">Unable to find Arduino hardware at {0}. First argument must be a valid serial port, IP address/hostname or Bluetooth address/name.</entry>
+      <entry key="invalidAddressType">Invalid first input data type. The input must be a character vector or string.</entry>
+      <entry key="wlLibChangeNotSupported">Unable to change Arduino settings with {0} connection. Call arduinosetup to configure the board.</entry>
+      <entry key="invalidWiFiPort">Port number must be an integer greater than {0} and less than or equal to {1}.</entry>
+      <entry key="invalidWiFiBoard">''{0}'' board type is not supported. Specify one of the following as board type for WiFi connection: {1}.</entry>
+      <entry key="invalidBluetoothBoard">''{0}'' board type is not supported. Specify one of the following as board type for Bluetooth connection: {1}.</entry>
+      <entry key="wlConnectionFailed">Unable to connect to the Arduino board wirelessly. Call arduinosetup to configure the Arduino board.</entry>
+      <entry key="wlBoardMismatch">Arduino {0} at address {1} is detected. Specify ''{2}'' as board type instead.</entry>
+      <entry key="ambiguousBTName">Multiple Bluetooth devices named {0} are detected. Recreate the connection with its 12-bit hexadecimal address.</entry>
+      
+      
+      <!-- Arduino Others -->
+      <entry key="connectionIsLost">The host and client connection is lost. Make sure the board is plugged in and recreate arduino and related objects.</entry>
+      <entry key="notSupportedInterface">The {0} interface is not supported on board {1}.</entry>
+      <entry key="reentrancyException">Rentrancy exception on arduino ''{0}'' method. &lt;a href=&quot;matlab:helpview(arduinoio.internal.getDocMap, ''reentrancy_exception'')&quot;&gt;Click here for more information.&lt;/a&gt;</entry>
+
+      <!-- Pin Configuration -->
+	  <entry key="invalidPinType" note="stringDatatypeUpdate">Invalid pin format. Pin number must be a character vector or string that starts with D or A.</entry>
+      <entry key="invalidLegacyPinType">Invalid pin format. Pin number must be a non-negative scalar integer.</entry>
+      <entry key="invalidPinMode" note="stringDatatypeUpdate">Invalid {0} pin mode. The mode must be a character vector or string. Valid mode values are:\n{1}.</entry>
+      <entry key="notSupportedPinMode">Pin mode {0} is not supported on this pin. Supported mode values for this pin are:\n{1}.</entry>
+      <entry key="invalidPinNumber">Invalid pin number. Valid pin numbers for this board {0} are {1}.</entry>
+      <entry key="reservedResourceDigitalAnalog">{0} pin {1} is reserved by your arduino object in {2} mode. Use configurePin to change the pin configuration appropriately, or configure it to ''Unset'' to allow arduino to automatically set it.</entry>
+ 	  <entry key="invalidPin">Invalid pin number. Valid {1} pin numbers for board {0} are {2}.</entry>
+      <entry key="reservedPin">Pin {0} was previously configured for ''{1}''. To complete this operation, use ''configurePin'' with mode ''{2}'', or ''Unset'' to allow arduino to automatically set the pin mode.</entry>
+	  <entry key="reservedResource">{0} pin {1} is reserved by {2} in ''{3}'' mode. To change the pin configuration, clear all variables holding onto this resource.</entry>
+          
+      <!-- Input Validation -->
+	  <entry key="invalidDigitalType">Invalid parameter type. The digital write value must be a logical (true/false), 0, or 1.</entry>
+	  <entry key="invalidDigitalValue">Invalid digital write value. Valid values are 0 or 1.</entry>
+	  <entry key="invalidDoubleTypePos">Invalid parameter type. The {0} value must be a scalar positive numeric double.</entry>
+	  <entry key="invalidDoubleTypeRanged">Invalid parameter type. The {0} value must be a scalar double between {1} and {2}.</entry>
+	  <entry key="invalidDoubleValueRanged">Invalid {0} value. The value must be between {1} and {2}.</entry>
+	  <entry key="invalidIntType">Invalid parameter type. The {0} value must be a scalar integer; valid values are {1}.</entry>
+	  <entry key="invalidIntValue">Invalid {0} value. Valid values are {1}.</entry>
+	  <entry key="invalidIntTypeRanged">Invalid parameter type. The {0} value must be a scalar integer between {1} and {2}.</entry>
+	  <entry key="invalidIntValueRanged">Invalid {0} value. The value must be an integer between {1} and {2}.</entry>
+	  <entry key="invalidIntArrayTypeRanged">Invalid array parameter type. The {0} array values must all be integers between {1} and {2}.</entry>
+	  <entry key="invalidIntArrayValueRanged">Invalid {0} array values. All array values must be integers between {1} and {2}.</entry>
+	  <entry key="invalidDoubleTypeRangedUnits">Invalid parameter type. The {0} value must be a scalar double between {1} and {2} ({3}).</entry>
+	  <entry key="invalidDoubleValueRangedUnits">Invalid {0} value. The value must be between {1} and {2} ({3}).</entry>
+
+      <!-- I2C/SPI -->
+      <entry key="communicationLostI2C">Communication with the board is lost. To recover communication, please check the power to the I2C device(s) on bus {0}, and try again. Otherwise, make sure the board is plugged in and recreate the arduino and its related objects.</entry>
+	  <entry key="reservedI2CPins">Board {0}, I2C communications requires pins {1}(SDA) and {2}(SCL). Pin {3} is being used for ''{4}''. To use the I2C bus, configure this pin to ''I2C''.</entry>
+	  <entry key="reservedSPIPins">Board {0}, SPI communications requires pins {1} which is currently in use. To use SPI, configure them to ''SPI''.</entry>
+	  <entry key="maxSPIData">SPI count for read and write operations have a limit of 144 for a data precision of ''uint8'', and 72 for a data precision of ''uint16''.</entry>
+	  <entry key="maxI2CData">I2C count for read and write operations have a limit of 144 for a data precision of ''uint8'', and 72 for a data precision of ''uint16''.</entry>
+	  <entry key="invalidI2CBusNumber">Invalid I2C bus number. Valid I2C bus numbers on board {0} are {1}.</entry>
+      <entry key="invalidI2CBusType">Invalid I2C bus type. Bus must be a non-negative scalar integer.</entry>
+	  <entry key="permanentlyReservedI2CPins">Board {0}, {1} pins {2}(SDA) and {3}(SCL) are permanently reserved for I2C communications and its pin mode cannot be changed.</entry>
+	  <entry key="invalidSPIBitRateType">Invalid SPI bit rate type. Bit rate must be a non-negative scalar integer.</entry>
+      <entry key="conflictSPIPinsCS">The pin {0} is reserved for SPI({1}), and cannot be used as chip select.</entry>
+	  <entry key="invalidNVPropertyName">Invalid name-value pairs name for {0}. Valid name-value pairs names are {1}.</entry>
+	  <entry key="invalidNVPropertyValue">Invalid name-value pairs value for {0} {1}. Valid name-value pairs values are {2}.</entry>
+      <entry key="invalidRegisterValue" note="stringDatatypeUpdate">Invalid register value. The value must be either a character vector or string between ''00'' to ''FF'' or an integer between 0 and 255.</entry>
+      <entry key="invalidChipSelectPin">Invalid SPI chip select pin number {0}. Specify a digital pin number.</entry>
+      <entry key="reservedResourceSPI">Pin {0} is reserved by other spidev object(s) in the current workspace. Clear all variables holding onto this resource first.</entry>
+      <entry key="invalidI2CAddress" note="stringDatatypeUpdate">Invalid I2C address ''{0}''. The address must be a scalar integer (or hex character vector or string) between {1} and {2}.</entry>
+	  <entry key="invalidI2CAddressType" note="stringDatatypeUpdate">Invalid I2C address format. The address must be a scalar integer (or hex character vector or string) between 0 and 127.</entry>
+	  <entry key="conflictI2CAddress">I2C address ''{0} (0x{1})'' already in use.</entry>
+	  <entry key="unsuccessfulI2CRead">Failed to read {0} {1} value(s) from the device.</entry>
+      <entry key="unsuccessfulI2CReadRegister">Failed to read {0} values from register {1}.</entry>
+      <entry key="invalidPrecision">Invalid precision. Valid precision values are {0}.</entry>
+      
+      <!-- Servo -->
+      <entry key="reservedServoPins">Board {0}, Servo requires pins {1} which is currently in use. To use Servo, configure it to ''Servo''.</entry>
+      <entry key="maxServos">Maximum limit of {1} servos reached for board {0}.</entry>
+      <entry key="reservedResourceServo">Pin {0} is reserved by other servo object(s) in the current workspace. Clear all variables holding onto this resource first.</entry>
+      <entry key="invalidMinMaxPulseDurations">MaxPulseDuration of servo must be greater than MinPulseDuration.</entry>
+      <entry key="requiredBothMinMaxPulseDurations">Specify both MinPulseDuration and MaxPulseDuration name-value pairs for servo.</entry>
+
+      <!-- Shift Register -->
+      <entry key="invalidShiftRegModel">Invalid model value. Specify one of the following model values: {0}.</entry>
+      <entry key="invalidShiftRegPin">Invalid pins for the {0} shift register. Specify a digital pin that starts with a D(for example, ''D4'').</entry>
+      <entry key="reservedShiftRegPins">Pin {0} is already used in {1} mode. Clear all variables that use this pin, or use ''configurePin'' to set its mode to 'Unset'.</entry>
+      <entry key="unsupportedShiftRegRead">Read function not supported on model {0}.</entry>
+      <entry key="unsupportedShiftRegWrite">Write function not supported on model {0}.</entry>
+      <entry key="unsupportedShiftRegReset">Reset function not supported on model {0}.</entry>
+      <entry key="shiftRegResetPinNotSpecified">Reset pin is not specified for the shift register. Specify ''ResetPin'' when creating the shift register to enable reset operation.</entry>
+      <entry key="invalidShiftRegValue">Invalid write value. Specify the value as a scalar integer, a character vector or string of ''1''s or ''0''s, or a vector of 1s or 0s.</entry>
+      <entry key="invalidShiftRegWriteNumBits">Invalid write value. The length of the value must match with default or specified precision.</entry>
+      <entry key="invalidShiftRegWritePrecision">Invalid precision value. Specify the value as: {0}.</entry>
+      <entry key="invalidShiftRegReadPrecision">Invalid precision value. Specify the value as either one of these integers ({0}) or one of these character vectors ({1}).</entry>
+      
+      <!-- Rotary Encoder -->
+      <entry key="invalidEncoderChannelType">Invalid channel input. Specify a pin that starts with D or A.</entry>
+      <entry key="invalidEncoderChannelPin">Invalid channel pins. Interrupt pins for board {0} are {1}.</entry>
+      <entry key="reuseEncoderChannelPin">Pin {0} is already in use with rotary encoder. Clear all variables holding onto this resource.</entry>
+      <entry key="invalidEncoderChannelPinDuplicate">Channel A and B must be different pins.</entry>
+      <entry key="invalidEncoderPPRValue">Pulse per revolution must be a positive integer.</entry>
+      <entry key="maxEncoders">Maximum limit of {1} rotary encoders reached for board {0}.</entry>
+      <entry key="encoderCountOverflow">Encoder count has overflowed on the hardware. Call resetCount to reset it.</entry>
+      <entry key="encoderPPRNotSpecified">Recreate the rotary encoder object and specify pulse per revolution.</entry>
+      <entry key="encoderNotSameParent">readSpeed function can read speed only from rotary encoders connected to the same Arduino board.</entry>
+      <entry key="invalidEncoderCount">Invalid count value. Count must be an integer between {0} and {1}.</entry>
+      <entry key="invalidCountResetValue">Invalid reset value. Value must be true or false.</entry>
+	  
+	  <!-- Adafruit Motor Shield -->
+      <entry key="dcmotorAlreadyRunning">DC Motor {0} is already running.</entry>
+	  <entry key="conflictDCMotor">AdafruitMotorShieldV2\\\\DCMotor ''M{0}'' is already in use.</entry>
+	  <entry key="conflictStepperMotor">AdafruitMotorShieldV2\\\\Stepper Motor ''{0}'' is already in use.</entry>
+	  <entry key="conflictStepperTerminals">AdafruitMotorShieldV2\\\\DCMotor terminals ''M{0}'' and ''M{1}'' needed for Stepper Motor ''{2}'' may be in use by DC Motor.</entry>
+	  <entry key="conflictDCMotorTerminals">AdafruitMotorShieldV2\\\\DCMotor terminals ''M{0}'' and ''M{1}'' may be in use by Stepper Motor ''{2}''.</entry>
+      <entry key="maxAddonLimit">You have reached max limit of {0} on {1} add-ons for board {2}.</entry>
+	  
+      <!-- Internal Errors -->
+      <entry key="protocolDebugOn">Protocol debug is turned on. Do not use returned arduino object. Use serial to start debugging.</entry>
+      <entry key="notSupportedMethod">Internal error: Method ''{0}'' is not supported by the ''{1}'' protocol.</entry>
+      <entry key="invalidServerInitResponse">Internal error: Did not receive expected number of characters or received incorrect characters.</entry>
+      <entry key="incorrectServerInitialization">Internal error: The initialization of the server code is incorrect.</entry>
+      <entry key="maxDataLimit">You have reached max limit of {0} bytes of data in sendCommand for board {1}.</entry>
+      <entry key="dataNotInBytes">Internal error: Data to be sent to server must be converted to uint8 data type.</entry>
+      <entry key="invalidValidateType">Internal error: Invalid terminal type for validateTerminal. Valid types are {0}.</entry>
+      <entry key="invalidInputs">Internal error: Parameter ''inputs'' must be a single dimension array of integers or an empty array.</entry>
+      <entry key="invalidCommandID">Internal error: Parameter ''commandID'' must be a non-negative scalar integer less than 256.</entry>
+      <entry key="invalidTimeout">Internal error: Parameter ''timout'' must be a non-negative scalar integer.</entry>
+      <entry key="invalidTimeoutValue">Internal error: Parameter ''timout'' must be greater than {0}(s) if specified.</entry>
+      <entry key="invalidLibraryNameFormat" note="stringDatatypeUpdate">Internal error: Parameter ''libName'' must be a character vector.</entry>
+      <entry key="invalidTerminalType">Internal error: Invalid terminal format. Terminal number must be a non-negative scalar integer.</entry>
+      <entry key="invalidTerminalNumber">Internal error: Invalid terminal number {0}. Valid terminal numbers for board {1} are: {2}.</entry>
+      <entry key="invalidResourceNameType" note="stringDatatypeUpdate">Internal error: Invalid resourceName format. The resourceName parameter must be a character vector.</entry>
+      <entry key="invalidResourceName">Internal error: Invalid resourceName value. Valid resourceName values are: {0}.</entry>
+      <entry key="resourceCountZero">Internal error: Resource count is zero.</entry>
+      <entry key="invalidSlotType">Internal error: Invalid slot format. Slot must be a positive scalar integer.</entry>
+      <entry key="invalidSlotNumber">Internal error: Invalid slot number. Valid slot numbers are: {0}.</entry>
+      <entry key="invalidPropertyNameType" note="stringDatatypeUpdate">Internal error: Invalid propertyName format. The propertyName must be a character vector.</entry>
+      <entry key="invalidPropertyName">Internal error: Invalid propertyName value. Valid propertyName values are: {0}.</entry>
+      <entry key="invalidForceConfig">Internal error: Invalid forceConfig value. The forceConfig must be a logical value of either true or false.</entry>
+      <entry key="invalidResourceOwnerType" note="stringDatatypeUpdate">Internal error: Invalid resourceOwner format. The resourceOwner must be a character vector.</entry>
+
+      <!-- Setup App Messages -->
+      <entry key="ArduinoSetupInfoMessage">You can install the driver for Arduino hardware. This process installs the Arduino USB Driver on your desktop.</entry>
+      <entry key="ArduinoSetupInstallSteps">To install Arduino USB Driver, click on the "Next" button below.</entry>
+      <entry key="ArduinoSetupNotes">&lt;br&gt;1. Installation of driver requires Administrator privileges. Make sure you have setup your Windows User Account Control and Local Security Policy Settings correctly.&lt;br&gt;&lt;br&gt;2. If this is the first time using Arduino on this machine, you need to replug the hardware after the installation finishes.</entry>
+      <entry key="ArduinoSetupDriverCheckbox">Enable installation of Arduino USB Driver</entry>
+      <entry key="ArduinoDriverScreenTitle">Arduino USB Driver Installation</entry>
+      <entry key="ArduinoResultsScreenTitle">Arduino Hardware Setup</entry>
+      <entry key="ArduinoResultINFFailure">Driver Install Unsuccessful: Driver INF file not found.</entry>
+      <entry key="ArduinoCompleteDescription">The hardware setup process for the MATLAB Support Package for Arduino is complete.\n\nTo restart the setup process, type ''arduinosetup''.</entry>
+      <entry key="yesText">Yes</entry>
+      <entry key="noText">No</entry>
+      <entry key="driverInstallFailed">Warning: The driver installation fails. Proceed if the Arduino driver already exists, otherwise follow this link to manually install it.</entry>
+      <entry key="driverInstallDocLinkText">&lt;a href=&quot;matlab:helpview(arduinoio.internal.getDocMap, ''driver_install'')&quot;&gt;Instructions on Installing Arduino Driver&lt;/a&gt;</entry>
+      <entry key="skipSetupText">Do you want to set up your Arduino board connection?</entry>
+      <entry key="noSerialPort">Choose a valid serial port. Check device connection if port is not listed.</entry>
+      <entry key="noBoardSelected">Choose a board type.</entry>
+      <entry key="retrieveWiFiText">Retrieving current Arduino WiFi configuration...</entry>
+      <entry key="invalidBTAddress">Device address must be a 12-bit hexadecimal string.</entry>
+      <entry key="invalidIPAddress">IP address must be a string in the 4 octet format.</entry>
+      <entry key="invalidKey">Key must be a 10-bit or 26-bit hexadecimal string.</entry>
+      <entry key="invalidKeyIndex">Key index must be a nonnegative integer.</entry>
+      <entry key="emptyWPAParameters">Fill in SSID, Password and Port to proceed.</entry>
+      <entry key="emptyWEPParameters">Fill in SSID, Key, Key Index and Port to proceed.</entry>
+      <entry key="emptyNoneParameters">Fill in SSID and Port to proceed.</entry>
+      <entry key="emptyStaticIPAddress">Fill in static IP address to proceed.</entry>
+      <entry key="operationSuccessText">Success! Click Next to proceed.</entry>
+      <entry key="chooseArduinoPortText">Choose port:</entry>
+      <entry key="chooseDevicePortText">Choose serial port:</entry>
+      <entry key="chooseBoardText">Choose board:</entry>
+      <entry key="chooseBaudRateText">Choose baud rate:</entry>
+      <entry key="supportedTypesText">Supported types:</entry>
+      <entry key="supportedDevicesText">Supported devices:</entry>
+      <entry key="noSSIDAvailable">Arduino finds no available networks. Check your WiFi and the network settings.</entry>
+      <entry key="wlConnectFailed">Arduino fails to connect to the network for all the attempts. Check your network settings.</entry>
+      <entry key="wlConnectLost">Arduino has lost its network connection. Check your WiFi and network settings.</entry>
+      <entry key="wlDisconneted">Arduino fails to connect to the network. Check your WiFi and the network settings.</entry>
+      <entry key="ArduinoBTConnectScreenTitle">Connect Bluetooth Device to Arduino</entry>
+      <entry key="ArduinoBTConnectScreenDescription">Follow the diagram below:</entry>
+      <entry key="ArduinoBTConnectScreenWhatToConsider">1. Make sure RXD on the Bluetooth device is connected to pin 1 on Arduino and TXD on the Bluetooth device is connected to pin 0 on Arduino.&lt;br&gt;&lt;br&gt;2. You can unplug the USB cable and power your Arduino board with an external power supply.</entry>
+      <entry key="ArduinoBTConnectScreenWhatToConsiderShield">1. Make sure the switch on Adafruit Bluefruit EZ-Link Shield is set to Direct.&lt;br&gt;&lt;br&gt;2. You can unplug the USB cable and power your Arduino board with an external power supply.</entry>
+      <entry key="ComputerBTConnectScreenTitle">Connect Bluetooth Device to Host Computer</entry>
+      <entry key="ComputerBTConnectScreenDescription">Connect your Bluetooth device to host computer with a 3.3V FTDI serial to USB adaptor.</entry>
+      <entry key="ComputerBTConnectScreenWhatToConsider">Make sure TXD on FTDI is connected to RXD on the Bluetooth device and RXD on FTDI is connected to TXD on the Bluetooth device.&lt;br&gt;&lt;br&gt;If the Bluetooth device requires 5V power or you have a 5V FTDI adaptor, see Arduino Bluetooth Setup Issues topic in the Troubleshooting documentation.</entry>
+      <entry key="ComputerBTConnectScreenHC05Text">Important: Connect Gnd, TX and RX first. Press and hold button on Bluetooth device. While holding the button, connect Vcc and then release the button. The device LED should blink slowly.</entry>
+      <entry key="ConfigureBTScreenTitle">Configure Bluetooth Device</entry>
+      <entry key="ConfigureBTScreenAboutSelection">Port is the serial port on your host computer that your Bluetooth device is connected to via FTDI.</entry>
+      <entry key="ConfigureBTScreenButtonText">To begin configuring the device, click ''Configure''.</entry>
+      <entry key="ConfigureBTScreenDocLinkText">&lt;a href=&quot;matlab:helpview(arduinoio.internal.getDocMap, ''bluetooth_ftdi'')&quot;&gt;Find FTDI serial port&lt;/a&gt;</entry>
+      <entry key="ConfigureBTScreenTableText1">Pairing code set to {0}</entry>
+      <entry key="ConfigureBTScreenTableText2">Module set to slave mode</entry>
+      <entry key="ConfigureBTScreenFailureText">Failed to configure the Bluetooth device. Check the serial port and your device wiring.</entry>
+      <entry key="ObtainIPScreenTitle">Retrieve Arduino WiFi Configuration</entry>
+      <entry key="ObtainIPScreenWhatToConsider">&lt;b&gt;Confirm that Arduino board is connected to your host computer using a USB cable at this step.&lt;/b&gt;</entry>
+      <entry key="ObtainIPScreenAboutSelection">This step retrieves the current IP address and port number from your Arduino board, which must be connected to the network.</entry>
+      <entry key="ObtainIPScreenButtonText">To begin retrieving WiFi configuration from board, click ''Retrieve''.</entry>
+      <entry key="retrieveIPFailed">Fail to get device WiFi configuration. Check board and port. Or go back and reconfigure Arduino WiFi settings.</entry>
+      <entry key="PairBTScreenTitle">Pair Bluetooth Device</entry>
+      <entry key="PairBTScreenWhatToConsider">&lt;br&gt;* indicates required field.</entry>
+      <entry key="PairBTStep1Text">1. If using a Windows desktop computer, connect a Bluetooth dongle to your computer. Otherwise, proceed to step 2.</entry>
+      <entry key="PairBTStep2HC0506Text">2. Follow this link to pair your Bluetooth device.</entry>
+      <entry key="PairBTStep3HC0506Text">3. Follow this link to get your Bluetooth device address.</entry>
+      <entry key="PairBTStep4HC0506Text">4. Enter your Bluetooth device address *:</entry>
+      <entry key="PairBTStep2BluefruitText">2. Follow this link to pair your Bluetooth device.</entry>
+      <entry key="PairBTStep3BluefruitText">3. Follow this link to get your Bluetooth device serial port.</entry>
+      <entry key="PairBTStep4BluefruitText">4. Select your Bluetooth serial port *:</entry>
+      <entry key="PairBTScreenDocLink1Text">&lt;a href=&quot;matlab:helpview(arduinoio.internal.getDocMap, ''DOCLINK'')&quot;&gt;Instructions on Pairing Bluetooth Device&lt;/a&gt;</entry>
+      <entry key="PairBTScreenDocLink2Text">&lt;a href=&quot;matlab:helpview(arduinoio.internal.getDocMap, ''DOCLINK'')&quot;&gt;Instructions on Getting Bluetooth Device Information&lt;/a&gt;</entry>
+      <entry key="SelectBTScreenTitle">Choose Bluetooth Device</entry>
+      <entry key="SelectBTScreenDescription">Choose your Bluetooth device.</entry>
+      <entry key="SelectBTScreenAboutSelectionHC0506">You need a 3.3V FTDI adaptor to configure the Bluetooth device.</entry>
+      <entry key="SelectBTDeviceScreenBTNoteICT">Connecting to Arduino with this Bluetooth device requires Instrument Control Toolbox.</entry>
+      <entry key="skipConfigureText">Have you configured this Bluetooth device in Hardware Setup before?</entry>
+      <entry key="SelectConnectionScreenTitle">Choose Connection Type</entry>
+      <entry key="SelectConnectionScreenDescription">Connect Arduino via USB and choose your connection type.</entry>
+      <entry key="SelectConnectionScreenAboutSelection">This connection type determines how the Arduino board will be connected to your host computer after setup.</entry>
+      <entry key="SelectConnectionScreenBTNote">Note: Remove any connected Bluetooth device from Arduino board before clicking Next.</entry>
+      <entry key="SelectConnectionScreenWhatToConsider">Network settings are used to connect an Arduino board to the network that your host computer has access to.&lt;br&gt;&lt;br&gt;For better security:&lt;br&gt;1. Choose WPA/WPA2 encryption type.&lt;br&gt;2. Use encrypted network and for nonproduction critical use cases.&lt;br&gt;3. Limit outbound network access.&lt;br&gt;&lt;br&gt;* indicates required field.</entry>
+      <entry key="SelectConnectionScreenEncryptionText">Select encryption type:</entry>
+      <entry key="SelectConnectionScreenEncryptionTitle">Network Settings</entry>
+      <entry key="retrieveIPText">Retrieve last configuration\nfrom Arduino board</entry>
+      <entry key="TestConnectionScreenTitle">Test Arduino Connection</entry>
+      <entry key="TestConnectionScreenWhatToConsider">See arduino function reference in Documentation for more information about using Arduino board after setup.</entry>
+      <entry key="TestConnectionScreenStepText">Test arduino connection</entry>
+      <entry key="testConnectionFailed">Test connection failed. Go back to check your settings.</entry>
+      <entry key="testConnectionSuccess">To use your Arduino board with the current settings, type a = arduino.</entry>
+      <entry key="UpdateServerScreenTitle">Upload Arduino Server</entry>
+      <entry key="UpdateServerScreenAboutSelection">This step uploads a server to Arduino board that allows MATLAB to communicate with it.</entry>
+      <entry key="UpdateServerScreenConnectUSBText">Connect Arduino to host computer via USB</entry>
+      <entry key="UpdateServerScreenLibraryText">Select libraries to be included in the server:</entry>
+      <entry key="UpdateServerScreenButtonText">To begin uploading server to the board, click ''Program''.</entry>
+      <entry key="UpdateServerScreenWhatToConsider">Make sure there is no existing connection to the Arduino board in MATLAB workspace before clicking Program.</entry>
+      <entry key="obtainingIP">Obtaining device IP address from Arduino board.</entry>
+      <entry key="programLogLinkText">&lt;a href=&quot;matlab:edit {0}&quot;&gt;{1}&lt;/a&gt;</entry>
+      <entry key="obtainIPFailed">Fail to get device IP address. Check the WiFi network settings to ensure device can join the network and program it again.</entry>
+      <entry key="programArduinoFailed">Failed to program the Arduino board. Click the following link to see the error log. Contact Technical Support if you need more help.</entry>
+      <entry key="NoDirectoriesRemoved">Failed to remove {0}. Close any open files in the directory and/or restart MATLAB.</entry>
+      <entry key="openArduinoFailed">Failed to open serial port {0} to communicate with board {1}.</entry>
+      <entry key="programButtonText">Program</entry>
+      <entry key="retrieveButtonText">Retrieve</entry>
+      <entry key="configureButtonText">Configure</entry>
+      <entry key="refreshButtonText">Refresh</entry>
+      <entry key="testButtonText">Test connection</entry>
+  </message>
+</rsccat>
+
+<!-- LocalWords:  arduinoio dev hwconnectinstaller SDA SCL SPI ons spidev
+     LocalWords:  Rentrancy reentrancy
+-->

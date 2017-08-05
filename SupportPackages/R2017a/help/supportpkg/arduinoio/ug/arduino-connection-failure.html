@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Arduino USB, Bluetooth, and WiFi Connection Failure</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="ug">
+<meta name="infotype" itemprop="infotype" content="trbl" />
+
+<meta name="description" itemprop="description" content="If you are unable to connect to your Arduino hardware using USB, Bluetooth or WiFi, try these tips." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html" itemprop="url"><span itemprop="title">Troubleshooting in MATLAB Support Package for Arduino Hardware</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Arduino USB, Bluetooth, and WiFi Connection Failure</a></li>
+<li class="nav_scrollspy_title">On this page</li>
+
+<li><a href="#bvpui7j" class="intrnllnk">Arduino USB Connection Failure</a>
+<ul>
+<li><a href="#bvpui8u" class="intrnllnk">Arduino Object Creation Error</a></li>
+<li><a href="#bvpui9r-1" class="intrnllnk">Steps to Resolve the Error</a></li>
+</ul>
+</li>
+<li><a href="#bvr7dpg" class="intrnllnk">Arduino Bluetooth Connection Failure</a>
+<ul>
+<li><a href="#bvsq4rl" class="intrnllnk">Test Connection Fails</a></li>
+<li><a href="#bvsq4r7-1" class="intrnllnk">Test Connection Succeeds but Arduino Object Creation Fails</a></li>
+</ul>
+</li>
+<li><a href="#bvpujei-1" class="intrnllnk">Arduino WiFi Connection Failure</a></li>
+</li><li><a href="#zmw57dd0e5371" class="intrnllnk">Related Topics</a>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-topic">
+<span id="bvpui6g" class="anchor_target"></span><h2 class="title r2017a" itemprop="title content" id="bvpui6g">Arduino USB, Bluetooth, and WiFi Connection Failure</h2><span id="arduinoio_troubleshooting" class="anchor_target"></span><div class="clearfix"></div><div itemprop="content"><span id="bvpui7j" class="anchor_target"></span><h3 class="title" id="bvpui7j">Arduino USB Connection Failure</h3><span id="bvpui8u" class="anchor_target"></span><h4 class="title" id="bvpui8u">Arduino Object Creation Error</h4><p>When you try to create an <code>arduino</code> object
+as shown here, <div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino() </pre></div></div></div>you
+see the following error message,<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>Cannot <span style="color:#A020F0">detect</span> <span style="color:#A020F0">Arduino</span> <span style="color:#A020F0">hardware.</span> <span style="color:#A020F0">Make</span> <span style="color:#A020F0">sure</span> <span style="color:#A020F0">original</span> <span style="color:#A020F0">Arduino</span> <span style="color:#A020F0">hardware</span> <span style="color:#A020F0">is</span> <span style="color:#A020F0">properly</span> <span style="color:#A020F0">plugged</span> <span style="color:#A020F0">in.</span> <span style="color:#A020F0">Otherwise</span>, please <span style="color:#A020F0">specify</span> <span style="color:#A020F0">both</span> <span style="color:#A020F0">port</span> <span style="color:#A020F0">and</span> <span style="color:#A020F0">board</span> <span style="color:#A020F0">type.</span></pre></div></div></div></p><span id="bvpui9r-1" class="anchor_target"></span><h4 class="title" id="bvpui9r-1">Steps to Resolve the Error</h4><p><b><span id="bvpui_r" class="anchor_target"></span>Specify Board Type and Port.&nbsp;&nbsp;</b>If you see the error <code>Cannot detect Arduino hardware.
+Make sure original Arduino hardware is properly plugged in. Otherwise,
+please specify both port and board type</code>, specify the board
+and type as shown here,<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'COM4'</span>,<span style="color:#A020F0">'Uno'</span>)</pre></div></div></div></p><p><b><span id="bvpujah-1" class="anchor_target"></span>Specify Board Type and Port Correctly.&nbsp;&nbsp;</b>If you see the error <code>Cannot program board Uno (COM4).
+Please make sure the board is supported and the port and board type
+are correct</code> with both board type and port specified:</p><ol type="1"><li><p>Make sure that you specify the correct board type.</p></li><li><p>Make sure the board type is supported. <a href="http://www.mathworks.com/hardware-support/arduino-matlab.html" target="_top">See
+the full list</a>.</p></li><li><p>Make sure you are using an FTDI converter to connect
+the board to computer, if you are using the old ATmega328p board.</p></li><li><p>Make sure that you specify the correct port. See the <a href="../../../supportpkg/arduinoio/ug/find-arduino-port-on-windows-mac-and-linux.html">Find Arduino Port on Windows, Mac, and Linux</a> for
+more information.</p></li><li><p>Open Arduino<sup>&#x00AE;</sup> IDE (any version supports the board).
+Make sure you can program the same board under the same port successfully.</p></li></ol><p>If you are using official Arduino boards such as Uno, Mega,
+Due, Micro and Leonardo, MATLAB<sup>&#x00AE;</sup> can autodetect the port connected
+to the hardware on Windows<sup>&#x00AE;</sup>. However, some Arduino devices
+are not automatically recognized, especially those that require external
+FTDI adaptors. In those cases, specify both the port and board type
+to create a connection.</p><p><b><span id="bvspd7r" class="anchor_target"></span>Remove Bluetooth Device.&nbsp;&nbsp;</b>If you want the Arduino hardware to communicate with the
+host computer via a USB cable, remove any Bluetooth<sup>&#x00AE;</sup> devices connected
+to your Arduino hardware, and then call the <code>arduino</code> function
+with appropriate parameters to create your Arduino object.</p><p><b><span id="bvpuja8-1" class="anchor_target"></span>Install Device Driver.&nbsp;&nbsp;</b>If you cannot connect to official Arduino hardware, you
+may be missing the device driver. See <a href="update-hardware-driver-on-a-windows-system.html">Install Hardware Driver</a> to
+update the hardware driver.</p><p><b><span id="bvpujdo-1" class="anchor_target"></span>Manual Disconnect.&nbsp;&nbsp;</b>If you manually disconnect the board before clearing the <code>arduino</code> object
+from the MATLAB workspace, MATLAB will not recognize the Arduino serial
+port if you reconnect. Restart MATLAB, and try reconnecting the
+board.</p><p><b><span id="bvpujec-1" class="anchor_target"></span>Turn On the Trace Log.&nbsp;&nbsp;</b>If you have checked for <a href="arduino-connection-failure.html#bvpujdo-1" class="intrnllnk">Manual Disconnect</a> and the issue still persists, turn on the
+trace log by executing the following command in MATLAB.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'COM4'</span>,<span style="color:#A020F0">'Uno'</span>,<span style="color:#A020F0">'Trace'</span>,true);</pre></div></div></div><p>The trace log gives a much more detailed output of the compilation
+and upload results. There are some common possible causes of the error.
+Depending on what you see in your trace log, try the one that applies.</p><ul type="disc"><li><p>If you see either of these errors in the log, try
+the appropriate action for your release. For R2015a update the support
+package to the latest version, or uninstall WINAVR. For R2014a and
+R2014b, <a href="http://www.mathworks.com/support/bugreports/1194137" target="_top">follow
+these workarounds</a>.</p><ul type="circle"><li><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>C:/MATLAB/SupportPackages/R2015a/arduino-1.5.6-r2/hardware/arduino/sam/cores/arduino/WInterrupts.c:19: 
+C:/MATLAB/SupportPackages/R2015a/arduino-1.5.6-r2/hardware/arduino/sam/cores/arduino/Arduino.h:31: 
+fatal error: avr/pgmspace.h: No such file or directory 
+compilation terminated. 
+cs-make: *** [C:/Users/maciej/AppData/Local/Temp/ArduinoServer/WInterrupts.c.o] Error 1
+</pre></div></div></div></li><li><div class="code_responsive"><pre class="programlisting">C:/MATLAB/SupportPackages/R2014b/arduino-1.5.6-r2/hardware/arduino/avr/cores/arduino/WInterrupts.c -o 
+C:/Users/ecsadmin/AppData/Local/Temp/ArduinoServer/WInterrupts.c.o 
+In file included from C:/MATLAB/SupportPackages/R2014b/arduino-1.5.6-r2/hardware/arduino/avr/cores/arduino/wiring_private.h:33, 
+from C:/MATLAB/SupportPackages/R2014b/arduino-1.5.6-r2/hardware/arduino/avr/cores/arduino/WInterrupts.c:33: 
+C:/MATLAB/SupportPackages/R2014b/arduino-1.5.6-r2/hardware/arduino/avr/cores/arduino/Arduino.h:245:26: error: pins_arduino.h: 
+No such file or directory 
+make: *** [C:/Users/ecsadmin/AppData/Local/Temp/ArduinoServer/WInterrupts.c.o] Error 1"
+</pre></div></li></ul></li><li><p>If you see the following error in the log, reinstall
+the support package. If error still exists, report the bug to MathWorks<sup>&#x00AE;</sup> technical
+support.</p><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>In file included from C:/Users/Tom/AppData/Local/Temp/ArduinoServer/Dynamic.cpp:1, 
+from C:/MATLAB/SupportPackages/R2015a/arduinoio/toolbox/matlab/hardware/supportpackages/arduinoio/src/MWArduino.cpp:488: 
+C:/MATLAB/SupportPackages/R2015a/arduinoio/toolbox/matlab/hardware/supportpackages/arduinoio/+arduinoioaddons/+adafruit/src/MotorShieldV2Base.h:7:37: 
+error: Adafruit_PWMServoDriver.h: No such file or directory 
+make: *** [C:/Users/Tom/AppData/Local/Temp/ArduinoServer/MWArduino.cpp.o] Error 1
+</pre></div></div></div></li><li><p>If you see the following error in the log, remove
+or rename the user-installed Firmata folder that is conflicting with
+the shipping Firmata library the support package downloads,</p><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>In file included from 
+C:\Users\Max\Documents\Arduino\libraries\Firmata\utility\SerialFirmata.cpp:20:0: 
+C:\Users\Max\Documents\Arduino\libraries\Firmata\utility\SerialFirmata.h:30:28: fatal error: 
+SoftwareSerial.h: No such file or directory 
+#include&lt;SoftwareSerial.h&gt;
+
+compliation terminated.</pre></div></div></div><p>Look for the location of the Firmata folder to change in the
+error log. For example, this error above indicates that the Firmata
+folder to change is <code>"C:\Users\Max\Documents\Arduino\libraries\Firmata"</code>.
+Remove or rename this Firmata folder. Then call <code>arduino</code> in MATLAB again.</p><p>If you still have the same issues, after trying these steps,
+contact <a href="https://www.mathworks.com/support/contact_us/" target="_top">MathWorks Technical
+Support</a>.</p></li></ul></div><div class="clearfix"></div><div itemprop="content"><span id="bvr7dpg" class="anchor_target"></span><h3 class="title" id="bvr7dpg">Arduino Bluetooth Connection Failure</h3><span id="bvsq4rl" class="anchor_target"></span><h4 class="title" id="bvsq4rl">Test Connection Fails</h4><p>If the <b>Test connection</b> fails while you
+are setting up Arduino hardware to use Bluetooth connection
+in the <code>arduinosetup</code> interface, try the following
+steps:</p><ul type="disc"><li><p>To ensure that testing connection did not fail intermittently,
+try to click the <b>Test connection</b> again.</p></li><li><p>If <b>Test connection</b> fails consistently,
+check that the Bluetooth device appears on the host computer
+and that it is paired correctly. If not, follow the instructions on <a href="../../../supportpkg/arduinoio/ug/instructions-on-pairing-bluetooth-device.html">Pair a Bluetooth Device and Retrieve the Bluetooth Device
+Address</a> to
+pair your device. </p></li><li><p>If you are using HC-05 or HC-06, type <code>instrhwinfo('Bluetooth')</code> in
+the MATLAB Command Window, and check that the Bluetooth device
+address appears on the <code>RemoteIDs</code> properties of
+the object.</p></li><li><p>If you are using Adafruit<sup>&#x00AE;</sup> Bluefruit EZ-Link shield
+or programmer, type <code>seriallist</code> in the MATLAB Command
+Window, and check that the Bluetooth device COM port appears
+on the list.</p></li></ul><span id="bvsq4r7-1" class="anchor_target"></span><h4 class="title" id="bvsq4r7-1">Test Connection Succeeds but Arduino Object Creation Fails</h4><p>While using Adafruit Bluefruit EZ-Link shield or programmer,
+if the <b>Test connection</b> succeeds, but the object
+creation <code>a=arduino</code> with the appropriate parameters
+fails in the MATLAB Command Window, follow these steps:</p><ul type="disc"><li><p>To ensure that <code>a=arduino</code> did not
+fail intermittently, type <code>a=arduino</code> with the appropriate
+parameters in the MATLAB Command Window again.</p></li><li><p>If <code>a=arduino</code> fails consistently,
+check that the Adafruit Bluefruit device appears on the host
+computer and that it is paired correctly. If not, follow the instructions
+in <a href="../../../supportpkg/arduinoio/ug/instructions-on-pairing-bluetooth-device.html">Pair a Bluetooth Device and Retrieve the Bluetooth Device
+Address</a> to
+pair your device. </p></li><li><p>Type <code>seriallist</code> in the MATLAB Command
+Window, and check that the Bluetooth device COM port appears
+on the list.</p></li></ul><p>If you are still experiencing Arduino hardware connection
+issues, contact <a href="https://www.mathworks.com/support/contact_us/" target="_top">MathWorks Technical
+Support</a>.</p></div><div class="clearfix"></div><div itemprop="content"><span id="bvpujei-1" class="anchor_target"></span><h3 class="title" id="bvpujei-1">Arduino WiFi Connection Failure</h3><p>If you have configured your Arduino WiFi connection using <code>arduinosetup</code> interface,
+and if <code>Test connection</code> fails, try the following
+steps:</p><ul type="disc"><li><p>Select the <code>Retrieve last configuration from
+Arduino board</code> in the <code>arduinosetup</code> interface,
+and obtain configuration information from the board.</p><ul type="circle"><li><p>If you are unable to retrieve the IP address from
+the board, check whether your WiFi network is up and running. Restart
+and reconfigure the connection using the <code>arduinosetup</code> user
+interface in MATLAB Command Window. Check that the WiFi connection
+settings that you specify in the <code>arduinosetup</code> are
+accurate.</p></li></ul></li><li><p>Ping the IP address and check whether the address
+is reachable. To ping the IP address, open a shell window on Windows or
+a terminal on Linux<sup>&#x00AE;</sup>/Mac and type, <code>ping</code> followed
+by the IP address of the device.</p><ul type="circle"><li><p>If the ping test fails, check whether your WiFi network
+is up and running. Restart and reconfigure the connection using <code>arduinosetup</code> in
+the MATLAB Command Window. Check that the WiFi connection settings
+that you specify in <code>arduinosetup</code> are accurate.</p></li><li><p>If you are using static IP address and if the ping
+test fails, make sure that the specified IP address is available and
+your network settings allow communication with that IP address.</p></li></ul></li></ul><p>If you are still experiencing Arduino hardware
+connection issues, contact <a href="https://www.mathworks.com/support/contact_us/" target="_top">MathWorks Technical
+Support</a>.</p></div>
+<h2 id="zmw57dd0e5371">Related Topics</h2><ul><li><a href="arduino-bluetooth-setup-issues.html">Arduino Bluetooth Setup Tips</a></li><li><a href="connection-and-communication-issues.html">Lost Connection and Data Issues</a></li></ul>
+
+</div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:07 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

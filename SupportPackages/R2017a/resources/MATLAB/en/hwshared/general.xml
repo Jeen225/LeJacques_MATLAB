@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2014 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="MATLAB">
+  <message>
+      <entry key="nosave">{0} objects cannot be saved to disk, and will be skipped.</entry>
+	  <entry key="nosparse">{0} objects cannot be placed in sparse arrays.</entry>
+      <entry key="unsupported">Method ''{0}'' is not supported on objects of class ''{1}''.</entry>
+      <entry key="missingFile">Missing file ''{0}''. Open &lt;a href="matlab: matlab.addons.supportpackage.internal.explorer.showSupportPackages(''{1}'', ''tripwire'');&quot;&gt;Add&#8209;On Explorer&lt;/a&gt; to reinstall the support package.</entry>
+	  <entry key="noWritePermission">No write permission to the current directory. Please change the Current Folder to another location.</entry>
+	  <!-- Internal errors -->
+	  <entry key="notImplemented">Internal Error:  A function has been called that is not implemented.</entry>
+	  <entry key="errorMessageParamNotString" note="stringDatatypeUpdate">Internal Error: Attempt to generate localized message with non character vector parameter.</entry>
+  </message>
+</rsccat>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>3p/arduinoide.instrset</componentBaseName>
+    <componentFileName>3p/arduinoide.instrset_glnxa64_1498672467.zip</componentFileName>
+    <componentName>3p/arduinoide.instrset_glnxa64</componentName>
+    <componentVersion>1498672467</componentVersion>
+    <instrset>1</instrset>
+    <locale />
+    <locationId>1</locationId>
+    <numFiles>1</numFiles>
+    <platformList>
+      <platform>glnxa64</platform>
+    </platformList>
+    <releaseFamily>R2017a</releaseFamily>
+    <size>949</size>
+    <type />
+    <uncompressedBytes>4549</uncompressedBytes>
+  </component>
+</componentData>
+

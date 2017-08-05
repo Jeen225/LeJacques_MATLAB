@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>3p/adafruitmotorshieldv2.instrset</componentBaseName>
+    <componentFileName>3p/adafruitmotorshieldv2.instrset_glnxa64_1498154408.zip</componentFileName>
+    <componentName>3p/adafruitmotorshieldv2.instrset_glnxa64</componentName>
+    <componentVersion>1498154408</componentVersion>
+    <instrset>1</instrset>
+    <locale />
+    <locationId>1</locationId>
+    <numFiles>1</numFiles>
+    <platformList>
+      <platform>glnxa64</platform>
+    </platformList>
+    <releaseFamily>R2017a</releaseFamily>
+    <size>634</size>
+    <type />
+    <uncompressedBytes>739</uncompressedBytes>
+  </component>
+</componentData>
+

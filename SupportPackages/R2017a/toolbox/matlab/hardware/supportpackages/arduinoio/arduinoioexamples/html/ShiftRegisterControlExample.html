@@ -1,0 +1,188 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Push Button Control with 74HC165 Shift Register</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-07-29"><meta name="DC.source" content="ShiftRegisterControlExample.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Push Button Control with 74HC165 Shift Register</h1><!--introduction--><p>This example shows how to use the MATLAB&reg; Support Package for Arduino&reg; Hardware to collect large number of push button states with a 74HC165 8-bit paralle-in-serial-out shift register. This example uses four push buttons.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Hardware Requirements</a></li><li><a href="#2">Hardware Setup</a></li><li><a href="#3">Create Shift Register Object</a></li><li><a href="#6">Read Push Button States</a></li><li><a href="#7">Clean Up</a></li></ul></div><h2 id="1">Hardware Requirements</h2><div><ul><li>Arduino board</li><li>Four push buttons</li><li>74HC165 8-bit parallel-in-serial-out shift register</li><li>Four 10K ohm resistors</li><li>Breadboard and wires</li></ul></div><h2 id="2">Hardware Setup</h2><p>Connect push buttons and 74HC165 shift registers to Arduino hardware:</p><div><ul><li>Connect Vcc pin on 74HC165 to 5V pin on Arduino hardware.</li></ul></div><div><ul><li>Connect GND pin on 74HC165 to GND pin on Arduino hardware.</li></ul></div><div><ul><li>Connect Q7 pin on 74HC165 to digital pin 11 on Arduino hardware.</li></ul></div><div><ul><li>Connect CP pin on 74HC165 to digital pin 8 on Arduino hardware.</li></ul></div><div><ul><li>Connect PL pin on 74HC165 to digital pin 9 on Arduino hardware.</li></ul></div><div><ul><li>Connect CE pin on 74HC165 to digital pin 10 on Arduino hardware.</li></ul></div><div><ul><li>Connect a push button to pin D0, D4, D5 and D7 on 74HC165 with a pull down resistor to GND as shown below.</li></ul></div><div><ul><li>Connect pin D1, D2, D3 and D6 on 74HC165 to GND pin on Arduino hardware.</li></ul></div><p><img vspace="5" hspace="5" src="ShiftRegisterControlExample_01.png" alt=""> </p><h2 id="3">Create Shift Register Object</h2><p>Create an arduino object, and include the ShiftRegister library.</p><pre class="codeinput">   a = arduino(<span class="string">'COM7'</span>, <span class="string">'Uno'</span>, <span class="string">'Libraries'</span>, <span class="string">'ShiftRegister'</span>)
+</pre><pre class="codeoutput">
+a = 
+
+  arduino with properties:
+
+                    Port: 'COM7'
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'ShiftRegister'}
+
+</pre><p>Create shift register object, specifying the connected data pin, clock pin, load pin, and clock enable pin.</p><pre class="codeinput">   dataPin = <span class="string">'D11'</span>;
+   clockPin = <span class="string">'D8'</span>;
+   loadPin = <span class="string">'D9'</span>;
+   clockEnablePin = <span class="string">'D10'</span>;
+   register = shiftRegister(a, <span class="string">'74HC165'</span>, dataPin, clockPin, loadPin, clockEnablePin)
+</pre><pre class="codeoutput">
+register = 
+
+  shiftRegister with properties:
+
+           Model: '74HC165'      
+         DataPin: 'D11'          
+        ClockPin: 'D8'           
+         LoadPin: 'D9'           
+  ClockEnablePin: 'D10'          
+
+</pre><h2 id="6">Read Push Button States</h2><p>Monitor the states of the four push buttons, and print out a message if at least one button is pressed,</p><pre class="codeinput">    states = read(register, 8);
+    pressedButtons = find(states == 1)-1;
+    <span class="keyword">if</span> ~isempty(pressedButtons)
+        bitsStr = num2str(pressedButtons, <span class="string">'%d '</span>);
+        disp([<span class="string">'Push button(s) connected to bit '</span>, bitsStr, <span class="string">' is pressed'</span>]);
+    <span class="keyword">end</span>
+</pre><pre class="codeoutput">Push button&#40;s&#41; connected to bit 0 1 2 3 4 5 6 is pressed
+</pre><h2 id="7">Clean Up</h2><p>When the connection is no longer needed, clear the shift register and arduino object.</p><pre class="codeinput">  clear <span class="string">register</span> <span class="string">a</span>
+</pre><p class="footer">Copyright 2016 The MathWorks, Inc.<br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Push Button Control with 74HC165 Shift Register
+%
+% This example shows how to use the MATLAB(R) Support Package for
+% Arduino(R) Hardware to collect large number of push button states 
+% with a 74HC165 8-bit paralle-in-serial-out shift register. This example
+% uses four push buttons.
+ 
+% Copyright 2016 The MathWorks, Inc.
+
+
+%% Hardware Requirements
+% * Arduino board
+% * Four push buttons
+% * 74HC165 8-bit parallel-in-serial-out shift register
+% * Four 10K ohm resistors
+% * Breadboard and wires
+%
+
+%% Hardware Setup
+% 
+% Connect push buttons and 74HC165 shift registers to Arduino hardware:
+%
+% * Connect Vcc pin on 74HC165 to 5V pin on Arduino hardware.
+%
+% * Connect GND pin on 74HC165 to GND pin on Arduino hardware.
+%
+% * Connect Q7 pin on 74HC165 to digital pin 11 on Arduino hardware.
+%
+% * Connect CP pin on 74HC165 to digital pin 8 on Arduino hardware.
+%
+% * Connect PL pin on 74HC165 to digital pin 9 on Arduino hardware.
+%
+% * Connect CE pin on 74HC165 to digital pin 10 on Arduino hardware.
+%
+% * Connect a push button to pin D0, D4, D5 and D7 on 74HC165 with a pull
+% down resistor to GND as shown below.
+%
+% * Connect pin D1, D2, D3 and D6 on 74HC165 to GND pin on Arduino
+% hardware.
+%
+% <<ShiftRegisterControlExample_01.png>>
+
+
+%% Create Shift Register Object
+% Create an arduino object, and include the ShiftRegister library. 
+%
+   a = arduino('COM7', 'Uno', 'Libraries', 'ShiftRegister')
+%%
+%
+% Create shift register object, specifying the connected data pin, clock 
+% pin, load pin, and clock enable pin. 
+%
+   dataPin = 'D11';
+   clockPin = 'D8';
+   loadPin = 'D9';
+   clockEnablePin = 'D10';
+   register = shiftRegister(a, '74HC165', dataPin, clockPin, loadPin, clockEnablePin)
+%%
+   
+%% Read Push Button States
+% Monitor the states of the four push buttons, and print out a message if at 
+% least one button is pressed,
+%
+
+    states = read(register, 8);
+    pressedButtons = find(states == 1)-1;
+    if ~isempty(pressedButtons)
+        bitsStr = num2str(pressedButtons, '%d ');
+        disp(['Push button(s) connected to bit ', bitsStr, ' is pressed']);
+    end
+
+
+%% Clean Up
+% When the connection is no longer needed, clear the shift register and 
+% arduino object.
+
+  clear register a
+ 
+displayEndOfDemoMessage(mfilename) 
+ 
+
+##### SOURCE END #####
+--></body></html>

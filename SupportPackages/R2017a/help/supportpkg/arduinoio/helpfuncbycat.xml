@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<toc version="2.0">
+<tocitem target="functionlistbycat.html">Functions
+<tocitem target="setup-and-configuration.html">Setup and Configuration
+<tocitem target="ref/arduinosetup.html">
+<name>arduinosetup</name>
+<purpose> Launch Arduino hardware setup interface</purpose>
+</tocitem>
+<tocitem target="ref/arduino.html">
+<name>arduino</name>
+<purpose>Connect to Arduino hardware</purpose>
+</tocitem>
+</tocitem>
+<tocitem target="read-and-write-data.html">Read and Write Data
+<tocitem target="ref/configurepin.html">
+<name>configurePin</name>
+<purpose>Arduino pin mode</purpose>
+</tocitem>
+<tocitem target="ref/readdigitalpin.html">
+<name>readDigitalPin</name>
+<purpose>Read data from digital pin on Arduino hardware</purpose>
+</tocitem>
+<tocitem target="ref/writedigitalpin.html">
+<name>writeDigitalPin</name>
+<purpose>Write to digital pin on Arduino hardware</purpose>
+</tocitem>
+<tocitem target="ref/writepwmvoltage.html">
+<name>writePWMVoltage</name>
+<purpose>Write digital pin PWM voltage value</purpose>
+</tocitem>
+<tocitem target="ref/writepwmdutycycle.html">
+<name>writePWMDutyCycle</name>
+<purpose>Set digital pin PWM duty cycle</purpose>
+</tocitem>
+<tocitem target="ref/playtone.html">
+<name>playTone</name>
+<purpose>Play tone on piezo speaker using digital pin</purpose>
+</tocitem>
+<tocitem target="ref/readvoltage.html">
+<name>readVoltage</name>
+<purpose>Read Arduino analog pin voltage</purpose>
+</tocitem>
+</tocitem>
+<tocitem target="i2c-sensors.html">I2C Devices
+<tocitem target="ref/i2cdev.html">
+<name>i2cdev</name>
+<purpose>Device connected on Arduino I2C
+bus</purpose>
+</tocitem>
+<tocitem target="ref/readregister.html">
+<name>readRegister</name>
+<purpose>Read data from I2C device register</purpose>
+</tocitem>
+<tocitem target="ref/writeregister.html">
+<name>writeRegister</name>
+<purpose>Write to I2C device register</purpose>
+</tocitem>
+<tocitem target="ref/scani2cbus.html">
+<name>scanI2CBus</name>
+<purpose>Scan Arduino hardware for I2C bus address</purpose>
+</tocitem>
+<tocitem target="ref/read.html">
+<name>read</name>
+<purpose>Read data from I2C bus</purpose>
+</tocitem>
+<tocitem target="ref/write.html">
+<name>write</name>
+<purpose>Write data to I2C bus</purpose>
+</tocitem>
+</tocitem>
+<tocitem target="spi-sensors.html">SPI Devices
+<tocitem target="ref/spidev.html">
+<name>spidev</name>
+<purpose>Connect to SPI device</purpose>
+</tocitem>
+<tocitem target="ref/writeread.html">
+<name>writeRead</name>
+<purpose>Write and read data from SPI device</purpose>
+</tocitem>
+</tocitem>
+<tocitem target="shift-registers.html">Shift Registers
+<tocitem target="ref/shiftregister.html">
+<name>shiftRegister</name>
+<purpose>Connect to shift register</purpose>
+</tocitem>
+<tocitem target="ref/shiftregisterread.html">
+<name>shiftRegister/read</name>
+<purpose>Read data from shift register</purpose>
+</tocitem>
+<tocitem target="ref/shiftregisterwrite.html">
+<name>shiftRegister/write</name>
+<purpose>Write data to shift register</purpose>
+</tocitem>
+<tocitem target="ref/reset.html">
+<name>reset</name>
+<purpose>Clear all outputs of shift register</purpose>
+</tocitem>
+</tocitem>
+<tocitem target="quadrature-encoders.html">Quadrature Encoders
+<tocitem target="ref/rotaryencoder.html">
+<name>rotaryEncoder</name>
+<purpose>Connect to quadrature encoder</purpose>
+</tocitem>
+<tocitem target="ref/resetcount.html">
+<name>resetCount</name>
+<purpose>Set count value to zero or user-specified value</purpose>
+</tocitem>
+<tocitem target="ref/readcount.html">
+<name>readCount</name>
+<purpose>Read current count value from encoder with X4 decoding</purpose>
+</tocitem>
+<tocitem target="ref/readspeed.html">
+<name>readSpeed</name>
+<purpose>Read current rotational speed</purpose>
+</tocitem>
+</tocitem>
+<tocitem target="servo-motors.html">Servo Motors
+<tocitem target="ref/servo.html">
+<name>servo</name>
+<purpose>Create connection to servo motor</purpose>
+</tocitem>
+<tocitem target="ref/readposition.html">
+<name>readPosition</name>
+<purpose>Read servo motor position</purpose>
+</tocitem>
+<tocitem target="ref/writeposition.html">
+<name>writePosition</name>
+<purpose>Write position of servo motor</purpose>
+</tocitem>
+</tocitem>
+<tocitem target="adafruit-motor-shield-v2.html">Adafruit Motor Shield V2
+<tocitem target="ref/addon.html">
+<name>addon</name>
+<purpose>Create add-on device connection to Adafruit Motor
+Shield V2</purpose>
+</tocitem>
+<tocitem target="ref/dcmotor.html">
+<name>dcmotor</name>
+<purpose>Create DC motor connection</purpose>
+</tocitem>
+<tocitem target="ref/start.html">
+<name>start</name>
+<purpose>Start DC motor attached to Adafruit Motor Shield</purpose>
+</tocitem>
+<tocitem target="ref/stop.html">
+<name>stop</name>
+<purpose>Stop DC motor</purpose>
+</tocitem>
+<tocitem target="ref/stepper.html">
+<name>stepper</name>
+<purpose>Create stepper motor connection</purpose>
+</tocitem>
+<tocitem target="ref/move.html">
+<name>move</name>
+<purpose>Rotate stepper motor</purpose>
+</tocitem>
+<tocitem target="ref/release.html">
+<name>release</name>
+<purpose>Release stepper motor</purpose>
+</tocitem>
+<tocitem target="ref/servo_addon.html">
+<name>servo</name>
+<purpose>Create servo motor connection</purpose>
+</tocitem>
+<tocitem target="ref/addon_readposition.html">
+<name>readPosition</name>
+<purpose>Read servo motor position</purpose>
+</tocitem>
+<tocitem target="ref/addon_writeposition.html">
+<name>writePosition</name>
+<purpose>Write servo motor position</purpose>
+</tocitem>
+</tocitem>
+<tocitem target="custom-arduino-libraries.html">Custom Arduino Libraries
+<tocitem target="ref/sendcommand.html">
+<name>sendCommand</name>
+<purpose>Send message to Arduino device from MATLAB</purpose>
+</tocitem>
+<tocitem target="ref/configurepinresource.html">
+<name>configurePinResource</name>
+<purpose>Set resource owner and mode of pin</purpose>
+</tocitem>
+<tocitem target="ref/decrementresourcecount.html">
+<name>decrementResourceCount</name>
+<purpose>Decrement count of number of instances of resource</purpose>
+</tocitem>
+<tocitem target="ref/incrementresourcecount.html">
+<name>incrementResourceCount</name>
+<purpose>Increment current resource count</purpose>
+</tocitem>
+<tocitem target="ref/getterminalsfrompins.html">
+<name>getTerminalsFromPins</name>
+<purpose>Get terminal numbers from pins</purpose>
+</tocitem>
+<tocitem target="ref/listarduinolibraries.html">
+<name>listArduinoLibraries</name>
+<purpose>Display a list of installed Arduino libraries</purpose>
+</tocitem>
+<tocitem target="ref/getresourcecount.html">
+<name>getResourceCount</name>
+<purpose>Number of instances of a resource</purpose>
+</tocitem>
+<tocitem target="ref/getfreeresourceslot.html">
+<name>getFreeResourceSlot</name>
+<purpose>Get first free slot of resource</purpose>
+</tocitem>
+<tocitem target="ref/setsharedresourceproperty.html">
+<name>setSharedResourceProperty</name>
+<purpose>Set shared resource property</purpose>
+</tocitem>
+<tocitem target="ref/getsharedresourceproperty.html">
+<name>getSharedResourceProperty</name>
+<purpose>Get shared resource property</purpose>
+</tocitem>
+<tocitem target="ref/getresourceowner.html">
+<name>getResourceOwner</name>
+<purpose>Get terminal resource owner</purpose>
+</tocitem>
+<tocitem target="ref/validatepin.html">
+<name>validatePin</name>
+<purpose>Validate that pin supports specific functionality</purpose>
+</tocitem>
+<tocitem target="ref/getpinsfromterminals.html">
+<name>getPinsFromTerminals</name>
+<purpose>Get pin numbers from terminal</purpose>
+</tocitem>
+<tocitem target="ref/getterminalmode.html">
+<name>getTerminalMode</name>
+<purpose>Get current terminal mode</purpose>
+</tocitem>
+<tocitem target="ref/isterminaldigital.html">
+<name>isTerminalDigital</name>
+<purpose>Check if terminal can be used as a digital pin</purpose>
+</tocitem>
+<tocitem target="ref/isterminalanalog.html">
+<name>isTerminalAnalog</name>
+<purpose>Check if terminal can be used as an analog pin</purpose>
+</tocitem>
+<tocitem target="ref/getservoterminals.html">
+<name>getServoTerminals</name>
+<purpose>Get terminals that have servo functionality</purpose>
+</tocitem>
+<tocitem target="ref/geti2cterminals.html">
+<name>getI2CTerminals</name>
+<purpose>Get terminals with I2C functionality</purpose>
+</tocitem>
+<tocitem target="ref/getspiterminals.html">
+<name>getSPITerminals</name>
+<purpose>Get terminals that have SPI functionality</purpose>
+</tocitem>
+<tocitem target="ref/getpwmterminals.html">
+<name>getPWMTerminals</name>
+<purpose>Get terminals with PWM functionality</purpose>
+</tocitem>
+<tocitem target="ref/getmcu.html">
+<name>getMCU</name>
+<purpose>Get microcontroller of Arduino board</purpose>
+</tocitem>
+<tocitem target="ref/getpinalias.html">
+<name>getPinAlias</name>
+<purpose>Get alias pin number</purpose>
+</tocitem>
+</tocitem>
+</tocitem>
+</toc>

@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>servo</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css">
+<meta name="chunktype" content="refpage">
+<meta name="refentity" itemprop="refentity" content="function:servo"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="fcn">
+<meta name="infotype" itemprop="infotype" content="ref/function" />
+
+<meta name="description" itemprop="description" content="This MATLAB function creates a servo motor object connected to the specified pin on the Arduino hardware a." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../servo-motors.html" itemprop="url"><span itemprop="title">Servo Motors</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+</li>
+<li><a href="../functionlist.html" itemprop="url">Functions</a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">servo</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<li><a href="#zmw57dd0e5882" class="intrnllnk">Syntax</a></li>
+<li><a href="#description" class="intrnllnk">Description</a></li>
+<li><a href="#examples" class="intrnllnk">Examples</a><ul>
+<li><a href="#buims14-5" class="intrnllnk">Create a Servo Object</a></li>
+<li><a href="#buimwr0-1" class="intrnllnk">Specify Minimum and Maximum Pulse Duration for a Servo</a></li>
+</ul>
+</li><li><a href="#buims14-3" class="intrnllnk">Input Arguments</a><ul>
+<li><a href="#input_argument_d0e5945" class="intrnllnk">a</a></li>
+<li><a href="#input_argument_d0e5973" class="intrnllnk">pin</a></li>
+</ul>
+</li><li><a href="#namevaluepairs" class="intrnllnk">Name-Value Pair Arguments</a><ul>
+<li><a href="#input_argument_d0e6025" class="intrnllnk">'MinPulseDuration'</a></li>
+<li><a href="#input_argument_d0e6052" class="intrnllnk">'MaxPulseDuration'</a></li>
+</ul>
+</li><li><a href="#buli040-1" class="intrnllnk">Output Arguments</a><ul>
+<li><a href="#output_argument_d0e6084" class="intrnllnk">s</a></li>
+</ul>
+</li><li><a href="#buims14-1_seealso" class="intrnllnk">See Also</a></li>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref"><span id="buims14-1" class="anchor_target"></span><div class="clearfix"></div><div itemprop="content"><h1 class="r2017a" itemprop="title">servo</h1><!-- SYNCHTO: _buiu8i8.html --><div class="doc_topic_desc"><div class="purpose_container"><p itemprop="purpose">Create connection to servo motor</p><div class="switch"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true1">collapse all in page</a></div></div></div></div>
+<div class="ref_sect"><h2 id="zmw57dd0e5882">Syntax</h2><div class="syntax_signature"><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis">s = servo(a, pin)</code></div><div class="code_responsive"><code class="synopsis">s = servo(a, pin,Name,Value)</code></div></div></div></div><div class="clear"></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><span id="buims14-2" class="anchor_target"></span><h2 id="description">Description</h2><div class="descriptions"><div class="description_module"><div class="description_element"><p class="syntax_example"><a href="servo.html#buims14-5" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_s" class="intrnllnk"><code>s</code></a> = servo(<a href="#inputarg_a" class="intrnllnk"><code>a</code></a>, <a href="#inputarg_pin" class="intrnllnk"><code>pin</code></a>)</code></span> creates
+a servo motor object connected to the specified pin on the Arduino<sup>&#x00AE;</sup> hardware <code>a</code>. </p></div></div><div class="description_element"><p class="syntax_example"><a href="servo.html#buimwr0-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_s" class="intrnllnk"><code>s</code></a> = servo(<a href="#inputarg_a" class="intrnllnk"><code>a</code></a>, <a href="#inputarg_pin" class="intrnllnk"><code>pin</code></a>,<a href="#namevaluepairarguments" class="intrnllnk"><code>Name,Value</code></a>)</code></span> creates
+a servo motor object with additional options specified by one or more <code>Name,Value</code> pair
+arguments.</p></div></div></div></div><div class="clear"></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><div class="clearfix"></div><div class="examples"><h2 id="examples">Examples</h2><div class="expandableContent" id="expandableExamples"><p class="switch"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true3">collapse all</a></p><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_buims14-5"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_buims14-5" data-target="#expand_panel_body_buims14-5" aria-controls="expand_panel_body_buims14-5" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="buims14-5">Create a Servo Object<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_buims14-5" aria-labelledby="expand_panel_heading_buims14-5" class="panel-collapse collapse in"><div class="panel-body">
+<p>Create a servo object using pin 3.</p>
+<p>Create an <code>arduino</code> object, and attach
+the servo object to pin 3. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino()
+s = servo(a,<span style="color:#A020F0">'D3'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>
+s = 
+
+  Servo with properties:
+
+                Pins: D3
+    MinPulseDuration: 5.44e-04 (s)
+    MaxPulseDuration: 2.40e-03 (s)</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_buimwr0-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_buimwr0-1" data-target="#expand_panel_body_buimwr0-1" aria-controls="expand_panel_body_buimwr0-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="buimwr0-1">Specify Minimum and Maximum Pulse Duration for a Servo<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_buimwr0-1" aria-labelledby="expand_panel_heading_buimwr0-1" class="panel-collapse collapse in"><div class="panel-body">
+<p>Set the minimum duration to 7e-4 and maximum
+to 2.3e-3 seconds.</p>
+<p>Create an <code>arduino</code> object and attach
+the servo object to digital pin 3 and specify </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino()
+s = servo(a,<span style="color:#A020F0">'D3'</span>,<span style="color:#A020F0">'MinPulseDuration'</span>,7.00e-4,<span style="color:#A020F0">'MaxPulseDuration'</span>,2.3e-3)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>s = 
+
+  Servo with properties:
+
+                Pins: D3
+    MinPulseDuration: 7.00e-04 (s)
+    MaxPulseDuration: 2.30e-03 (s)</pre></div></div></div></div></div></div></div></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="buims14-3">Input Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="buims14-3_panel-group" role="tablist" aria-multiselectable="true"><p> </p><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e5945" data-target="#expand_panel_body_input_argument_d0e5945" aria-controls="expand_panel_body_input_argument_d0e5945" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_a" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e5945"><code>a</code> &#8212; Arduino hardware connection<br><span class="add_font_color_general remove_bold"><span class="example_desc">object</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e5945" aria-labelledby="expand_panel_heading_input_argument_d0e5945" class="panel-collapse collapse in"><div class="panel-body">
+<p>Arduino hardware connection
+created using <code>arduino</code>, specified as an object.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e5973" data-target="#expand_panel_body_input_argument_d0e5973" aria-controls="expand_panel_body_input_argument_d0e5973" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_pin" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e5973"><code>pin</code> &#8212; Digital pin number<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e5973" aria-labelledby="expand_panel_heading_input_argument_d0e5973" class="panel-collapse collapse in"><div class="panel-body">
+<p>Digital pin number on the Arduino board,
+specified as a character vector.</p>
+</div></div></div><span id="namevaluepairarguments" class="anchor_target"></span><h3 id="namevaluepairs" class="bottom_ruled">Name-Value Pair Arguments</h3><span id="buimvee-1" class="anchor_target"></span><div class="namevaluecontainer"><p>Specify optional comma-separated pairs of <code>Name,Value</code> arguments.
+<code>Name</code> is the argument
+name and <code>Value</code> is the corresponding
+value. <code>Name</code> must appear
+inside single quotes (<code>' '</code>).
+You can specify several name and value pair
+arguments in any order as <code>Name1,Value1,...,NameN,ValueN</code>.</p><span class="example_desc"><strong>Example: </strong><code>s= servo(a, 7, 'MaxPulseDuration', 2e-3, 'MinPulseDuration',
+1e-3);</code></span></div><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="d0e6023_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e6025" data-target="#expand_panel_body_input_argument_d0e6025" aria-controls="expand_panel_body_input_argument_d0e6025" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_MinPulseDuration" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e6025"><code>'MinPulseDuration'</code> &#8212; Minimum pulse duration<br><span class="add_font_color_general remove_bold"><span class="example_desc">5.44e-4 seconds (default) | numeric</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e6025" aria-labelledby="expand_panel_heading_input_argument_d0e6025" class="panel-collapse collapse in"><div class="panel-body">
+<p>Minimum pulse duration specified as the comma-separated pair
+consisting of <code>'MinPulseDuration'</code> and a number,
+which represents the duration in seconds. Specified value must be
+equal to the width of the pulse the motor needs to be at the minimum
+angle. Refer to your device data sheet for valid values.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e6052" data-target="#expand_panel_body_input_argument_d0e6052" aria-controls="expand_panel_body_input_argument_d0e6052" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_MaxPulseDuration" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e6052"><code>'MaxPulseDuration'</code> &#8212; Maximum pulse duration<br><span class="add_font_color_general remove_bold"><span class="example_desc">2.4e-3 seconds (default) | numeric</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e6052" aria-labelledby="expand_panel_heading_input_argument_d0e6052" class="panel-collapse collapse in"><div class="panel-body">
+<p>Maximum pulse duration, specified as the comma-separated pair
+consisting of <code>'MaxPulseDuration'</code> and a number,
+which represents the duration in seconds. Specified value must be
+equal to width of the pulse the motor needs to be at the maximum angle.
+Refer to your device data sheet for valid values.</p>
+</div></div></div></div></div></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="buli040-1">Output Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="buli040-1_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_d0e6084" data-target="#expand_panel_body_output_argument_d0e6084" aria-controls="expand_panel_body_output_argument_d0e6084" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_s" class="anchor_target"></span><h3 class="panel-title" id="output_argument_d0e6084"><code>s</code> &#8212; Servo object<br><span class="add_font_color_general remove_bold"><span class="example_desc">object</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_d0e6084" aria-labelledby="expand_panel_heading_output_argument_d0e6084" class="panel-collapse collapse in"><div class="panel-body">
+<p>Servo object returned as an object.</p>
+<ul><span id="zmw57dd0e6103" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+There is a limit on the maximum number of Servo objects that
+can be created, and this limit varies with the type of the board.
+In the case of Arduino Uno, MKR1000, and Mega it is 12, 12, and
+48 respectively. In the case of Arduino Due, it is equal to the
+number of its digital pins.</p></td></tr></table></ul>
+</div></div></div></div></div></div><div class="clearfix"></div><div class="ref_sect"><h2 id="buims14-1_seealso">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="arduino.html"><span itemprop="name"><code>arduino</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="readposition.html"><span itemprop="name"><code>readPosition</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="writeposition.html"><span itemprop="name"><code>writePosition</code></span></a></span></p><div class="'examples_container'"><h3 class="remove_border">Topics</h3>
+<div itemprop="content">
+<ul class="list-unstyled"><li><a href="../../../supportpkg/arduinoio/ug/rotate-a-servo-motor.html">Rotate a Servo Motor</a></li><li><a href="../../../supportpkg/arduinoio/ug/servo-add-on-motors-and-library.html">Servo Motors</a></li></ul></div>
+</div></div><div class="release_introduced"><h4>Introduced in R2014b</h4></div>
+</div></div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:45 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

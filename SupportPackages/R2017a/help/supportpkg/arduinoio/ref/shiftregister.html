@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>shiftRegister</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css">
+<meta name="chunktype" content="refpage">
+<meta name="refentity" itemprop="refentity" content="function:shiftRegister"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="fcn">
+<meta name="infotype" itemprop="infotype" content="ref/function" />
+
+<meta name="description" itemprop="description" content="This MATLAB function creates a connection to the 74hc165 shift register connected to your Arduino board using the Arduino object a, dataPin to input or output data, clockPin to signal read or write, loadPin to load parallel input data and clockEnablePin to enable or disable clock." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../shift-registers.html" itemprop="url"><span itemprop="title">Shift Registers</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+</li>
+<li><a href="../functionlist.html" itemprop="url">Functions</a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">shiftRegister</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<li><a href="#zmw57dd0e6376" class="intrnllnk">Syntax</a></li>
+<li><a href="#description" class="intrnllnk">Description</a></li>
+<li><a href="#examples" class="intrnllnk">Examples</a><ul>
+<li><a href="#bvgrmzc-2" class="intrnllnk">Create a Connection to 74hc165 Shift Register</a></li>
+<li><a href="#bvgrq4p-1" class="intrnllnk">Create a Connection to 74hc595 Shift Register</a></li>
+<li><a href="#bvhd7rj" class="intrnllnk">Specify the resetPin of 74hc595 Shift Register</a></li>
+<li><a href="#bvhd7u3" class="intrnllnk">Create a Connection to 74hc164 Shift Register</a></li>
+<li><a href="#bvgrri6-1" class="intrnllnk">Specify the resetPin of 74hc164 Shift Register</a></li>
+</ul>
+</li><li><a href="#bvgrlcu-2" class="intrnllnk">Input Arguments</a><ul>
+<li><a href="#input_argument_d0e6558" class="intrnllnk">a</a></li>
+<li><a href="#input_argument_d0e6586" class="intrnllnk">dataPin</a></li>
+<li><a href="#input_argument_d0e6626" class="intrnllnk">clockPin</a></li>
+<li><a href="#input_argument_d0e6666" class="intrnllnk">latchPin</a></li>
+<li><a href="#input_argument_d0e6706" class="intrnllnk">loadPin</a></li>
+<li><a href="#input_argument_d0e6743" class="intrnllnk">clockEnablePin</a></li>
+<li><a href="#input_argument_d0e6780" class="intrnllnk">resetPin</a></li>
+</ul>
+</li><li><a href="#bvgrlcu-3" class="intrnllnk">Output Arguments</a><ul>
+<li><a href="#output_argument_d0e6822" class="intrnllnk">register</a></li>
+</ul>
+</li><li><a href="#bvgrlcu_seealso" class="intrnllnk">See Also</a></li>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref"><span id="bvgrlcu" class="anchor_target"></span><div class="clearfix"></div><div itemprop="content"><h1 class="r2017a" itemprop="title">shiftRegister</h1><!-- SYNCHTO: _buiu8i8.html --><div class="doc_topic_desc"><div class="purpose_container"><p itemprop="purpose">Connect to shift register</p><div class="switch"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true1">collapse all in page</a></div></div></div></div>
+<div class="ref_sect"><h2 id="zmw57dd0e6376">Syntax</h2><div class="syntax_signature"><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis">register = shiftRegister(a,'74hc165',dataPin,clockPin,loadPin,clockEnablePin)</code></div></div><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis">register = shiftRegister(a,'74hc595',dataPin,clockPin,latchPin)</code></div><div class="code_responsive"><code class="synopsis">register = shiftRegister(a,'74hc595',dataPin,clockPin,latchPin,resetPin)</code></div></div><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis">register = shiftRegister(a,'74hc164',dataPin,clockPin)</code></div><div class="code_responsive"><code class="synopsis">register = shiftRegister(a,'74hc164',dataPin,clockPin,resetPin)</code></div></div></div></div><div class="clear"></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><span id="bvgrlcu-1" class="anchor_target"></span><h2 id="description">Description</h2><div class="descriptions"><div class="description_module"><span id="bvg3ct3" class="anchor_target"></span>
+<div class="description_element"><p class="syntax_example"><a href="shiftregister.html#bvgrmzc-2" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_register" class="intrnllnk"><code>register</code></a> = shiftRegister(<a href="#inputarg_a" class="intrnllnk"><code>a</code></a>,'74hc165',<a href="#inputarg_dataPin" class="intrnllnk"><code>dataPin</code></a>,<a href="#inputarg_clockPin" class="intrnllnk"><code>clockPin</code></a>,<a href="#inputarg_loadPin" class="intrnllnk"><code>loadPin</code></a>,<a href="#inputarg_clockEnablePin" class="intrnllnk"><code>clockEnablePin</code></a>)</code></span> creates
+a connection to the <code>74hc165</code> shift register connected
+to your Arduino board using the Arduino object <code>a</code>, <code>dataPin</code> to
+input or output data, <code>clockPin</code> to signal read or
+write, <code>loadPin</code> to load parallel input data and <code>clockEnablePin</code> to
+enable or disable clock.</p></div></div>
+</div><div class="description_module"><span id="bvg6x3w" class="anchor_target"></span>
+<div class="description_element"><p class="syntax_example"><a href="shiftregister.html#bvgrq4p-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_register" class="intrnllnk"><code>register</code></a> = shiftRegister(<a href="#inputarg_a" class="intrnllnk"><code>a</code></a>,'74hc595',<a href="#inputarg_dataPin" class="intrnllnk"><code>dataPin</code></a>,<a href="#inputarg_clockPin" class="intrnllnk"><code>clockPin</code></a>,<a href="#inputarg_latchPin" class="intrnllnk"><code>latchPin</code></a>)</code></span> creates
+a connection to the  <code>74hc595</code> shift register using
+the <code>latchPin</code> to latch input data.</p></div></div>
+<div class="description_element"><p class="syntax_example"><a href="shiftregister.html#bvhd7rj" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_register" class="intrnllnk"><code>register</code></a> = shiftRegister(<a href="#inputarg_a" class="intrnllnk"><code>a</code></a>,'74hc595',<a href="#inputarg_dataPin" class="intrnllnk"><code>dataPin</code></a>,<a href="#inputarg_clockPin" class="intrnllnk"><code>clockPin</code></a>,<a href="#inputarg_latchPin" class="intrnllnk"><code>latchPin</code></a>,<a href="#inputarg_resetPin" class="intrnllnk"><code>resetPin</code></a>)</code></span> enables
+reset of the outputs of <code>74hc595</code> shift register.</p></div></div>
+</div><div class="description_module"><span id="bvg6x76-1" class="anchor_target"></span>
+<div class="description_element"><p class="syntax_example"><a href="shiftregister.html#bvhd7u3" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_register" class="intrnllnk"><code>register</code></a> = shiftRegister(<a href="#inputarg_a" class="intrnllnk"><code>a</code></a>,'74hc164',<a href="#inputarg_dataPin" class="intrnllnk"><code>dataPin</code></a>,<a href="#inputarg_clockPin" class="intrnllnk"><code>clockPin</code></a>)</code></span> creates
+a connection to the <code>74hc164</code> shift register.</p></div></div>
+<div class="description_element"><p class="syntax_example"><a href="shiftregister.html#bvgrri6-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_register" class="intrnllnk"><code>register</code></a> = shiftRegister(<a href="#inputarg_a" class="intrnllnk"><code>a</code></a>,'74hc164',<a href="#inputarg_dataPin" class="intrnllnk"><code>dataPin</code></a>,<a href="#inputarg_clockPin" class="intrnllnk"><code>clockPin</code></a>,<a href="#inputarg_resetPin" class="intrnllnk"><code>resetPin</code></a>)</code></span> enables
+reset of the outputs of <code>74hc164</code> shift register.</p></div></div>
+</div></div><div class="clear"></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><div class="clearfix"></div><div class="examples"><h2 id="examples">Examples</h2><div class="expandableContent" id="expandableExamples"><p class="switch"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true3">collapse all</a></p><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvgrmzc-2"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvgrmzc-2" data-target="#expand_panel_body_bvgrmzc-2" aria-controls="expand_panel_body_bvgrmzc-2" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvgrmzc-2">Create a Connection to <code>74hc165</code> Shift Register<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvgrmzc-2" aria-labelledby="expand_panel_heading_bvgrmzc-2" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to a <code>74hc165</code> shift
+register using your Arduino<sup>&#x00AE;</sup> board.</p>
+<p>Create an Arduino object with the <code>'ShiftRegister'</code> library.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'COM3'</span>,<span style="color:#A020F0">'Uno'</span>,<span style="color:#A020F0">'Libraries'</span>,<span style="color:#A020F0">'ShiftRegister'</span>);</pre></div></div></div><p>Connect to the shift register connected to your Arduino board.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>register = shiftRegister(a,<span style="color:#A020F0">'74HC165'</span>,<span style="color:#A020F0">'D3'</span>,<span style="color:#A020F0">'D6'</span>,<span style="color:#A020F0">'D7'</span>,<span style="color:#A020F0">'D10'</span>)
+register = 
+
+  shiftRegister <span style="color:#A020F0">with</span> <span style="color:#A020F0">properties:</span>
+	     Model: <span style="color:#A020F0">'74HC165'</span>
+	   DataPin: <span style="color:#A020F0">'D3'</span>
+	  ClockPin: <span style="color:#A020F0">'D6'</span>
+	   LoadPin: <span style="color:#A020F0">'D7'</span>
+    ClockEnablePin: <span style="color:#A020F0">'D10'</span>;</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvgrq4p-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvgrq4p-1" data-target="#expand_panel_body_bvgrq4p-1" aria-controls="expand_panel_body_bvgrq4p-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvgrq4p-1">Create a Connection to <code>74hc595</code> Shift Register <br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvgrq4p-1" aria-labelledby="expand_panel_heading_bvgrq4p-1" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to a <code>74hc595</code> shift
+register using your Arduino board.</p>
+<p>Connect to the shift register connected to your Arduino board.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>register = shiftRegister(a,<span style="color:#A020F0">'74HC595'</span>,<span style="color:#A020F0">'D3'</span>,<span style="color:#A020F0">'D6'</span>,<span style="color:#A020F0">'D7'</span>)
+register = 
+
+ shiftRegister <span style="color:#A020F0">with</span> <span style="color:#A020F0">properties:</span>
+	     Model: <span style="color:#A020F0">'74HC595'</span>
+	   DataPin: <span style="color:#A020F0">'D3'</span>
+	  ClockPin: <span style="color:#A020F0">'D6'</span>
+	  LatchPin: <span style="color:#A020F0">'D7'</span>
+          ResetPin: Not specified</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvhd7rj"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvhd7rj" data-target="#expand_panel_body_bvhd7rj" aria-controls="expand_panel_body_bvhd7rj" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvhd7rj">Specify the <code>resetPin</code> of <code>74hc595</code> Shift Register<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvhd7rj" aria-labelledby="expand_panel_heading_bvhd7rj" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to a <code>74hc595</code> shift
+register, and also specify the <code>resetPin</code> to reset
+the outputs.</p>
+<p>Connect to the shift register on your Arduino board.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>register = shiftRegister(a,<span style="color:#A020F0">'74HC595'</span>,<span style="color:#A020F0">'D3'</span>,<span style="color:#A020F0">'D6'</span>,<span style="color:#A020F0">'D7'</span>,<span style="color:#A020F0">'D8'</span>)
+register = 
+
+  shiftRegister <span style="color:#A020F0">with</span> <span style="color:#A020F0">properties:</span>
+	     Model: <span style="color:#A020F0">'74HC595'</span>
+	   DataPin: <span style="color:#A020F0">'D3'</span>
+	  ClockPin: <span style="color:#A020F0">'D6'</span>
+	  LatchPin: <span style="color:#A020F0">'D7'</span>
+	  ResetPin: <span style="color:#A020F0">'D8'</span></pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvhd7u3"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvhd7u3" data-target="#expand_panel_body_bvhd7u3" aria-controls="expand_panel_body_bvhd7u3" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvhd7u3">Create a Connection to <code>74hc164</code> Shift Register <br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvhd7u3" aria-labelledby="expand_panel_heading_bvhd7u3" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to a <code>74hc164</code> shift
+register using your Arduino board.</p>
+<p>Connect to the shift register connected to your Arduino board.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>register = shiftRegister(a,<span style="color:#A020F0">'74HC164'</span>,<span style="color:#A020F0">'D3'</span>,<span style="color:#A020F0">'D6'</span>)
+register = 
+
+ shiftRegister <span style="color:#A020F0">with</span> <span style="color:#A020F0">properties:</span>
+	     Model: <span style="color:#A020F0">'74HC164'</span>
+	   DataPin: <span style="color:#A020F0">'D3'</span>
+	  ClockPin: <span style="color:#A020F0">'D6'</span>
+          ResetPin: Not specified</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvgrri6-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvgrri6-1" data-target="#expand_panel_body_bvgrri6-1" aria-controls="expand_panel_body_bvgrri6-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvgrri6-1">Specify the <code>resetPin</code> of <code>74hc164</code> Shift Register<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvgrri6-1" aria-labelledby="expand_panel_heading_bvgrri6-1" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to a <code>74hc164</code> shift
+register, and also specify the <code>resetPin</code> to reset
+the outputs.</p>
+<p>Connect to the shift register on your Arduino board.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>register = shiftRegister(a,<span style="color:#A020F0">'74HC164'</span>,<span style="color:#A020F0">'D3'</span>,<span style="color:#A020F0">'D6'</span>,<span style="color:#A020F0">'D7'</span>)
+register = 
+
+  shiftRegister <span style="color:#A020F0">with</span> <span style="color:#A020F0">properties:</span>
+	     Model: <span style="color:#A020F0">'74HC164'</span>
+	   DataPin: <span style="color:#A020F0">'D3'</span>
+	  ClockPin: <span style="color:#A020F0">'D6'</span>
+	  ResetPin: <span style="color:#A020F0">'D7'</span></pre></div></div></div></div></div></div></div></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="bvgrlcu-2">Input Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="bvgrlcu-2_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e6558" data-target="#expand_panel_body_input_argument_d0e6558" aria-controls="expand_panel_body_input_argument_d0e6558" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_a" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e6558"><code>a</code> &#8212; Arduino hardware connection<br><span class="add_font_color_general remove_bold"><span class="example_desc">arduino object</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e6558" aria-labelledby="expand_panel_heading_input_argument_d0e6558" class="panel-collapse collapse in"><div class="panel-body">
+<p>Arduino hardware connection created using <code>arduino</code>,
+specified as an arduino object.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e6586" data-target="#expand_panel_body_input_argument_d0e6586" aria-controls="expand_panel_body_input_argument_d0e6586" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_dataPin" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e6586"><code>dataPin</code> &#8212; Shift register serial pin to input or output data<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e6586" aria-labelledby="expand_panel_heading_input_argument_d0e6586" class="panel-collapse collapse in"><div class="panel-body">
+<p>Shift register serial pin to input or output data, specified
+as a character vector of the form <code>'Dx'</code> where <code>x</code> is
+the Arduino pin number. For example, <code>'D3'</code>. It is
+usually connected to the <code>DS</code> or <code>SER</code> pin
+on the shift register.</p>
+<p class="datatypelist"><strong>Data Types: </strong><code>char</code></p></div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e6626" data-target="#expand_panel_body_input_argument_d0e6626" aria-controls="expand_panel_body_input_argument_d0e6626" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_clockPin" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e6626"><code>clockPin</code> &#8212; Shift register clock pin to signal read or write<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e6626" aria-labelledby="expand_panel_heading_input_argument_d0e6626" class="panel-collapse collapse in"><div class="panel-body">
+<p>Shift register clock pin to signal read or write, specified
+as a character vector of the form <code>'Dx'</code> where <code>x</code> is
+the Arduino pin number. For example, <code>'D3'</code>. It is
+usually connected to the <code>SHCP</code> or <code>SRCLK</code> pin
+on the shift register.</p>
+<p class="datatypelist"><strong>Data Types: </strong><code>char</code></p></div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e6666" data-target="#expand_panel_body_input_argument_d0e6666" aria-controls="expand_panel_body_input_argument_d0e6666" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_latchPin" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e6666"><code>latchPin</code> &#8212; Shift register latch pin to latch input data<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e6666" aria-labelledby="expand_panel_heading_input_argument_d0e6666" class="panel-collapse collapse in"><div class="panel-body">
+<p>Shift register latch pin to latch input data, specified as a
+character vector of the form <code>'Dx'</code> where <code>x</code> is
+the Arduino pin number. For example, <code>'D3'</code>. It is
+usually connected to the <code>STCP</code> or <code>RCLK</code> pin
+on the shift register.</p>
+<p class="datatypelist"><strong>Data Types: </strong><code>char</code></p></div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e6706" data-target="#expand_panel_body_input_argument_d0e6706" aria-controls="expand_panel_body_input_argument_d0e6706" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_loadPin" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e6706"><code>loadPin</code> &#8212; Shift register parallel load pin to load parallel input data<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e6706" aria-labelledby="expand_panel_heading_input_argument_d0e6706" class="panel-collapse collapse in"><div class="panel-body">
+<p>Shift register parallel load pin to load parallel input data,
+specified as a character vector of the form <code>'Dx'</code> where <code>x</code> is
+the Arduino pin number. For example, <code>'D3'</code>. It is
+usually connected to the <code>PL</code> pin on the shift register.</p>
+<p class="datatypelist"><strong>Data Types: </strong><code>char</code></p></div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e6743" data-target="#expand_panel_body_input_argument_d0e6743" aria-controls="expand_panel_body_input_argument_d0e6743" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_clockEnablePin" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e6743"><code>clockEnablePin</code> &#8212; Shift register clock enable pin to enable or disable clock<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e6743" aria-labelledby="expand_panel_heading_input_argument_d0e6743" class="panel-collapse collapse in"><div class="panel-body">
+<p>Shift register clock enable pin to enable or disable clock,
+specified as a character vector of the form <code>'Dx'</code> where <code>x</code> is
+the Arduino pin number. For example, <code>'D3'</code>. It is
+usually connected to the <code>CE</code> pin on the shift register.</p>
+<p class="datatypelist"><strong>Data Types: </strong><code>char</code></p></div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e6780" data-target="#expand_panel_body_input_argument_d0e6780" aria-controls="expand_panel_body_input_argument_d0e6780" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_resetPin" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e6780"><code>resetPin</code> &#8212; Shift register reset pin to reset output<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e6780" aria-labelledby="expand_panel_heading_input_argument_d0e6780" class="panel-collapse collapse in"><div class="panel-body">
+<p>Shift register reset pin to reset output, specified as a character
+vector of the form <code>'Dx'</code> where <code>x</code> is
+the Arduino pin number. For example, <code>'D3'</code>. It is
+usually connected to the <code>CE</code> pin on the shift register.</p>
+<p class="datatypelist"><strong>Data Types: </strong><code>char</code></p></div></div></div></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="bvgrlcu-3">Output Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="bvgrlcu-3_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_d0e6822" data-target="#expand_panel_body_output_argument_d0e6822" aria-controls="expand_panel_body_output_argument_d0e6822" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_register" class="anchor_target"></span><h3 class="panel-title" id="output_argument_d0e6822"><code>register</code> &#8212; Shift register connection<br><span class="add_font_color_general remove_bold"><span class="example_desc">shiftRegister object</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_d0e6822" aria-labelledby="expand_panel_heading_output_argument_d0e6822" class="panel-collapse collapse in"><div class="panel-body">
+<p>Shift register connection, returned as a shiftRegister object.
+You can set the properties of the shiftRegister object only during
+the shiftRegister object creation. After creating the shiftRegister
+object, you can use dot notation to access the shiftRegister object
+property values. For example, <div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>register = shiftRegister(a,<span style="color:#A020F0">'74HC165'</span>,<span style="color:#A020F0">'D3'</span>,<span style="color:#A020F0">'D6'</span>,<span style="color:#A020F0">'D7'</span>,<span style="color:#A020F0">'D10'</span>);
+register.Model
+ans = 
+
+   1x7 char <span style="color:#A020F0">array</span>
+
+74HC165</pre></div></div></div></p>
+</div></div></div></div></div></div><div class="clearfix"></div><div class="ref_sect"><h2 id="bvgrlcu_seealso">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="arduino.html"><span itemprop="name"><code>arduino</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="reset.html"><span itemprop="name"><code>reset</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="shiftregisterread.html"><span itemprop="name"><code>shiftRegister/read</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="shiftregisterwrite.html"><span itemprop="name"><code>shiftRegister/write</code></span></a></span></p></div><div class="release_introduced"><h4>Introduced in R2016b</h4></div>
+</div></div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:45 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

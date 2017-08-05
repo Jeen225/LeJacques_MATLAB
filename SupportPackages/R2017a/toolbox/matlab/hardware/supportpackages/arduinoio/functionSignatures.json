@@ -1,0 +1,357 @@
+{
+"arduino":
+{
+    "inputs":
+    [
+        {"name":"Port", "kind":"positional", "type":"choices=arduinoio.internal.TabCompletionHelper.getAvailablePorts" },
+        {"name":"Board", "kind":"positional", "type":"choices=arduinoio.internal.TabCompletionHelper.getSupportedBoards" },
+        {"name":"Libraries", "kind":"namevalue", "type":"choices=listArduinoLibraries()" },
+        {"name":"TraceOn", "kind":"namevalue", "type":"logical"},
+        {"name":"ForceBuildOn", "kind":"namevalue", "type":"logical"}
+    ],
+    "outputs":
+    [
+        {"name":"obj", "type":"arduino"}
+    ]
+},
+"arduino.writeDigitalPin":
+{
+	"inputs":
+	[
+		{"name":"obj", "kind":"required", "type":"arduino"},
+		{"name":"pin", "kind":"required", "type":"choices=obj.AvailablePins" },
+        {"name":"value", "kind":"required", "type":"choices={0,1}"}
+	]
+},
+"arduino.readDigitalPin":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"arduino"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=obj.AvailablePins"]}
+    ],
+	"outputs":
+	[
+		{"name":"value", "type":"double"}
+	]
+},
+"arduino.readVoltage":
+{
+    "inputs":
+    [
+	
+		{"name":"obj", "kind":"required", "type":"arduino"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getAnalogPins(obj)"]}
+    ],
+	"outputs":
+	[
+		{"name":"value", "type":"double"}
+	]
+},
+"arduino.writePWMDutyCycle":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getPWMPins(obj)"]},
+		{"name":"value", "kind":"required", "type":["numeric", "scalar"]}
+    ]
+},
+"arduino.writePWMVoltage":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getPWMPins(obj)"]},
+		{"name":"value", "kind":"required", "type":["numeric", "scalar"]}
+    ]
+},
+"arduino.playTone":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getPWMPins(obj)"]},
+		{"name":"frequency", "kind":"optional", "type":["numeric", "scalar"]},
+        {"name":"duration", "kind":"optional", "type":["numeric", "scalar"]}
+    ]
+},
+"arduino.configurePin":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=obj.AvailablePins"]},
+		{"name":"mode", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getSupportedModes"]}
+    ]
+},
+"arduino.configurePin":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=obj.AvailablePins"]}
+    ],
+    "outputs":
+    [
+        {"name":"mode", "type":"char"}
+    ]
+},
+"arduino.scanI2CBus":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"bus", "kind":"optional", "type":"choices=arduinoio.internal.TabCompletionHelper.getAvailableBuses(obj)"}
+    ],
+    "outputs":
+    [
+        {"name":"addrs", "type":["char", "cell"]}
+    ]
+},
+"arduino.i2cdev":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"address","kind":"required","type":[["numeric", "scalar"], ["char", "vector"]]},
+        {"name":"bus", "kind":"namevalue", "type":"choices=arduinoio.internal.TabCompletionHelper.getAvailableBuses(obj)"}
+    ],
+    "outputs":
+    [
+        {"name":"i2cObj", "type":"arduinoio.i2cdev"}
+    ]
+},
+"arduinoio.i2cdev.read":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduinoio.i2cdev"},
+        {"name":"count","kind":"required","type":["numeric", "scalar"]},
+        {"name":"precision", "kind":"optional", "type":"choices=arduinoio.internal.TabCompletionHelper.getI2CReadWritePrecisions"}
+    ],
+    "outputs":
+    [
+        {"name":"dataOut", "type":["numeric", "vector"]}
+    ]
+},
+"arduinoio.i2cdev.write":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduinoio.i2cdev"},
+        {"name":"dataIn","kind":"required","type":["numeric", "vector"]},
+        {"name":"precision", "kind":"optional", "type":"choices=arduinoio.internal.TabCompletionHelper.getI2CReadWritePrecisions"}
+    ]
+},
+"arduinoio.i2cdev.readRegister":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduinoio.i2cdev"},
+        {"name":"register","kind":"required","type":[["char"], ["numeric", "scalar"]]},
+        {"name":"precision", "kind":"optional", "type":"choices=arduinoio.internal.TabCompletionHelper.getI2CReadWritePrecisions"}
+    ],
+    "outputs":
+    [
+        {"name":"dataOut", "type":["numeric", "vector"]}
+    ]
+},
+"arduinoio.i2cdev.writeRegister":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduinoio.i2cdev"},
+        {"name":"register","kind":"required","type":[["char"], ["numeric", "scalar"]]},
+        {"name":"dataIn","kind":"required","type":["numeric", "vector"]},
+        {"name":"precision", "kind":"optional", "type":"choices=arduinoio.internal.TabCompletionHelper.getI2CReadWritePrecisions"}
+    ]
+},
+"arduino.spidev":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"pin","kind":"required","type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj)"]},
+        {"name":"BitOrder", "kind":"namevalue", "type":"choices={'lsbfirst', 'msbfirst'}"},
+        {"name":"Mode", "kind":"namevalue", "type":"choices={0,1,2,3}"},
+        {"name":"BitRate", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"spiObj", "type":"arduinoio.spidev"}
+    ]
+},
+"arduinoio.spidev.writeRead":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduinoio.spidev"},
+        {"name":"dataIn","kind":"required","type":["numeric", "vector"]},
+        {"name":"precision", "kind":"optional", "type":"choices=arduinoio.internal.TabCompletionHelper.getSPIReadWritePrecisions"}
+    ],
+    "outputs":
+    [
+        {"name":"dataOut", "type":["numeric", "vector"]}
+    ]
+},
+"arduino.servo":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"pin","kind":"required","type":["char", "choices=arduinoio.internal.TabCompletionHelper.getServoPins(obj)"]},
+        {"name":"MinPulseDuration", "kind":"namevalue", "type":["numeric", "scalar"]},
+        {"name":"MaxPulseDuration", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"servoObj", "type":"arduinoio.Servo"}
+    ]
+},
+"arduino.addon":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"library","kind":"required","type":["char", "choices=arduinoio.internal.TabCompletionHelper.getAddonLibraries"]}
+    ]
+},
+"arduinoioaddons.adafruit.motorshieldv2.servo":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoioaddons.adafruit.motorshieldv2"},
+        {"name":"motornum","kind":"required","type":"choices={1,2}"},
+        {"name":"MinPulseDuration", "kind":"namevalue", "type":["numeric", "scalar"]},
+        {"name":"MaxPulseDuration", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"stepperObj", "type":"arduinoioaddons.adafruit.Servo"}
+    ]
+},
+"arduinoioaddons.adafruit.motorshieldv2.stepper":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoioaddons.adafruit.motorshieldv2"},
+        {"name":"motornum","kind":"required","type":"choices={1,2}"},
+        {"name":"sprev", "kind":"required", "type":["numeric", "scalar"]},
+        {"name":"RPM", "kind":"namevalue", "type":["numeric", "scalar"]},
+        {"name":"StepType", "kind":"namevalue", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getStepTypes"]}
+    ],
+    "outputs":
+    [
+        {"name":"stepperObj", "type":"arduinoioaddons.adafruit.stepper"}
+    ]
+},
+"arduinoioaddons.adafruit.motorshieldv2.dcmotor":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoioaddons.adafruit.motorshieldv2"},
+        {"name":"motornum","kind":"required","type":"choices={1,2,3,4}"},
+        {"name":"Speed", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"dcmotorObj", "type":"arduinoioaddons.adafruit.dcmotor"}
+    ]
+},
+"arduino.shiftRegister":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"type","kind":"required","type":["char", "choices={'74HC165'}"]},
+        {"name":"dataPin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj)"]},
+        {"name":"clockPin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj, dataPin)"]},
+        {"name":"loadPin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj, {dataPin,clockPin})"]},
+        {"name":"clockEnablePin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj, {dataPin,clockPin,loadPin})"]}
+    ],
+    "outputs":
+    [
+        {"name":"register", "type":"arduinoio.shiftRegister"}
+    ]
+},
+"arduino.shiftRegister":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"type","kind":"required","type":["char", "choices={'74HC164'}"]},
+        {"name":"dataPin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj)"]},
+        {"name":"clockPin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj, dataPin)"]},
+        {"name":"resetPin", "kind":"optional", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj, {dataPin,clockPin})"]}
+    ],
+    "outputs":
+    [
+        {"name":"register", "type":"arduinoio.shiftRegister"}
+    ]
+},
+"arduino.shiftRegister":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"type","kind":"required","type":["char", "choices={'74HC595'}"]},
+        {"name":"dataPin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj)"]},
+        {"name":"clockPin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj, dataPin)"]},
+        {"name":"latchPin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj, {dataPin,clockPin})"]},
+        {"name":"resetPin", "kind":"optional", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getDigitalPins(obj, {dataPin,clockPin,latchPin})"]}
+    ],
+    "outputs":
+    [
+        {"name":"register", "type":"arduinoio.shiftRegister"}
+    ]
+},
+"arduinoio.shiftRegister.write":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduinoio.shiftRegister"},
+        {"name":"value","kind":"required","type":[["numeric", "vector"],["char"]]},
+        {"name":"precision", "kind":"optional", "type":"choices=arduinoio.internal.TabCompletionHelper.getShiftRegisterWritePrecisions"}
+    ]
+},
+"arduinoio.shiftRegister.read":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduinoio.shiftRegister"},
+        {"name":"precision", "kind":"optional", "type":"choices=arduinoio.internal.TabCompletionHelper.getShiftRegisterReadPrecisions"}
+    ],
+    "outputs":
+    [
+        {"name":"dataOut", "type":["numeric", "vector"]}
+    ]
+},
+"arduino.rotaryEncoder":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"channelA", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getInterruptPins(obj)"]},
+        {"name":"channelB", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getInterruptPins(obj, channelA)"]},
+        {"name":"ppr", "kind":"optional", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"encoder", "type":"arduinoio.rotaryEncoder"}
+    ]
+},
+"arduinoio.rotaryEncoder.readCount":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduinoio.rotaryEncoder"},
+        {"name":"reset", "kind":"namevalue", "type":"logical"}
+    ],
+    "outputs":
+    [
+        {"name":"count", "type":["numeric", "scalar"]},
+        {"name":"time", "type":["numeric", "scalar"]}
+    ]
+}
+}

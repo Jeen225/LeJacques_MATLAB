@@ -1,0 +1,504 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Create LCD Add-on</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="ug">
+<meta name="infotype" itemprop="infotype" content="ex" />
+
+<meta name="description" itemprop="description" content="Create a custom MATLAB Arduino LCD add-on library." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../custom-arduino-libraries.html" itemprop="url"><span itemprop="title">Custom Arduino Libraries</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Create LCD Add-on</a></li>
+<li class="nav_scrollspy_title">On this page</li>
+
+<li><a href="#buvvdya" class="intrnllnk">Connect Arduino to LCD</a></li>
+<li><a href="#buvvedz-1" class="intrnllnk">Create C++ Header and Include Third-Party Source Files</a></li>
+<li><a href="#buvvfvp-1" class="intrnllnk">Create MATLAB Add-On Wrapper</a></li>
+<li><a href="#buvvqmh-1" class="intrnllnk">Register Custom Library and Run MATLAB Code</a></li>
+
+
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-topic">
+<span id="butlugf-1" class="anchor_target"></span><h2 class="title r2017a" itemprop="title content" id="butlugf-1">Create LCD Add-on</h2><div itemprop="content">
+<p>This example shows how to create an LCD add-on
+library and display "Hello World!" on an LCD. For more
+information on LCDs, see <a href="https://learn.adafruit.com/character-lcds/rgb-backlit-lcds" target="_top">RGB
+Backlit LCDs</a>.</p>
+</div><ul><li><p><a class="intrnllnk" href="#buvvdya">Connect Arduino to LCD</a></p></li><li><p><a class="intrnllnk" href="#buvvedz-1">Create C++ Header and Include Third-Party Source Files</a></p></li><li><p><a class="intrnllnk" href="#buvvfvp-1">Create MATLAB Add-On Wrapper</a></p></li><li><p><a class="intrnllnk" href="#buvvqmh-1">Register Custom Library and Run MATLAB Code</a></p></li></ul><div class="clearfix"></div><div itemprop="content"><span id="buvvdya" class="anchor_target"></span><h3 class="title" id="buvvdya">Connect Arduino to LCD</h3>
+<p>This example shows you how to wire up an LCD
+display to your Arduino<sup>&#x00AE;</sup> Uno board. You need:</p>
+<ul type="disc"><li><p>An Arduino Uno board</p></li><li><p>16x2 LCD similar to this device from <a href="https://www.sparkfun.com/products/9395" target="_top">Sparkfun</a>.</p></li><li><p>10k potentiometer </p></li><li><p>Breadboard</p></li><li><p>Jumper cables</p></li></ul>
+<p>Files for this example are located in your Arduino support
+package installation folder in <code>\arduinoio\arduinoioexamples</code>.</p>
+<p>Connect the LCD as shown in the schematic:</p><p>
+<img src="lcd_schem.png" height="600" width="700" alt=""></p><p>Make sure that you wire your pins as follows:</p><div class="table-responsive"><table class="table table-condensed" border="2"><colgroup><col width="28%"><col width="72%"></colgroup><tbody><tr valign="top"><td><b>LCD Pin</b></td><td><b>Arduino Pin</b></td></tr>
+<tr valign="top"><td>1 (VSS)</td><td>Ground</td></tr>
+<tr valign="top"><td>2 (VDD)</td><td>5V</td></tr>
+<tr valign="top"><td>3 (V0)</td><td>Mid pin on potentiometer</td></tr>
+<tr valign="top"><td>4 (RS)</td><td>D7</td></tr>
+<tr valign="top"><td>5 (R/W)</td><td>Ground</td></tr>
+<tr valign="top"><td>6 (E)</td><td>D6</td></tr>
+<tr valign="top"><td>11 (DB4)</td><td>D5 (PWM)</td></tr>
+<tr valign="top"><td>12 (DB5)</td><td>D4</td></tr>
+<tr valign="top"><td>13 (DB6)</td><td>D3 (PWM)</td></tr>
+<tr valign="top"><td>14 (DB7)</td><td>D2</td></tr>
+<tr valign="top"><td>15 (LED+)</td><td>5 V</td></tr>
+<tr valign="top"><td>16 (LED-)</td><td>Ground</td></tr>
+</tbody></table></div><p></p><p>When done, your setup looks similar to this:</p><p>
+<img src="lcd_bb.png" height="718" width="732" alt=""></p></div><div class="clearfix"></div><div itemprop="content"><span id="buvvedz-1" class="anchor_target"></span><h3 class="title" id="buvvedz-1">Create C++ Header and Include Third-Party Source Files</h3>
+<p>For this example, create a header file named <code>LCDAddon.h</code> and
+save it in the <code>+arduinoioaddons/+ExampleLCD/src</code> folder.
+This file wraps all the methods in the library.</p>
+<p>You can find the library files for this example in your Arduino support
+package installation folder in <code>\arduinoio\arduinoioexamples</code>.</p>
+<p>Include <code>LibraryBase.h</code> and the third-party
+header file<code>LiquidCrystal.h</code>.</p><div class="code_responsive"><pre class="programlisting">#include "LibraryBase.h"
+#include "LiquidCrystal.h"</pre></div><p>Declare debug strings using <code>const char</code>.
+Use <code>PROGMEM</code> to store the debug strings to the device
+flash memory, to save <code>SRAM</code>.</p><div class="code_responsive"><pre class="programlisting">const char MSG_pLCD_CREATE_LCD_SHIELD[]       PROGMEM = "Arduino::pLCD = new LiquidCrystal(%d, %d, %d, %d, %d, %d);\n";
+const char MSG_pLCD_INITIALIZE_LCD_SHIELD[]   PROGMEM = "Arduino::pLCD-&gt;begin(%d, %d);\n";
+const char MSG_pLCD_CLEAR_LCD_SHIELD[]        PROGMEM = "Arduino::pLCD-&gt;clear();\n";
+const char MSG_pLCD_PRINT[]                   PROGMEM = "Arduino::pLCD-&gt;print(%s);\n";
+const char MSG_SET_CURSOR_LCD_SHIELD[]        PROGMEM = "Arduino::pLCD-&gt;setCursor(%d, %d);\n";
+const char MSG_pLCD_DELETE_LCD_SHIELD[]       PROGMEM = "Arduino::delete pLCD;\n";</pre></div><p>Define command IDs to match those defined in your MATLAB<sup>&#x00AE;</sup> class.</p><div class="code_responsive"><pre class="programlisting">#define LCD_CREATE      0x00
+#define LCD_INITIALIZE  0x01
+#define LCD_CLEAR       0x02
+#define LCD_PRINT       0x03
+#define LCD_DELETE      0x04</pre></div><p>Create the constructor that defines the library name.
+Declare the debug strings and register the library to the server.</p><div class="code_responsive"><pre class="programlisting">class LCD : public LibraryBase
+{
+public:
+    LiquidCrystal *pLCD;
+public:
+    LCD(MWArduinoClass&amp; a)
+    {
+        libName = "ExampleShield/LCD";
+        a.registerLibrary(this);
+    }</pre></div><p>Override the <code>setup</code> method to reset the
+cursor to the first row upon initialization.</p><div class="code_responsive"><pre class="programlisting">    void setup()
+    {
+        cursorRow = 0;
+    }
+    </pre></div><p>Override <code>commandHandler</code>, and map each
+command to its corresponding methods. For this example, map the commands:</p><div class="table-responsive"><table class="table table-condensed" border="2"><colgroup><col width="33%"><col width="33%"><col width="34%"></colgroup><thead><tr valign="top"><th valign="top">Case</th><th valign="top">Command </th><th valign="top">Description</th></tr>
+</thead><tbody><tr valign="top"><td>0x00</td><td><code>LCD_CREATE</code></td><td>Define pins used by the LCD</td></tr>
+<tr valign="top"><td>0x01</td><td><code>LCD_INITIALIZE</code></td><td>Set up columns and rows</td></tr>
+<tr valign="top"><td>0x02</td><td><code>LCD_CLEAR </code></td><td>Clear the LCD screen</td></tr>
+<tr valign="top"><td>0x03</td><td><code>LCD_PRINT</code></td><td>Print the message on the LCD</td></tr>
+<tr valign="top"><td>0x04</td><td><code>LCD_DELETE</code></td><td>Delete the LCD object</td></tr>
+</tbody></table></div><p></p><p> Create an LCD object. Initialize the LCD and assign rows
+and columns of the inputs. Use <code>debugPrint</code> to print
+trace messages to the MATLAB command line to help you debug code
+running on the Arduino device.</p><p>To understand more about command handlers see <a href="custom-library-concepts.html#bu73xge">Command Handler</a>.</p><div class="code_responsive"><pre class="programlisting">public:
+    void commandHandler(byte cmdID, byte* dataIn, unsigned int payloadSize)
+    {
+        switch(cmdID)
+        {
+            case LCD_CREATE:  //createLCD
+            {
+                byte* pinNumbers = new byte [6];
+                for (byte i=0; i&lt;6; i=i+1)
+                {
+                    pinNumbers[i] = dataIn[i];
+                }
+                createLCDObject(pinNumbers[0],pinNumbers[1],pinNumbers[2],pinNumbers[3],pinNumbers[4],pinNumbers[5]);
+                sendResponseMsg(cmdID, 0, 0);
+                break;
+            }
+            case LCD_INITIALIZE:  //initializeLCD
+            {
+                unsigned int rows = dataIn[0];
+                unsigned int cols = dataIn[1];
+                initializeLCD(rows,cols);
+                clearLCD();
+                sendResponseMsg(cmdID, 0, 0);
+                break;
+            }            </pre></div><p>Clear the LCD screen.</p><div class="code_responsive"><pre class="programlisting">case LCD_CLEAR:  //clearLCD
+            {
+                clearLCD();
+                cursorRow = 0;
+                setCursor(0, cursorRow);
+                sendResponseMsg(cmdID, 0, 0);
+                break;
+            }   </pre></div><p>Create a command that takes an input and prints it on
+the LCD screen. </p><div class="code_responsive"><pre class="programlisting">            case LCD_PRINT:  //printLCD
+            {
+                byte* val = {dataIn};
+                // last byte is the number of rows initialized
+                // last 2nd byte is the number of columns initialized
+                char message[payloadSize-1];
+                for(byte k=0; k&lt;(payloadSize-2); k=k+1)
+                {
+                    message[k]=val[k];
+                }
+                message[payloadSize-2] = '\0';
+                
+                byte cols = val[payloadSize-2];
+                byte rows = val[payloadSize-1];
+
+                if(cursorRow+1 &gt; rows){
+                    cursorRow = 0;
+                    clearLCD();
+                }
+                setCursor(0,cursorRow);
+                printLCD(message);
+                cursorRow++;
+                    
+                sendResponseMsg(cmdID, 0, 0);
+                break;
+            }        </pre></div><p>Delete the LCD object.</p><div class="code_responsive"><pre class="programlisting">            case LCD_DELETE:  //delete
+            {
+                deleteLCDobject();
+                //reset the cursor position to the first row on deletion
+                cursorRow = 0;
+                sendResponseMsg(cmdID, 0, 0);
+                break;
+            }
+           </pre></div><p>Wrap the <code>LiquidCrystal</code> methods to add
+debug messages.</p><div class="code_responsive"><pre class="programlisting">public:
+	void createLCDObject(unsigned int rs,unsigned int enable,unsigned int d0,unsigned int d1,unsigned int d2,unsigned int d3)
+	{
+		 pLCD = new LiquidCrystal(rs, enable, d0, d1, d2, d3);
+		 debugPrint(MSG_pLCD_CREATE_LCD_SHIELD,rs,enable,d0,d1,d2,d3);
+	}
+	void initializeLCD(unsigned int cols,unsigned int rows)
+	{
+		pLCD-&gt;begin(cols, rows);
+		debugPrint(MSG_pLCD_INITIALIZE_LCD_SHIELD, cols, rows);
+	}
+	void clearLCD()
+	{
+		pLCD-&gt;clear();
+		debugPrint(MSG_pLCD_CLEAR_LCD_SHIELD);
+	}
+	void printLCD(char message[])
+	{
+		pLCD-&gt;print(message);
+		debugPrint(MSG_pLCD_PRINT, message);
+	}
+	void setCursor(byte column, byte row)
+	{
+		pLCD-&gt;setCursor(column, row);
+		debugPrint(MSG_SET_CURSOR_LCD_SHIELD,column,row);
+	}
+	void deleteLCDobject()
+	{
+		delete pLCD;
+		debugPrint(MSG_pLCD_DELETE_LCD_SHIELD);
+	}
+};</pre></div></div><div class="clearfix"></div><div itemprop="content"><span id="buvvfvp-1" class="anchor_target"></span><h3 class="title" id="buvvfvp-1">Create MATLAB Add-On Wrapper</h3>
+<p>This example shows how to create <code>LCDAddon.m</code> MATLAB wrapper
+class file and save it in the <code>C:\Work\+arduinoioaddons\+ExampleLCD</code> folder. </p>
+<p>You can find library files for this example in your Arduino support
+package installation folder in <code>\arduinoio\arduinoioexamples</code>.</p>
+<p>Create MATLAB class, <code>LCDAddon</code>,
+that inherits from <code>arduinoio.LibraryBase</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">classdef</span> LCDAddon &lt; arduinoio.LibraryBase </pre></div></div></div><p>Define custom command IDs for all public methods of the
+LCD class sent to the server on the board.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre> properties(Access = private, Constant = true)
+        LCD_CREATE     = hex2dec(<span style="color:#A020F0">'00'</span>)
+        LCD_INITIALIZE = hex2dec(<span style="color:#A020F0">'01'</span>)
+        LCD_CLEAR      = hex2dec(<span style="color:#A020F0">'02'</span>)
+        LCD_PRINT      = hex2dec(<span style="color:#A020F0">'03'</span>)
+        LCD_DELETE     = hex2dec(<span style="color:#A020F0">'04'</span>)
+    <span style="color:#0000FF">end</span>  </pre></div></div></div><p>Override constant properties in the class to include necessary
+header and third-party source files.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>    properties(Access = protected, Constant = true)
+        LibraryName = <span style="color:#A020F0">'ExampleLCD/LCDAddon'</span>
+        DependentLibraries = {}
+        SourceHeaderFile = <span style="color:#A020F0">'LiquidCrystal/LiquidCrystal.h'</span>
+        CppClassHeaderFile = fullfile(arduinoio.FilePath(mfilename(<span style="color:#A020F0">'fullpath'</span>)), <span style="color:#A020F0">'src'</span>, <span style="color:#A020F0">'LCD.h'</span>)
+        CppClassName = <span style="color:#A020F0">'LCD'</span>
+    <span style="color:#0000FF">end</span>
+    
+   </pre></div></div></div><ul type="disc"><li><p><code>DependentLibraries</code> must contain
+all other libraries you need to use your custom library.</p></li><li><p><code>SourceHeaderFile</code> must be a string,
+starting with the library name, followed by a slash (<code>/</code>),
+and then header file name. If you need multiple header files, specify
+a cell array of strings.  </p></li><li><p><code>CppClassHeaderFile</code> must be the <code>LCD.h</code> with
+the full path. Replace <code>LCD.h</code> with your custom file
+name after you create it, and save it to the <code>src</code> folder
+in the <code>ExampleLCD</code> folder.  </p></li><li><p><code>CppClassName</code> must be the exact
+class name defined in <code>LCD.h</code>.</p></li></ul><p>Specify command IDs supported by the add-on for each method
+you create. Specify the pins that connect to the LCD, and define an
+error if the resource count is more than <code>0</code>. In
+this example, you can add only one LCD, and therefore it is imperative
+that you manage your pin resource count.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>
+methods(Hidden, Access = public)
+        <span style="color:#0000FF">function</span> obj = LCD(parentObj,inputPins)
+            obj.Parent = parentObj;
+            obj.Pins = inputPins;
+            count = getResourceCount(obj.Parent,obj.ResourceOwner);
+            <span style="color:#228B22">% Since this example allows implementation of only 1 LCD</span>
+            <span style="color:#228B22">% shield, error out if resource count is more than 0</span>
+            <span style="color:#0000FF">if</span> count &gt; 0
+                error(<span style="color:#A020F0">'You can only have 1 LCD shield'</span>);
+            <span style="color:#0000FF">end</span> 
+            incrementResourceCount(obj.Parent,obj.ResourceOwner);    
+            createLCD(obj,inputPins);
+        <span style="color:#0000FF">end</span></pre></div></div></div><p>Devices such as the Arduino Uno have a limited number of
+pins and require you to manage the resource allocation. Therefore,
+you are limited to creating only one LCD object at a time. For more
+information, see <a href="../../../supportpkg/arduinoio/ref/getresourceowner.html"><code>getResourceOwner</code></a>.</p><p>Write a <code>createLCD</code> method to perform
+the following functions: </p><ul type="disc"><li><p>Reserve the pins on the Arduino connected to
+the LCD and used by the library. Reserving prevents other functions
+from using these pins, giving your library exclusive use of the pins.</p></li><li><p>Send commands, including pin data, to the server using <code>sendCommand</code>.</p></li></ul><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre> <span style="color:#0000FF">function</span> createLCD(obj,inputPins)
+            <span style="color:#0000FF">try</span>
+               cmdID = obj.LCD_CREATE;
+                
+                <span style="color:#0000FF">for</span> iLoop = inputPins
+                    configurePinResource(obj.Parent,iLoop{:},obj.ResourceOwner,<span style="color:#A020F0">'Reserved'</span>);
+                <span style="color:#0000FF">end</span>
+                
+                terminals = getTerminalsFromPins(obj.Parent,inputPins);
+                sendCommand(obj, obj.LibraryName, cmdID, terminals);
+            <span style="color:#0000FF">catch</span> e
+                throwAsCaller(e);
+            <span style="color:#0000FF">end</span>
+        <span style="color:#0000FF">end</span>
+    <span style="color:#0000FF">end</span></pre></div></div></div><p>Overload destructor <code>delete</code> method for
+LCD class to free up the reserved pins and decrement LCD resource
+count.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>    methods(Access = protected)
+        <span style="color:#0000FF">function</span> delete(obj)
+            <span style="color:#0000FF">try</span>
+                parentObj = obj.Parent;
+                
+                <span style="color:#0000FF">for</span> iLoop = obj.Pins
+                    configurePinResource(parentObj,iLoop{:},obj.ResourceOwner,<span style="color:#A020F0">'Unset'</span>);
+                <span style="color:#0000FF">end</span>
+                
+                decrementResourceCount(parentObj, obj.ResourceOwner);
+                cmdID = obj.LCD_DELETE;
+                inputs = [];
+                sendCommand(obj, obj.LibraryName, cmdID, inputs);
+            <span style="color:#0000FF">catch</span>
+                
+            <span style="color:#0000FF">end</span>
+        <span style="color:#0000FF">end</span>  
+    <span style="color:#0000FF">end</span></pre></div></div></div><ul><span id="zmw57dd0e3980" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+Do not throw errors when you destroy the object. </p></td></tr></table></ul><p>Initialize the LCD with specific number of columns and
+rows, and clear the LCD screen.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>methods(Access = public)
+        
+        <span style="color:#0000FF">function</span> initializeLCD(obj,varargin)                                    
+            p = inputParser;
+            p.PartialMatching = true;
+            
+            addParameter(p, <span style="color:#A020F0">'Rows'</span>, 2);
+            addParameter(p, <span style="color:#A020F0">'Columns'</span>, 16);
+            parse(p, varargin{:});
+            output = p.Results;
+            
+            obj.Rows = output.Rows;
+            obj.Columns = output.Columns;
+            inputs = [output.Columns output.Rows];
+            
+            cmdID = obj.LCD_INITIALIZE;  
+            sendCommand(obj, obj.LibraryName, cmdID, inputs);
+        <span style="color:#0000FF">end</span>
+        
+        </pre></div></div></div><p>Clear the LCD.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">function</span> clearLCD(obj)
+            cmdID = obj.LCD_CLEAR;
+            inputs = [];
+            sendCommand(obj, obj.LibraryName, cmdID, inputs);
+        <span style="color:#0000FF">end</span></pre></div></div></div><p>Print the message on the LCD. This example uses a 16x2
+LCD screen and cannot print more than 16 characters.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre> <span style="color:#0000FF">function</span> printLCD(obj,message)
+            cmdID = obj.LCD_PRINT;
+            
+            <span style="color:#0000FF">if</span> numel(message) &gt; 16
+                error(<span style="color:#A020F0">'Cannot print more than 16 characters'</span>)
+            <span style="color:#0000FF">end</span>
+            
+            inputs = [double(message) obj.Columns obj.Rows];
+            sendCommand(obj, obj.LibraryName, cmdID, inputs); 
+        <span style="color:#0000FF">end</span>       
+    <span style="color:#0000FF">end</span>
+<span style="color:#0000FF">end</span></pre></div></div></div></div><div class="clearfix"></div><div itemprop="content"><span id="buvvqmh-1" class="anchor_target"></span><h3 class="title" id="buvvqmh-1">Register Custom Library and Run MATLAB Code</h3>
+<p>Use the header files you have created to register
+the custom library and run the example.</p>
+<p>You can find files for this example in your Arduino support
+package installation folder in <code>\arduinoio\arduinoioexamples</code>.</p>
+<p>Add the location of the template to the MATLAB path. For example:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>addpath (<span style="color:#A020F0">'C:\Work'</span>);</pre></div></div></div><p>
+<img src="lcdarduinolibraries.png" height="155" width="245" alt=""></p><p>Make sure the <code>ExampleLCD/LCDAddon</code> library
+is available.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>listArduinoLibraries</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>ans = 
+
+    'Adafruit/MotorShieldV2'
+    'ExampleLCD/LCDAddon'
+    'I2C'
+    'SPI'
+    'Servo'</pre></div></div></div><ul><span id="zmw57dd0e4042" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Tip:</b>&nbsp;&nbsp;
+
+
+If you do not see your add-on library in the list, see <a href="../../../supportpkg/arduinoio/ug/custom-arduino-library-issues.html">Custom Arduino Library Issues</a> for more information.</p></td></tr></table></ul><p>Create an <code>arduino</code> object specifying
+the <code>ExampleLCD/LCDAddon</code> library.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'com3'</span>,<span style="color:#A020F0">'uno'</span>,<span style="color:#A020F0">'libraries'</span>,<span style="color:#A020F0">'ExampleLCD/LCDAddon'</span>);</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+                    Port: 'COM5'
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'ExampleLCD/LCDAddon'}</pre></div></div></div><p>Create the LCD object, and specify the pins you configured
+on the Arduino device.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>lcd = addon(a,<span style="color:#A020F0">'ExampleLCD/LCDAddon'</span>,{<span style="color:#A020F0">'D7'</span>,<span style="color:#A020F0">'D6'</span>,<span style="color:#A020F0">'D5'</span>,<span style="color:#A020F0">'D4'</span>,<span style="color:#A020F0">'D3'</span>,<span style="color:#A020F0">'D2'</span>});</pre></div></div></div><p>Initialize the LCD.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>initializeLCD(lcd);
+</pre></div></div></div><p>Print a string to the LCD.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>printLCD(lcd,<span style="color:#A020F0">'Hello World!'</span>);</pre></div></div></div><p>If you do not see a display on your LCD, try turning the knob
+on your potentiometer to adjust the contrast. </p><p>Clear the LCD.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>clearLCD(lcd);</pre></div></div></div></div>
+</div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:07 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

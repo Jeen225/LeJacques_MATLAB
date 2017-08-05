@@ -1,0 +1,271 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Steer Two-Wheel Robot</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-09-14"><meta name="DC.source" content="RotaryEncoderSpeedExample.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Steer Two-Wheel Robot</h1><!--introduction--><p>This example shows how to use the MATLAB&reg; Support Package for Arduino&reg; Hardware to steer a two-wheel Arduino-based robot with closed-loop control.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Hardware Requirements</a></li><li><a href="#2">Hardware Setup</a></li><li><a href="#3">Create Rotary Encoder Objects</a></li><li><a href="#5">Turn On Motors</a></li><li><a href="#7">Measure Motor Speeds</a></li><li><a href="#9">Steer Robot Straight</a></li><li><a href="#13">Clean Up</a></li></ul></div><h2 id="1">Hardware Requirements</h2><div><ul><li>Arduino Due board</li><li>MinSegShield&#8482; Kit M2V3.2</li><li>9V battery pack</li></ul></div><h2 id="2">Hardware Setup</h2><p>Assemble the hardware:</p><div><ul><li>Attach the MinSegShield M2V3.2 to Arduino Due board.</li></ul></div><div><ul><li>Connect the Vcc of the battery pack to VIN port on the 2-terminal block on the MinSegShield.</li></ul></div><div><ul><li>Connect the Gnd of the battery pack to GND port on the 2-terminal block on the MinSegShield.</li></ul></div><p><img vspace="5" hspace="5" src="RotaryEncoderSpeedExample_01.png" alt=""> </p><h2 id="3">Create Rotary Encoder Objects</h2><p>Create an arduino object, and include the <tt>'RotaryEncoder'</tt> library.</p><pre class="codeinput">   a = arduino(<span class="string">'COM4'</span>,<span class="string">'Due'</span>,<span class="string">'Libraries'</span>,<span class="string">'RotaryEncoder'</span>)
+</pre><pre class="codeoutput">
+a = 
+
+  arduino with properties:
+
+                    Port: 'COM4'
+                   Board: 'Due'
+           AvailablePins: {'D2-D53', 'A0-A11'}
+               Libraries: {'RotaryEncoder'}
+
+</pre><p>Create rotary encoder objects for two encoders, specifying the connected output channel A and channel B pins. The quadrature encoder that comes with the kit has a resolution of 180 pulses per revolution.</p><pre class="codeinput">   channelA1 = <span class="string">'A8'</span>;
+   channelB1 = <span class="string">'D15'</span>;
+   channelA2 = <span class="string">'D18'</span>;
+   channelB2 = <span class="string">'D19'</span>;
+   encoder1 = rotaryEncoder(a,channelA1,channelB1,180)
+   encoder2 = rotaryEncoder(a,channelA2,channelB2,180)
+</pre><pre class="codeoutput">
+encoder1 = 
+
+  rotaryEncoder with properties:
+
+           ChannelA: 'A8'
+           ChannelB: 'D15'
+PulsesPerRevolution: 180
+
+
+encoder2 = 
+
+  rotaryEncoder with properties:
+
+           ChannelA: 'D18'
+           ChannelB: 'D19'
+PulsesPerRevolution: 180
+
+</pre><h2 id="5">Turn On Motors</h2><p>Each motor is controlled by a PWM pin for speed and a digital pin for direction. To turn on a motor, set the PWM voltage to above 0 and set the digital pin output to either 0 or 1 for forward or backward direction.</p><pre class="codeinput">  motor1SpeedPin = <span class="string">'D2'</span>;
+  motor1DirectionPin = <span class="string">'D5'</span>;
+  motor2SpeedPin = <span class="string">'D6'</span>;
+  motor2DirectionPin = <span class="string">'D8'</span>;
+</pre><p>Start rotating both motors by applying the same PWM voltage and setting the same direction.</p><pre class="codeinput">  direction = 0;
+  initialPWMVoltage = 1.5;
+  writeDigitalPin(a,motor1DirectionPin,direction);
+  writeDigitalPin(a,motor2DirectionPin,direction);
+  writePWMVoltage(a,motor1SpeedPin,initialPWMVoltage);
+  writePWMVoltage(a,motor2SpeedPin,initialPWMVoltage);
+  <span class="comment">% wait for the change to take effect on the hardware</span>
+  pause(3);
+</pre><h2 id="7">Measure Motor Speeds</h2><p>To measure one motor speed, pass in the corresponding encoder object.</p><pre class="codeinput">   rpm = readSpeed(encoder1);
+   fprintf(<span class="string">'Current motor speed is: %.2f\n'</span>,rpm);
+</pre><pre class="codeoutput">Current motor speed is: -45.83
+</pre><p>To measure both motor speeds at the same time, pass in an array of the two encoder objects.</p><pre class="codeinput">   rpms = readSpeed([encoder1,encoder2]);
+   fprintf(<span class="string">'Current motor speeds are: %.2f, %.2f\n'</span>,rpms(1),rpms(2));
+</pre><pre class="codeoutput">Current motor speeds are: -45.83, -45.83
+</pre><h2 id="9">Steer Robot Straight</h2><p>Generally, applying the same power to each wheel does not result in both motors rotating at the same speed, hence the robot does not move straight. To make it go straight, a closed-loop control algorithm is used to adjust the power applied to the two motors based on difference in their actual speeds. In this example, the proportional controller is used to help adjust the speeds. The following diagram explains the controller logic.</p><p><img vspace="5" hspace="5" src="RotaryEncoderSpeedExample_02.png" alt=""> </p><p>Define controller execution time, target speed, sampling period, and proportional gain parameter.</p><pre class="codeinput">   executionTime = 5;
+   targetSpeed = -50;
+   period = 0.1;
+   Kp = 0.002;
+</pre><p>Implement the closed-loop control algorithm to read both motor speeds and adjust one motor speed based on the difference. Make sure the shield is powered with 9V battery pack so that the motors rotate properly.</p><pre class="codeinput">   tic;
+   <span class="keyword">while</span> toc &lt; executionTime
+       rpms = readSpeed([encoder1,encoder2]);
+       diff = rpms-targetSpeed;
+       newPWMVoltages = initialPWMVoltage - diff*Kp;
+       writePWMVoltage(a,motor1SpeedPin,newPWMVoltages(1));
+       writePWMVoltage(a,motor2SpeedPin,newPWMVoltages(2));
+       pause(period);
+   <span class="keyword">end</span>
+</pre><p>Stop the motors by not applying power through the PWM pins.</p><pre class="codeinput">   writePWMVoltage(a,motor1SpeedPin,0);
+   writePWMVoltage(a,motor2SpeedPin,0);
+</pre><p>Note that the controller is running in soft real-time as it runs in MATLAB but not on the Arduino hardware. Hence, the quality of the control is affected by any other task running on your computer at the same time, such as anti-virus activities. To get hard real-time control, use the <a href="http://www.mathworks.com/hardware-support/arduino-simulink.html">Simulink Arduino Support Package</a>.</p><h2 id="13">Clean Up</h2><p>When the connection is no longer needed, clear the rotary encoder objects and arduino object.</p><pre class="codeinput">  clear <span class="string">encoder1</span> <span class="string">encoder2</span> <span class="string">a</span>
+</pre><p class="footer">Copyright 2016 The MathWorks, Inc.<br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Steer Two-Wheel Robot
+%
+% This example shows how to use the MATLAB(R) Support Package for
+% Arduino(R) Hardware to steer a two-wheel Arduino-based robot with 
+% closed-loop control.
+ 
+% Copyright 2016 The MathWorks, Inc.
+
+
+%% Hardware Requirements
+% * Arduino Due board
+% * MinSegShield(TM) Kit M2V3.2 
+% * 9V battery pack
+%
+
+%% Hardware Setup
+% 
+% Assemble the hardware:
+%
+% * Attach the MinSegShield M2V3.2 to Arduino Due board.
+%
+% * Connect the Vcc of the battery pack to VIN port on the 2-terminal block on the MinSegShield.
+%
+% * Connect the Gnd of the battery pack to GND port on the 2-terminal block on the MinSegShield.
+%
+% <<RotaryEncoderSpeedExample_01.png>>
+
+
+%% Create Rotary Encoder Objects
+% Create an arduino object, and include the |'RotaryEncoder'| library. 
+%
+   a = arduino('COM4','Due','Libraries','RotaryEncoder')
+%%
+%
+% Create rotary encoder objects for two encoders, specifying the
+% connected output channel A and channel B pins. The quadrature encoder 
+% that comes with the kit has a resolution of 180 pulses per revolution.
+%
+   channelA1 = 'A8';
+   channelB1 = 'D15';
+   channelA2 = 'D18';
+   channelB2 = 'D19';
+   encoder1 = rotaryEncoder(a,channelA1,channelB1,180)
+   encoder2 = rotaryEncoder(a,channelA2,channelB2,180)
+   
+%% Turn On Motors
+% Each motor is controlled by a PWM pin for speed and a digital pin for
+% direction. To turn on a motor, set the PWM voltage to above 0 and set the
+% digital pin output to either 0 or 1 for forward or backward direction.
+%
+  motor1SpeedPin = 'D2';
+  motor1DirectionPin = 'D5';
+  motor2SpeedPin = 'D6';
+  motor2DirectionPin = 'D8';
+%%
+% Start rotating both motors by applying the same PWM voltage and setting 
+% the same direction.
+  direction = 0;
+  initialPWMVoltage = 1.5;
+  writeDigitalPin(a,motor1DirectionPin,direction);
+  writeDigitalPin(a,motor2DirectionPin,direction);
+  writePWMVoltage(a,motor1SpeedPin,initialPWMVoltage);
+  writePWMVoltage(a,motor2SpeedPin,initialPWMVoltage);
+  % wait for the change to take effect on the hardware
+  pause(3); 
+    
+%% Measure Motor Speeds
+% To measure one motor speed, pass in the corresponding encoder object.
+%
+   rpm = readSpeed(encoder1);
+   fprintf('Current motor speed is: %.2f\n',rpm);
+%%
+% To measure both motor speeds at the same time, pass in an array of the 
+% two encoder objects.
+%
+   rpms = readSpeed([encoder1,encoder2]);
+   fprintf('Current motor speeds are: %.2f, %.2f\n',rpms(1),rpms(2));
+   
+%% Steer Robot Straight
+% Generally, applying the same power to each wheel does not result in both 
+% motors rotating at the same speed, hence the robot does not move straight. 
+% To make it go straight, a closed-loop control algorithm is used to adjust 
+% the power applied to the two motors based on difference in their actual 
+% speeds. In this example, the proportional controller is used to help 
+% adjust the speeds. The following diagram explains the controller logic.
+%
+% <<RotaryEncoderSpeedExample_02.png>>
+%
+% Define controller execution time, target speed, sampling period and 
+% proportional gain parameter.
+%
+   executionTime = 5; 
+   targetSpeed = -50;
+   period = 0.1;                             
+   Kp = 0.002;   
+%%
+% Implement the closed-loop control algorithm to read both motor speeds and 
+% adjust one motor speed based on the difference. Make sure the shield is
+% powered with 9V battery pack so that the motors rotate properly.
+%
+   tic;
+   while toc < executionTime
+       rpms = readSpeed([encoder1,encoder2]);
+       diff = rpms-targetSpeed;             
+       newPWMVoltages = initialPWMVoltage - diff*Kp;
+       writePWMVoltage(a,motor1SpeedPin,newPWMVoltages(1));
+       writePWMVoltage(a,motor2SpeedPin,newPWMVoltages(2));
+       pause(period);
+   end
+%%
+% Stop the motors by not applying power through the PWM pins.
+   writePWMVoltage(a,motor1SpeedPin,0);
+   writePWMVoltage(a,motor2SpeedPin,0);
+%%
+% Note that the controller is running in soft real-time as it runs in
+% MATLAB but not on the Arduino hardware. Hence, the quality of the control
+% is affected by any other task running on your computer at the same time, 
+% such as anti-virus activities. To get hard real-time control, use the 
+% <http://www.mathworks.com/hardware-support/arduino-simulink.html Simulink
+% Arduino Support Package>.
+
+%% Clean Up
+% When the connection is no longer needed, clear the rotary encoder objects
+% and arduino object.
+
+  clear encoder1 encoder2 a
+ 
+displayEndOfDemoMessage(mfilename) 
+ 
+
+##### SOURCE END #####
+--></body></html>

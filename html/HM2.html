@@ -1,0 +1,377 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>HM2</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-01-26"><meta name="DC.source" content="HM2.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput">P1 = [1 7 2 9 10 12 15];
+roots(P1)
+P2 = [1 9 8 9 12 15 20];
+roots(P2)
+P3 = P1+P2;
+P4 = P1-P2;
+P5 = conv(P1,P2);
+disp(P3);
+disp(P4);
+disp(P5);
+syms <span class="string">s</span>;
+P6 = (s+7)*(s+3)*(s+5)*(s+8)*(s+9)*(s+10);
+numP6=numden(P6);
+numP6=sym2poly(numP6);
+disp(numP6);
+G1 = 20*(s+2)*(s+3)*(s+6)*(s+8)<span class="keyword">...</span>
+/(s*(s+7)*(s+9)*(s+10)*(s+15));
+[numG1,denG1]=numden(G1);
+numG1=sym2poly(numG1);
+denG1=sym2poly(denG1);
+G1tf=tf(numG1,denG1)
+G1zpk=zpk(G1tf)
+G2=(s^4+17*s^3+99*s^2+223*s+140)<span class="keyword">...</span>
+    /(s^5+32*s^4+363*s^3+2092*s^2+5052*s+4320);
+[numG2,denG2]=numden(G2);
+numG2=sym2poly(numG2);
+denG2=sym2poly(denG2);
+G2tf=tf(numG2,denG2)
+G2zpk=zpk(G2tf)
+G3tf= G1tf+G2tf
+G3zpk=G1zpk+G2zpk
+G4tf= G1tf-G2tf
+G4zpk=G1zpk-G2zpk
+G5tf= G1tf*G2tf
+G5zpk=G1zpk*G2zpk
+<span class="comment">%G6 partial fraction expansion</span>
+numG6=[5 10];
+denG6=[1 8 15 0];
+[rG6,pG6]=residue(numG6,denG6)
+<span class="comment">%G7 partial fraction expansion</span>
+numG7=[5 10];
+denG7=[1 6 9 0];
+[rG7,pG7]=residue(numG7,denG7)
+<span class="comment">%G8 partial fraction expansion</span>
+numG8=[5 10];
+denG8=[1 6 34 0];
+[rG8,pG8]=residue(numG8,denG8)
+</pre><pre class="codeoutput">
+ans =
+
+  -6.8731 + 0.0000i
+   0.7632 + 1.0822i
+   0.7632 - 1.0822i
+  -1.0000 + 0.0000i
+  -0.3266 + 1.0667i
+  -0.3266 - 1.0667i
+
+
+ans =
+
+  -8.1330 + 0.0000i
+   0.6996 + 0.9880i
+   0.6996 - 0.9880i
+  -1.2183 + 0.0000i
+  -0.5240 + 1.0501i
+  -0.5240 - 1.0501i
+
+     2    16    10    18    22    27    35
+
+     0    -2    -6     0    -2    -3    -5
+
+     1    16    73    92   182   291   433   599   523   609   560   465   300
+
+  Columns 1 through 6
+
+           1          42         718        6372       30817       76530
+
+  Column 7
+
+       75600
+
+
+G1tf =
+ 
+  20 s^4 + 380 s^3 + 2480 s^2 + 6480 s + 5760
+  -------------------------------------------
+  s^5 + 41 s^4 + 613 s^3 + 3975 s^2 + 9450 s
+ 
+Continuous-time transfer function.
+
+
+G1zpk =
+ 
+  20 (s+8) (s+6) (s+3) (s+2)
+  ---------------------------
+  s (s+15) (s+10) (s+9) (s+7)
+ 
+Continuous-time zero/pole/gain model.
+
+
+G2tf =
+ 
+         s^4 + 17 s^3 + 99 s^2 + 223 s + 140
+  -------------------------------------------------
+  s^5 + 32 s^4 + 363 s^3 + 2092 s^2 + 5052 s + 4320
+ 
+Continuous-time transfer function.
+
+
+G2zpk =
+ 
+                 (s+7) (s+5) (s+4) (s+1)
+  ------------------------------------------------------
+  (s+16.79) (s^2 + 4.097s + 4.468) (s^2 + 11.12s + 57.6)
+ 
+Continuous-time zero/pole/gain model.
+
+
+G3tf =
+ 
+                                                                           
+  21 s^9 + 1078 s^8 + 23309 s^7 + 284298 s^6 + 2.156e06 s^5 + 1.043e07 s^4 
+                                                                           
+                     + 3.173e07 s^3 + 5.816e07 s^2 + 5.842e07 s + 2.488e07 
+                                                                           
+  -------------------------------------------------------------------------
+                                                                          
+  s^10 + 73 s^9 + 2288 s^8 + 40566 s^7 + 449993 s^6 + 3.239e06 s^5        
+                                                                          
+                  + 1.502e07 s^4 + 4.25e07 s^3 + 6.491e07 s^2 + 4.082e07 s
+                                                                          
+ 
+Continuous-time transfer function.
+
+
+G3zpk =
+ 
+                                                                                  
+   21 (s+16.76) (s+7.999) (s+6.003) (s^2 + 6.079s + 9.499) (s^2 + 3.033s + 2.607) 
+                                                                                  
+                                                     (s^2 + 11.46s + 59.47)       
+                                                                                  
+  ----------------------------------------------------------------------------------
+                                                                                    
+  s (s+15) (s+16.79) (s+10) (s+9) (s+7) (s^2 + 4.097s + 4.468) (s^2 + 11.12s + 57.6)
+                                                                                    
+                                                                                    
+ 
+Continuous-time zero/pole/gain model.
+
+
+G4tf =
+ 
+                                                                          
+  19 s^9 + 962 s^8 + 20491 s^7 + 246942 s^6 + 1.862e06 s^5 + 9.034e06 s^4 
+                                                                          
+                     + 2.791e07 s^3 + 5.284e07 s^2 + 5.577e07 s + 2.488e07
+                                                                          
+  ------------------------------------------------------------------------
+                                                                          
+  s^10 + 73 s^9 + 2288 s^8 + 40566 s^7 + 449993 s^6 + 3.239e06 s^5        
+                                                                          
+                  + 1.502e07 s^4 + 4.25e07 s^3 + 6.491e07 s^2 + 4.082e07 s
+                                                                          
+ 
+Continuous-time transfer function.
+
+
+G4zpk =
+ 
+                                                                                 
+     19 (s+16.81) (s+8.001) (s+5.997) (s+3.252) (s+1.496) (s^2 + 4.335s + 6.018) 
+                                                                                 
+                                                       (s^2 + 10.74s + 55.47)    
+                                                                                 
+  ----------------------------------------------------------------------------------
+                                                                                    
+  s (s+15) (s+16.79) (s+10) (s+9) (s+7) (s^2 + 4.097s + 4.468) (s^2 + 11.12s + 57.6)
+                                                                                    
+                                                                                    
+ 
+Continuous-time zero/pole/gain model.
+
+
+G5tf =
+ 
+                                                                          
+  20 s^8 + 720 s^7 + 10920 s^6 + 90720 s^5 + 448980 s^4 + 1.346e06 s^3    
+                                                                          
+                                      + 2.362e06 s^2 + 2.192e06 s + 806400
+                                                                          
+  ------------------------------------------------------------------------
+                                                                          
+  s^10 + 73 s^9 + 2288 s^8 + 40566 s^7 + 449993 s^6 + 3.239e06 s^5        
+                                                                          
+                  + 1.502e07 s^4 + 4.25e07 s^3 + 6.491e07 s^2 + 4.082e07 s
+                                                                          
+ 
+Continuous-time transfer function.
+
+
+G5zpk =
+ 
+                                                                    
+                  20 (s+8) (s+7) (s+6) (s+5) (s+4) (s+3) (s+2) (s+1)
+                                                                    
+  ----------------------------------------------------------------------------------
+                                                                                    
+  s (s+15) (s+16.79) (s+10) (s+9) (s+7) (s^2 + 4.097s + 4.468) (s^2 + 11.12s + 57.6)
+                                                                                    
+                                                                                    
+ 
+Continuous-time zero/pole/gain model.
+
+
+rG6 =
+
+   -1.5000
+    0.8333
+    0.6667
+
+
+pG6 =
+
+    -5
+    -3
+     0
+
+
+rG7 =
+
+   -1.1111
+    1.6667
+    1.1111
+
+
+pG7 =
+
+    -3
+    -3
+     0
+
+
+rG8 =
+
+  -0.1471 - 0.4118i
+  -0.1471 + 0.4118i
+   0.2941 + 0.0000i
+
+
+pG8 =
+
+  -3.0000 + 5.0000i
+  -3.0000 - 5.0000i
+   0.0000 + 0.0000i
+
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+P1 = [1 7 2 9 10 12 15];
+roots(P1)
+P2 = [1 9 8 9 12 15 20];
+roots(P2)
+P3 = P1+P2;
+P4 = P1-P2;
+P5 = conv(P1,P2);
+disp(P3);
+disp(P4);
+disp(P5);
+syms s;
+P6 = (s+7)*(s+3)*(s+5)*(s+8)*(s+9)*(s+10);
+numP6=numden(P6);
+numP6=sym2poly(numP6);         
+disp(numP6);
+G1 = 20*(s+2)*(s+3)*(s+6)*(s+8)...
+/(s*(s+7)*(s+9)*(s+10)*(s+15));
+[numG1,denG1]=numden(G1);
+numG1=sym2poly(numG1);
+denG1=sym2poly(denG1);
+G1tf=tf(numG1,denG1)
+G1zpk=zpk(G1tf)
+G2=(s^4+17*s^3+99*s^2+223*s+140)...
+    /(s^5+32*s^4+363*s^3+2092*s^2+5052*s+4320);
+[numG2,denG2]=numden(G2);
+numG2=sym2poly(numG2);
+denG2=sym2poly(denG2);
+G2tf=tf(numG2,denG2)
+G2zpk=zpk(G2tf)
+G3tf= G1tf+G2tf
+G3zpk=G1zpk+G2zpk
+G4tf= G1tf-G2tf
+G4zpk=G1zpk-G2zpk
+G5tf= G1tf*G2tf
+G5zpk=G1zpk*G2zpk
+%G6 partial fraction expansion 
+numG6=[5 10];
+denG6=[1 8 15 0];
+[rG6,pG6]=residue(numG6,denG6)
+%G7 partial fraction expansion 
+numG7=[5 10];
+denG7=[1 6 9 0];
+[rG7,pG7]=residue(numG7,denG7)
+%G8 partial fraction expansion 
+numG8=[5 10];
+denG8=[1 6 34 0];
+[rG8,pG8]=residue(numG8,denG8)
+
+
+##### SOURCE END #####
+--></body></html>

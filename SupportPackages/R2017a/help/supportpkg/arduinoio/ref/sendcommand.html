@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>sendCommand</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css">
+<meta name="chunktype" content="refpage">
+<meta name="refentity" itemprop="refentity" content="function:sendCommand"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="fcn">
+<meta name="infotype" itemprop="infotype" content="ref/function" />
+
+<meta name="description" itemprop="description" content="This MATLAB function sends a command to the Command Handler implemented by your add-on library." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../custom-arduino-libraries.html" itemprop="url"><span itemprop="title">Custom Arduino Libraries</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+</li>
+<li><a href="../functionlist.html" itemprop="url">Functions</a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">sendCommand</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<li><a href="#zmw57dd0e10132" class="intrnllnk">Syntax</a></li>
+<li><a href="#description" class="intrnllnk">Description</a></li>
+<li><a href="#examples" class="intrnllnk">Examples</a><ul>
+<li><a href="#buvhw2t-2" class="intrnllnk">Send a Command to HelloWorld Add-On</a></li>
+</ul>
+</li><li><a href="#butiky7-2" class="intrnllnk">Input Arguments</a><ul>
+<li><a href="#input_argument_d0e10198" class="intrnllnk">obj</a></li>
+<li><a href="#input_argument_d0e10221" class="intrnllnk">libName</a></li>
+<li><a href="#input_argument_d0e10242" class="intrnllnk">commandID</a></li>
+<li><a href="#input_argument_d0e10263" class="intrnllnk">dataIn</a></li>
+<li><a href="#input_argument_d0e10290" class="intrnllnk">timeout</a></li>
+</ul>
+</li><li><a href="#butiky7-3" class="intrnllnk">Output Arguments</a><ul>
+<li><a href="#output_argument_d0e10325" class="intrnllnk">dataOut</a></li>
+<li><a href="#output_argument_d0e10350" class="intrnllnk">payloadSize</a></li>
+</ul>
+</li><li><a href="#butiky7_seealso" class="intrnllnk">See Also</a></li>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref"><span id="butiky7" class="anchor_target"></span><div class="clearfix"></div><div itemprop="content"><h1 class="r2017a" itemprop="title">sendCommand</h1><!-- SYNCHTO: _buiu8i8.html --><div class="doc_topic_desc"><div class="purpose_container"><p itemprop="purpose">Send message to Arduino device from MATLAB</p><div class="switch"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true1">collapse all in page</a></div></div></div></div>
+<div class="ref_sect"><h2 id="zmw57dd0e10132">Syntax</h2><div class="syntax_signature"><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis">[dataOut,payloadSize]
+= sendCommand(obj,libName,commandID,dataIn)</code></div><div class="code_responsive"><code class="synopsis">[dataOut,payloadSize]
+= sendCommand(obj,libName,commandID,dataIn,timeout)</code></div></div></div></div><div class="clear"></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><span id="butiky7-1" class="anchor_target"></span><h2 id="description">Description</h2><div class="descriptions"><div class="description_module"><div class="description_element"><p class="syntax_example"><a href="sendcommand.html#buvhw2t-2" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code>[<a href="#outputarg_dataOut" class="intrnllnk"><code>dataOut</code></a>,<a href="#outputarg_payloadSize" class="intrnllnk"><code>payloadSize</code></a>]
+= sendCommand(<a href="#inputarg_obj" class="intrnllnk"><code>obj</code></a>,<a href="#inputarg_libName" class="intrnllnk"><code>libName</code></a>,<a href="#inputarg_commandID" class="intrnllnk"><code>commandID</code></a>,<a href="#inputarg_dataIn" class="intrnllnk"><code>dataIn</code></a>)</code></span> sends
+a command to the Command Handler implemented by your add-on library. </p><p><span itemprop="syntax"><code>[<a href="#outputarg_dataOut" class="intrnllnk"><code>dataOut</code></a>,<a href="#outputarg_payloadSize" class="intrnllnk"><code>payloadSize</code></a>]
+= sendCommand(<a href="#inputarg_obj" class="intrnllnk"><code>obj</code></a>,<a href="#inputarg_libName" class="intrnllnk"><code>libName</code></a>,<a href="#inputarg_commandID" class="intrnllnk"><code>commandID</code></a>,<a href="#inputarg_dataIn" class="intrnllnk"><code>dataIn</code></a>,<a href="#inputarg_timeout" class="intrnllnk"><code>timeout</code></a>)</code></span> sends
+a command to the Command Handler implemented by your add-on library
+with a user-specified acknowledgement timeout.</p></div></div></div></div><div class="clear"></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><div class="clearfix"></div><div class="examples"><h2 id="examples">Examples</h2><div class="expandableContent" id="expandableExamples"><p class="switch"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true3">collapse all</a></p><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_buvhw2t-2"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_buvhw2t-2" data-target="#expand_panel_body_buvhw2t-2" aria-controls="expand_panel_body_buvhw2t-2" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="buvhw2t-2">Send a Command to HelloWorld Add-On<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_buvhw2t-2" aria-labelledby="expand_panel_heading_buvhw2t-2" class="panel-collapse collapse in"><div class="panel-body">
+<p>Create a command, and use <code>sendCommand</code> to
+send it to the Arduino<sup>&#x00AE;</sup> hardware.</p>
+<p>Get the parent Arduino object.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>arduinoObj = obj.Parent;</pre></div></div></div><p>Define the library name.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>libName = <span style="color:#A020F0">'ExampleAddon/HelloWorld'</span>;</pre></div></div></div><p>Define the command ID, and create data to send.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>commandID = obj.READ_COMMAND;
+dataIn = [];</pre></div></div></div><p>Send the message.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[dataOut, payloadSize] = sendCommand(obj, libName, commandID, dataIn);</pre></div></div></div><p>Show the result in the MATLAB<sup>&#x00AE;</sup> command line.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>disp(char(dataOut))</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Hello WOrld!</pre></div></div></div></div></div></div></div></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="butiky7-2">Input Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="butiky7-2_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e10198" data-target="#expand_panel_body_input_argument_d0e10198" aria-controls="expand_panel_body_input_argument_d0e10198" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_obj" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e10198"><code>obj</code> &#8212; Arduino object<br><span class="add_font_color_general remove_bold"><span class="example_desc">object</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e10198" aria-labelledby="expand_panel_heading_input_argument_d0e10198" class="panel-collapse collapse in"><div class="panel-body">
+<p>Handle to the Arduino object stored in the private Parent property
+of the custom class.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e10221" data-target="#expand_panel_body_input_argument_d0e10221" aria-controls="expand_panel_body_input_argument_d0e10221" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_libName" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e10221"><code>libName</code> &#8212; Name of library<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e10221" aria-labelledby="expand_panel_heading_input_argument_d0e10221" class="panel-collapse collapse in"><div class="panel-body">
+<p>Name of library defined in the custom class, specified as a
+character vector.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e10242" data-target="#expand_panel_body_input_argument_d0e10242" aria-controls="expand_panel_body_input_argument_d0e10242" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_commandID" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e10242"><code>commandID</code> &#8212; Unique command identifier<br><span class="add_font_color_general remove_bold"><span class="example_desc">numeric</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e10242" aria-labelledby="expand_panel_heading_input_argument_d0e10242" class="panel-collapse collapse in"><div class="panel-body">
+<p>Unique command identifier, specified as a number. This number
+must match the ID in the command handler defined in your custom library
+header file.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e10263" data-target="#expand_panel_body_input_argument_d0e10263" aria-controls="expand_panel_body_input_argument_d0e10263" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_dataIn" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e10263"><code>dataIn</code> &#8212; Array of integers<br><span class="add_font_color_general remove_bold"><span class="example_desc">vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e10263" aria-labelledby="expand_panel_heading_input_argument_d0e10263" class="panel-collapse collapse in"><div class="panel-body">
+<p>An array of integers, specified as a vector. The size of <code>dataIn</code> cannot
+be more than 720 bytes for Arduino board types such as Mega 2560,
+Mega ADK and Due. For all other supported boards, the limit is 150
+bytes.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e10290" data-target="#expand_panel_body_input_argument_d0e10290" aria-controls="expand_panel_body_input_argument_d0e10290" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_timeout" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e10290"><code>timeout</code> &#8212; timeout duration<br><span class="add_font_color_general remove_bold"><span class="example_desc">5 sec (default) | numeric</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e10290" aria-labelledby="expand_panel_heading_input_argument_d0e10290" class="panel-collapse collapse in"><div class="panel-body">
+<p>Timeout duration, specified as a numeric value that is the number
+of seconds to wait for an acknowledgement from the server code. Specifying
+a timeout duration blocks the MATLAB command line until the <code>timeout</code> duration
+is met. The default is 5 seconds if timeout is not specified.</p>
+</div></div></div></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="butiky7-3">Output Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="butiky7-3_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_d0e10325" data-target="#expand_panel_body_output_argument_d0e10325" aria-controls="expand_panel_body_output_argument_d0e10325" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_dataOut" class="anchor_target"></span><h3 class="panel-title" id="output_argument_d0e10325"><code>dataOut</code> &#8212; Data returned<br><span class="add_font_color_general remove_bold"><span class="example_desc">vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_d0e10325" aria-labelledby="expand_panel_heading_output_argument_d0e10325" class="panel-collapse collapse in"><div class="panel-body">
+<p>Data returned, as an array of doubles</p>
+<p class="datatypelist"><strong>Data Types: </strong><code>uint8</code></p></div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_d0e10350" data-target="#expand_panel_body_output_argument_d0e10350" aria-controls="expand_panel_body_output_argument_d0e10350" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_payloadSize" class="anchor_target"></span><h3 class="panel-title" id="output_argument_d0e10350"><code>payloadSize</code> &#8212; Length of output returned<br><span class="add_font_color_general remove_bold"><span class="example_desc">numeric</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_d0e10350" aria-labelledby="expand_panel_heading_output_argument_d0e10350" class="panel-collapse collapse in"><div class="panel-body">
+<p>Length of the output returned by <code>sendCommand</code>,
+as a number.</p>
+</div></div></div></div></div></div><div class="clearfix"></div><div class="ref_sect"><h2 id="butiky7_seealso">See Also</h2><div class="'examples_container'"><h3 class="remove_border">Topics</h3>
+<div itemprop="content">
+<ul class="list-unstyled"><li><a href="../../../supportpkg/arduinoio/ug/custom-arduino-add-on-device-library-and-code.html">Create Custom Arduino Add-On
+Device, Library, or Code</a></li><li><a href="../../../supportpkg/arduinoio/ug/create-code-to-write-a-string.html">Create HelloWorld Add-On</a></li><li><a href="../../../supportpkg/arduinoio/ug/add-lcd-library.html">Create LCD Add-on</a></li><li><a href="../../../supportpkg/arduinoio/ug/custom-library-concepts.html">Custom Add-On Library Concepts</a></li></ul></div>
+</div></div><div class="release_introduced"><h4>Introduced in R2015b</h4></div>
+</div></div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:45 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

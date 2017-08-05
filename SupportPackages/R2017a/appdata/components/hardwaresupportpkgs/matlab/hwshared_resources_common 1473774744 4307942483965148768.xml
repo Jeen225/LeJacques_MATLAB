@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>hardwaresupportpkgs/matlab/hwshared_resources</componentBaseName>
+    <componentFileName>hardwaresupportpkgs/matlab/hwshared_resources_common_1473774744.zip</componentFileName>
+    <componentName>hardwaresupportpkgs/matlab/hwshared_resources_common</componentName>
+    <componentVersion>1473774744</componentVersion>
+    <instrset>0</instrset>
+    <locale />
+    <locationId>1</locationId>
+    <numFiles>1</numFiles>
+    <platformList>
+      <platform>glnxa64</platform>
+      <platform>maci64</platform>
+      <platform>win64</platform>
+    </platformList>
+    <releaseFamily>R2017a</releaseFamily>
+    <size>786</size>
+    <type />
+    <uncompressedBytes>1144</uncompressedBytes>
+  </component>
+</componentData>
+

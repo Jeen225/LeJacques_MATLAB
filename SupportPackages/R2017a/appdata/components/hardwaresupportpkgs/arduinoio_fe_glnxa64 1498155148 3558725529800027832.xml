@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>hardwaresupportpkgs/arduinoio_fe</componentBaseName>
+    <componentFileName>hardwaresupportpkgs/arduinoio_fe_glnxa64_1498155148.zip</componentFileName>
+    <componentName>hardwaresupportpkgs/arduinoio_fe_glnxa64</componentName>
+    <componentVersion>1498155148</componentVersion>
+    <instrset>0</instrset>
+    <locale />
+    <locationId>1</locationId>
+    <numFiles>14</numFiles>
+    <platformList>
+      <platform>glnxa64</platform>
+    </platformList>
+    <releaseFamily>R2017a</releaseFamily>
+    <size>831259</size>
+    <type />
+    <uncompressedBytes>840334</uncompressedBytes>
+  </component>
+</componentData>
+

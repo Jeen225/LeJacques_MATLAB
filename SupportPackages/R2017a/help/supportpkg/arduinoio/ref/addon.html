@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>addon</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css">
+<meta name="chunktype" content="refpage">
+<meta name="refentity" itemprop="refentity" content="function:addon"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="fcn">
+<meta name="infotype" itemprop="infotype" content="ref/function" />
+
+<meta name="description" itemprop="description" content="This MATLAB function creates an add-on connection to Adafruit Motor Shield V2 connected to the Arduino hardware a." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../adafruit-motor-shield-v2.html" itemprop="url"><span itemprop="title">Adafruit Motor Shield V2</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+</li>
+<li><a href="../functionlist.html" itemprop="url">Functions</a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">addon</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<li><a href="#zmw57dd0e400" class="intrnllnk">Syntax</a></li>
+<li><a href="#description" class="intrnllnk">Description</a></li>
+<li><a href="#bulf0au-3" class="intrnllnk">Input Arguments</a><ul>
+<li><a href="#input_argument_d0e482" class="intrnllnk">a</a></li>
+</ul>
+</li><li><a href="#namevaluepairs" class="intrnllnk">Name-Value Pair Arguments</a></li>
+<li><a href="#bvmin9q" class="intrnllnk">Properties</a><ul>
+<li><a href="#property_d0e562" class="intrnllnk">I2CAddress</a></li>
+<li><a href="#property_d0e606" class="intrnllnk">PWMFrequency</a></li>
+<li><a href="#property_d0e640" class="intrnllnk">Pins</a></li>
+</ul>
+</li><li><a href="#bulhgat-1" class="intrnllnk">Output Arguments</a><ul>
+<li><a href="#output_argument_d0e681" class="intrnllnk">motor</a></li>
+</ul>
+</li><li><a href="#examples" class="intrnllnk">Examples</a><ul>
+<li><a href="#bvom7vd-2" class="intrnllnk">Create a Motorshieldv2 Object</a></li>
+<li><a href="#bvom7vd-3" class="intrnllnk">Specify I2C Address and PWM Frequency</a></li>
+</ul>
+</li><li><a href="#bulf0au-1_seealso" class="intrnllnk">See Also</a></li>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref"><span id="bulf0au-1" class="anchor_target"></span><div class="clearfix"></div><div itemprop="content"><h1 class="r2017a" itemprop="title">addon</h1><!-- SYNCHTO: _buiu8i8.html --><div class="doc_topic_desc"><div class="purpose_container"><p itemprop="purpose">Create add-on device connection to Adafruit Motor
+Shield V2</p><div class="switch"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true1">collapse all in page</a></div></div></div></div>
+<div class="ref_sect"><h2 id="zmw57dd0e400">Syntax</h2><div class="syntax_signature"><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis">motor = addon(a,'Adafruit\MotorshieldV2')</code></div><div class="code_responsive"><code class="synopsis">motor = addon(a,'Adafruit\MotorshieldV2',Name,Value)</code></div></div></div></div><div class="clear"></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><span id="bulf0au-2" class="anchor_target"></span><h2 id="description">Description</h2><div class="descriptions"><div class="description_module"><div class="description_element"><p class="syntax_example"><a href="addon.html#bvom7vd-2" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_motor" class="intrnllnk"><code>motor</code></a> = addon(<a href="#inputarg_a" class="intrnllnk"><code>a</code></a>,'Adafruit\MotorshieldV2')</code></span> creates
+an add-on connection to Adafruit<sup>&#x00AE;</sup> Motor Shield V2 connected to
+the Arduino<sup>&#x00AE;</sup> hardware <code>a</code>. Also, you can create
+additional add-on libraries such as <a href="https://www.mathworks.com/matlabcentral/fileexchange/57171-l3g-add-on-library-for-arduino" target="_top">L3G</a>, <a href="https://www.mathworks.com/matlabcentral/fileexchange/57173-lsm303-add-on-library-for-arduino" target="_top">LSM303</a>, <a href="https://www.mathworks.com/matlabcentral/fileexchange/57897-1-wire-add-on-library-for-arduino" target="_top">1&#8211;Wire</a>, <a href="https://www.mathworks.com/matlabcentral/fileexchange/57898-hc-sr04-add-on-library-for-arduino" target="_top">HC-SR04</a>,
+and <a href="https://www.mathworks.com/matlabcentral/fileexchange/57170-capacitive-sensor-add-on-library-for-arduino" target="_top">Capacitive
+sensor</a>. Furthermore, you can also create your own custom Arduino add-on
+libraries as mentioned in <a href="../../../supportpkg/arduinoio/ug/custom-arduino-add-on-device-library-and-code.html">Create Custom Arduino Add-On
+Device, Library, or Code</a>.</p></div></div><div class="description_element"><p class="syntax_example"><a href="addon.html#bvom7vd-3" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_motor" class="intrnllnk"><code>motor</code></a> = addon(<a href="#inputarg_a" class="intrnllnk"><code>a</code></a>,'Adafruit\MotorshieldV2',<a href="#namevaluepairarguments" class="intrnllnk"><code>Name,Value</code></a>)</code></span> creates
+an add-on connection to Adafruit Motor Shield V2 with additional
+options specified by one or more <code>Name,Value</code> pair
+arguments.</p></div></div></div></div><div class="clear"></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="bulf0au-3">Input Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="bulf0au-3_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e482" data-target="#expand_panel_body_input_argument_d0e482" aria-controls="expand_panel_body_input_argument_d0e482" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_a" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e482"><code>a</code> &#8212; Arduino hardware connection<br><span class="add_font_color_general remove_bold"><span class="example_desc">arduino object</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e482" aria-labelledby="expand_panel_heading_input_argument_d0e482" class="panel-collapse collapse in"><div class="panel-body">
+<p>Arduino hardware connection created using <code>arduino</code>,
+specified as an arduino object.</p>
+</div></div></div><span id="namevaluepairarguments" class="anchor_target"></span><h3 id="namevaluepairs" class="bottom_ruled">Name-Value Pair Arguments</h3><span id="bulf0au-4" class="anchor_target"></span><div class="namevaluecontainer"><p>Specify optional comma-separated pairs of <code>Name,Value</code> arguments.
+<code>Name</code> is the argument
+name and <code>Value</code> is the corresponding
+value. <code>Name</code> must appear
+inside single quotes (<code>' '</code>).
+You can specify several name and value pair
+arguments in any order as <code>Name1,Value1,...,NameN,ValueN</code>.</p></div><p>Use <code>Name,Value</code> arguments to specify parameter
+initial values and additional <a href="addon.html#bvmin9q" class="intrnllnk">Properties</a> of <code>addon</code> function
+during model creation. For example, <code>motor = addon(a, &#8216;Adafruit\MotorshieldV2',&#8216;I2CAddress',
+&#8216;0x07' &#8216;pwmfrequency', 3200);</code> creates
+an adafruit motor shield connection with the <code>I2CAddress</code> property
+set to <code>0x07</code> and the <code>PWMFrequency</code> property
+set to a value of 3200.</p></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="bvmin9q">Properties</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="bvmin9q_panel-group" role="tablist" aria-multiselectable="true"><p>Adafruit motor shield object properties include:</p><div class="panel panel-default " itemscope="" itemprop="property" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/PropertyReference"><div role="tab" data-toggle="collapse" id="expand_panel_heading_property_d0e562" data-target="#expand_panel_body_property_d0e562" aria-controls="expand_panel_body_property_d0e562" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="prop_I2CAddress" class="anchor_target"></span><h3 class="panel-title" id="property_d0e562"><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/ReferenceEntity" itemprop="refentityobj"><code itemprop="name" id="propname_I2CAddress">I2CAddress</code></span> &#8212; <span itemprop="purpose">I2C device address</span><br><span class="add_font_color_general remove_bold"><span class="example_desc">90 (0x60) (default) | numeric | character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_property_d0e562" aria-labelledby="expand_panel_heading_property_d0e562" class="panel-collapse collapse in"><div class="panel-body">
+<p>I2C address, specified as the comma-separated pair consisting
+of <code>'I2CAddress'</code> and its value. The value can either
+a hexadecimal value or a scalar integer. <code>I2CAddress</code> is
+a read-only property whose value is specified only during adafruit
+motor shield object creation.</p>
+<p class="description_valueexample"><strong>Example: </strong><code>shield = addon(a,'Adafruit\MotorshieldV2','I2CAddress','0x61');</code> sets
+the I2C address to <code>97</code> or <code>0x61</code>.</p>
+</div></div></div><div class="panel panel-default " itemscope="" itemprop="property" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/PropertyReference"><div role="tab" data-toggle="collapse" id="expand_panel_heading_property_d0e606" data-target="#expand_panel_body_property_d0e606" aria-controls="expand_panel_body_property_d0e606" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="prop_PWMFrequency" class="anchor_target"></span><h3 class="panel-title" id="property_d0e606"><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/ReferenceEntity" itemprop="refentityobj"><code itemprop="name" id="propname_PWMFrequency">PWMFrequency</code></span> &#8212; <span itemprop="purpose">PWM frequency of Adafruit Motor Shield V2</span><br><span class="add_font_color_general remove_bold"><span class="example_desc">1600 (default) | numeric</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_property_d0e606" aria-labelledby="expand_panel_heading_property_d0e606" class="panel-collapse collapse in"><div class="panel-body">
+<p>PWM frequency of Adafruit Motor Shield V2, specified as the
+comma-separated pair consisting of <code>'PWMFrequency'</code> and
+a number. <code>PWMFrequency</code> is a read-only property
+whose value is specified only during adafruit motor shield object
+creation.</p>
+<p class="description_valueexample"><strong>Example: </strong><code>shield = addon(a,'Adafruit\MotorshieldV2','PWMFrequency',3200);</code> sets
+the PWM frequency to 3200.</p></div></div></div><div class="panel panel-default " itemscope="" itemprop="property" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/PropertyReference"><div role="tab" data-toggle="collapse" id="expand_panel_heading_property_d0e640" data-target="#expand_panel_body_property_d0e640" aria-controls="expand_panel_body_property_d0e640" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="prop_Pins" class="anchor_target"></span><h3 class="panel-title" id="property_d0e640"><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/ReferenceEntity" itemprop="refentityobj"><code itemprop="name" id="propname_Pins">Pins</code></span> &#8212; <span itemprop="purpose">Arduino pins used by Adafruit Motor Shield V2</span><br><span class="add_font_color_general remove_bold"><span class="example_desc">96  (default) | numeric | character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_property_d0e640" aria-labelledby="expand_panel_heading_property_d0e640" class="panel-collapse collapse in"><div class="panel-body">
+<p>Arduino pins used by Adafruit Motor Shield V2, represented in
+alpha-numeric values. <code>Pins</code> is a read-only property.</p>
+</div></div></div><p>You can set the properties of the adafruit motor shield object
+only during its object creation. After creating the adafruit motor
+shield object, you can use dot notation to access its property values.
+For example, <div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>motor = addon(a,<span style="color:#A020F0">'Adafruit\MotorshieldV2'</span>);
+motor.I2CAddress</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>ans = 
+96</pre></div></div></div></p></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="bulhgat-1">Output Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="bulhgat-1_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_d0e681" data-target="#expand_panel_body_output_argument_d0e681" aria-controls="expand_panel_body_output_argument_d0e681" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_motor" class="anchor_target"></span><h3 class="panel-title" id="output_argument_d0e681"><code>motor</code> &#8212; Adafruit Motor Shield V2 connection<br><span class="add_font_color_general remove_bold"><span class="example_desc">adafruit motor shield object</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_d0e681" aria-labelledby="expand_panel_heading_output_argument_d0e681" class="panel-collapse collapse in"><div class="panel-body">
+<p>Adafruit Motor Shield V2 connection, returned as an adafruit
+motor shield object.</p>
+</div></div></div></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><div class="clearfix"></div><div class="examples"><h2 id="examples">Examples</h2><div class="expandableContent" id="expandableExamples"><p class="switch"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true3">collapse all</a></p><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvom7vd-2"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvom7vd-2" data-target="#expand_panel_body_bvom7vd-2" aria-controls="expand_panel_body_bvom7vd-2" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvom7vd-2">Create a Motorshieldv2 Object<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvom7vd-2" aria-labelledby="expand_panel_heading_bvom7vd-2" class="panel-collapse collapse in"><div class="panel-body"><p>Connect to Arduino hardware, and create an add-on
+connection to an Adafruit Motor Shield.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'COM7'</span>,<span style="color:#A020F0">'Uno'</span>,<span style="color:#A020F0">'Libraries'</span>,<span style="color:#A020F0">'Adafruit/MotorShieldV2'</span>);
+motor = addon(a,<span style="color:#A020F0">'Adafruit\MotorshieldV2'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>motor = 
+
+motorshieldv2 with properties:
+
+            Pins: A4(SDA), A5(SCL)
+      I2CAddress: 96 (0x60)
+    PWMFrequency: 1600 (Hz)
+</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvom7vd-3"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvom7vd-3" data-target="#expand_panel_body_bvom7vd-3" aria-controls="expand_panel_body_bvom7vd-3" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvom7vd-3">Specify I2C Address and PWM Frequency<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvom7vd-3" aria-labelledby="expand_panel_heading_bvom7vd-3" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to Arduino hardware, and create
+an add-on connection to an Adafruit Motor Shield with an I2C
+address of <code>0x61</code> and PWM frequency of <code>1200</code>.</p>
+<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'COM7'</span>,<span style="color:#A020F0">'Uno'</span>,<span style="color:#A020F0">'Libraries'</span>,<span style="color:#A020F0">'Adafruit/MotorShieldV2'</span>);
+motor = addon(a,<span style="color:#A020F0">'Adafruit\MotorshieldV2'</span>,<span style="color:#A020F0">'I2CAddress'</span>,<span style="color:#A020F0">'0x61'</span>, <span style="color:#A020F0">'PWMFrequency'</span>,1200)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>motor = 
+
+motorshieldv2 with properties:
+
+            Pins: A4(SDA), A5(SCL)
+      I2CAddress: 97 (0x61)
+    PWMFrequency: 1200 (Hz)
+
+</pre></div></div></div></div></div></div></div></div></div></div><div class="clearfix"></div><div class="ref_sect"><h2 id="bulf0au-1_seealso">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="arduino.html"><span itemprop="name"><code>arduino</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="dcmotor.html"><span itemprop="name"><code>dcmotor</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="servo_addon.html"><span itemprop="name"><code>servo</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="stepper.html"><span itemprop="name"><code>stepper</code></span></a></span></p><div class="'examples_container'"><h3 class="remove_border">Topics</h3>
+<div itemprop="content">
+<ul class="list-unstyled"><li><a href="../../../supportpkg/arduinoio/ug/control-motors-using-adafruit-motor-shield-v2.html">Control Motors Using Adafruit&reg; Motor Shield V2</a></li></ul></div>
+</div></div><div class="release_introduced"><h4>Introduced in R2014b</h4></div>
+</div></div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:45 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

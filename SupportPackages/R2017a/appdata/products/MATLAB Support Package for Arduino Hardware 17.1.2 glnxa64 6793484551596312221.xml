@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productAdditionalComps>
+  <dependsOn>
+    <component>
+      <name>3p/adafruitmotorshieldv2.instrset_glnxa64</name>
+      <instrset>1</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+      </platformList>
+      <version>1498154408</version>
+    </component>
+    <component>
+      <name>3p/arduinoide.instrset_glnxa64</name>
+      <instrset>1</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+      </platformList>
+      <version>1498672467</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/arduinoio_fe_glnxa64</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+      </platformList>
+      <version>1498155148</version>
+    </component>
+  </dependsOn>
+  <isControllingProduct>false</isControllingProduct>
+  <licenseAgreementType>ASLA</licenseAgreementType>
+  <platform>glnxa64</platform>
+  <productBaseCode>ML_ARDUINO</productBaseCode>
+  <productName>MATLAB Support Package for Arduino Hardware</productName>
+  <productNumber>2089</productNumber>
+  <productVersion>17.1.2</productVersion>
+  <releaseDescription>R2017a</releaseDescription>
+  <releaseFamily>R2017a</releaseFamily>
+</productAdditionalComps>
+

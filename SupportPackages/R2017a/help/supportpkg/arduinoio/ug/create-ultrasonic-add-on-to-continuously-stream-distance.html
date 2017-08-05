@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Create Ultrasonic Add-On to Continuously Stream Distance Values</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="ug">
+<meta name="infotype" itemprop="infotype" content="ex" />
+
+<meta name="description" itemprop="description" content="Create your custom MATLAB Arduino ultrasonic add-on library to stream distance values." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../custom-arduino-libraries.html" itemprop="url"><span itemprop="title">Custom Arduino Libraries</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Create Ultrasonic Add-On to Continuously Stream Distance Values</a></li>
+<li class="nav_scrollspy_title">On this page</li>
+
+<li><a href="#bvh0zrh-2" class="intrnllnk">Create Folder Structure</a></li>
+<li><a href="#bvh0zrh-3" class="intrnllnk">Create C++ Code</a></li>
+<li><a href="#bvh0zrh-4" class="intrnllnk">Create MATLAB Wrapper</a></li>
+<li><a href="#bvh0zrh-5" class="intrnllnk">Register Add-On</a></li>
+<li><a href="#bvh0zrh-6" class="intrnllnk">Run MATLAB Code</a></li>
+</li><li><a href="#zmw57dd0e4544" class="intrnllnk">See Also</a></li>
+<li><a href="#zmw57dd0e4567" class="intrnllnk">Related Examples</a></li>
+<li><a href="#zmw57dd0e4573" class="intrnllnk">More About</a>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-topic">
+<span id="bvh0zrh-1" class="anchor_target"></span><h2 class="title r2017a" itemprop="title content" id="bvh0zrh-1">Create Ultrasonic Add-On to Continuously Stream Distance Values</h2><div itemprop="content">
+<p>This example shows how to create an ultrasonic
+add-on library that continuously streams distance to an object from
+a HC-SR04 sensor using MATLAB<sup>&#x00AE;</sup> and C++. In this example, you use
+the ultrasonic HC-SR04 sensor to continuously stream the distance
+values measured in the last 1 second.</p>
+</div><ul><li><p><a class="intrnllnk" href="#bvh0zrh-2">Create Folder Structure</a></p></li><li><p><a class="intrnllnk" href="#bvh0zrh-3">Create C++ Code</a></p></li><li><p><a class="intrnllnk" href="#bvh0zrh-4">Create MATLAB Wrapper</a></p></li><li><p><a class="intrnllnk" href="#bvh0zrh-5">Register Add-On</a></p></li><li><p><a class="intrnllnk" href="#bvh0zrh-6">Run MATLAB Code</a></p></li></ul><div class="clearfix"></div><div itemprop="content"><span id="bvh0zrh-2" class="anchor_target"></span><h3 class="title" id="bvh0zrh-2">Create Folder Structure</h3><p>Create a folder to contain all the files for your custom library,
+and add it to the MATLAB path.
+For this example:</p><ol type="1"><li><p>Add a folder named <code>+arduinoioaddons</code> in
+your working folder, for example <code>C:\Work</code>.</p></li><li><p>In <code>+arduinoioaddons</code>, add a <code>+JRodrigoTech</code> subfolder
+to contain your MATLAB class
+file.</p></li><li><p>In the <code>+JRodrigoTech</code> subfolder,
+add a <code>src</code> folder to contain your <code>C++</code> header
+file.</p></li></ol></div><div class="clearfix"></div><div itemprop="content"><span id="bvh0zrh-3" class="anchor_target"></span><h3 class="title" id="bvh0zrh-3">Create C++ Code</h3><p>Create a C++ header file named <code>UltrasonicDistanceStreamer.h</code>,
+and save it in the <code>+arduinoioaddons/+JRodrigoTech/src</code> folder.
+This file wraps methods to expose to the Arduino<sup>&#x00AE;</sup> library.</p><ol type="1"><li><p>Include header files, including <code>LibraryBase.h</code> and
+the third-party header file <code>Ultrasonic.h</code> that the
+add-on library depends on. Download the third-party <code><a href="https://github.com/JRodrigoTech/Ultrasonic-HC-SR04/archive/master.zip" target="_top">Ultrasonic</a></code> library,
+unzip it and move it to the <code>libraries</code> folder inside
+your Arduino sketchbook folder.</p><div class="code_responsive"><pre class="programlisting">#include "LibraryBase.h"
+#include "Ultrasonic.h"</pre></div></li><li><p>Declare global variables that the C++ header file <code>LibraryBase.h</code> uses. <div class="code_responsive"><pre class="programlisting">unsigned long lastSampleTime;
+uint16_t circularArray[100];
+int deltaT;
+int circularArrayIx;</pre></div>Use pins D9 and D8 on the Arduino board
+as the trigger and echo pins, respectively, in the constructor of
+the ultrasonic object as shown.<div class="code_responsive"><pre class="programlisting">int TrigPin = 9;
+int EchoPin = 8;
+Ultrasonic mySensor(TrigPin,EchoPin);</pre></div></p></li><li><p>Create an add-on class that inherits from the <code>LibraryBase</code> class,
+which defines all the necessary interfaces.</p></li><li><p>In the constructor, define the library name, and register
+the library to the server.</p><div class="code_responsive"><pre class="programlisting">class UltrasonicDistanceStreamer : public LibraryBase
+{
+    public:
+        UltrasonicDistanceStreamer(MWArduinoClass&amp; a)
+        {
+            libName = "JRodrigoTech/UltrasonicDistanceStreamer";
+            a.registerLibrary(this);
+        }
+</pre></div><p>The custom class and library names must have this format:</p><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>shield(vendor)/device(library)</pre></div></div></div></li><li><p>Override the <code>setup</code> method to initialize
+the time, array, and index variables.<div class="code_responsive"><pre class="programlisting">void setup()
+        {
+        // The distance values update every 10 ms and the sampling rate is 100 Samples/s
+	deltaT = 10;
+        circularArrayIx = 0;
+        lastSampleTime = 0;
+        // Zero initialize the circular Array
+        circularArray[100] = {0};
+        }</pre></div></p></li><li><p>Override the <code>loop</code> method to repeatedly
+update the <code>circularArray</code> with most recent distance
+values in definite time intervals <code>deltaT</code>.</p><div class="code_responsive"><pre class="programlisting">void loop()
+        {
+            long now = millis();
+            // The circular array updates every 10 ms
+            if(now-lastSampleTime &gt; deltaT)
+            {
+                circularArray[circularArrayIx] = mySensor.Ranging(1);
+                if (circularArrayIx &gt; 99)
+                {
+                    circularArrayIx = 0;
+                }
+                else
+                    ++circularArrayIx;
+                lastSampleTime = millis();
+            }
+        }</pre></div></li><li><p>Override the command handler to create a command that
+returns the distance values measured in the last 1 second from the <code>circularArray</code>.</p><div class="code_responsive"><pre class="programlisting">public:
+	void commandHandler(byte cmdID, byte* dataIn, unsigned int payloadSize)
+    {
+        switch(cmdID)
+        {
+            case 0x01: 
+            {
+                byte result [200];
+                int byteIx = 0;
+                // Convert the array into byte array and send the values to MATLAB
+                for (int ix = 0; ix &lt; 100; ++ix)
+                {
+                    result[byteIx] = (circularArray[ix] &amp; 0x000000ff);
+                    result[byteIx+1] = (circularArray[ix] &amp; 0x0000ff00) &gt;&gt; 8;
+                    byteIx = byteIx + 2;
+                }
+                sendResponseMsg(cmdID,result,200);
+                break;
+            }
+            default:
+            {
+                // Do nothing
+            }
+        }
+    }
+};</pre></div><p>The command ID must match the operation that you add to the MATLAB add-on
+library. For more information, see <a href="custom-library-concepts.html#bu73xge">Command Handler</a>.</p></li></ol></div><div class="clearfix"></div><div itemprop="content"><span id="bvh0zrh-4" class="anchor_target"></span><h3 class="title" id="bvh0zrh-4">Create MATLAB Wrapper</h3><p>Create an <code>UltrasonicDistanceStreamer.m</code> wrapper
+class file, and save it in the <code>C:\Work\+arduinoioaddons\+JRodrigoTech</code> folder.</p><ol type="1"><li><p>Create a MATLAB class <code>UltrasonicDistanceStreamer.m</code> that
+inherits from <code>arduinoio.LibraryBase</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">classdef</span> UltrasonicDistanceStreamer &lt; arduinoio.LibraryBase
+<span style="color:#0000FF">...</span>
+<span style="color:#0000FF">end</span></pre></div></div></div></li><li><p>Define the command ID for read operation command that
+is sent to the server on the board.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">classdef</span> UltrasonicDistanceStreamer &lt; arduinoio.LibraryBase
+    <span style="color:#0000FF">...</span>
+    <span style="color:#0000FF">properties</span>(Access = private,Constant = true)
+        READ_COMMAND = hex2dec(<span style="color:#A020F0">'01'</span>);
+    <span style="color:#0000FF">end</span>
+<span style="color:#0000FF">...</span>
+<span style="color:#0000FF">end</span></pre></div></div></div></li><li><p>Override constant properties in the class to specify
+the location of source header files.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">classdef</span> UltrasonicDistanceStreamer &lt; arduinoio.LibraryBase
+    <span style="color:#0000FF">...</span>
+    <span style="color:#0000FF">properties</span>(Access = protected,Constant = true)
+        LibraryName = <span style="color:#A020F0">'JRodrigoTech/UltrasonicDistanceStreamer'</span>;
+        DependentLibraries = {};
+        ArduinoLibraryHeaderFiles = {<span style="color:#A020F0">'Ultrasonic/Ultrasonic.h'</span>};
+        CppHeaderFile = fullfile(arduinoio.FilePath(mfilename(<span style="color:#A020F0">'fullpath'</span>)),<span style="color:#A020F0">'src'</span>,<span style="color:#A020F0">'UltrasonicDistanceStreamer.h'</span>);
+        CppClassName = <span style="color:#A020F0">'UltrasonicDistanceStreamer'</span>;
+    <span style="color:#0000FF">end</span>
+    <span style="color:#0000FF">...</span>
+<span style="color:#0000FF">end</span></pre></div></div></div></li><li><p>Set the <code>ResourceOwner</code> property
+for the class.<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">classdef</span> UltrasonicDistanceStreamer &lt; arduinoio.LibraryBase
+    <span style="color:#0000FF">...</span>
+    <span style="color:#0000FF">properties</span>(Access = private)
+        ResourceOwner = <span style="color:#A020F0">'UltrasonicDistanceStreamer'</span>;
+	<span style="color:#0000FF">end</span>
+    <span style="color:#0000FF">...</span>
+<span style="color:#0000FF">end</span></pre></div></div></div></p></li><li><p>Define the class constructor, set the methods to call
+the class constructor, and set the <code>Parent</code> and <code>Pins</code> properties
+of the <code>UltrasonicDistanceStreamer</code> object. Also,
+use the <code>configurePinResource</code> function to set the
+resource owner and mode for both the trigger pin D9 and echo pin D8.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">classdef</span> UltrasonicDistanceStreamer &lt; arduinoio.LibraryBase
+    <span style="color:#0000FF">...</span>
+    <span style="color:#0000FF">methods</span>
+        <span style="color:#0000FF">function</span> obj = UltrasonicDistanceStreamer(parentObj)
+            obj.Parent = parentObj;
+            obj.Pins = {<span style="color:#A020F0">'D9'</span>,<span style="color:#A020F0">'D8'</span>};
+            configurePinResource(obj.Parent,char(obj.Pins(1)),obj.ResourceOwner,<span style="color:#A020F0">'DigitalOutput'</span>);
+            configurePinResource(obj.Parent,char(obj.Pins(2)),obj.ResourceOwner,<span style="color:#A020F0">'DigitalInput'</span>);
+        <span style="color:#0000FF">end</span> 
+        <span style="color:#0000FF">...</span>
+    <span style="color:#0000FF">end</span>  
+<span style="color:#0000FF">end</span>             </pre></div></div></div></li><li><p>Define the method to read the data values, and plot
+the values measured in the last 1 second.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">classdef</span> UltrasonicDistanceStreamer &lt; arduinoio.LibraryBase
+    <span style="color:#0000FF">...</span>
+        <span style="color:#0000FF">methods</span>
+        <span style="color:#0000FF">...</span>
+        <span style="color:#0000FF">function</span> plotStream(obj)
+            cmdID = obj.READ_COMMAND;
+            inputs = [];
+            distancebyteArray = sendCommand(obj,obj.LibraryName,cmdID,inputs);
+            <span style="color:#0000FF">for</span> i = 1: 100
+                byteIx = i*2;
+                distance(i) = typecast(uint8(distancebyteArray((byteIx-1):byteIx)),<span style="color:#A020F0">'int16'</span>);
+            <span style="color:#0000FF">end</span>
+            figure;
+            plot(distance);
+            title(<span style="color:#A020F0">'Distance to the object'</span>);
+            xlabel(<span style="color:#A020F0">'Last 100 samples'</span>);
+            ylabel(<span style="color:#A020F0">'Distance [cm]'</span>);    
+        <span style="color:#0000FF">end</span>
+
+<span style="color:#0000FF">end</span></pre></div></div></div></li></ol><p>For help using MATLAB,
+see <a href="../../../matlab/object-oriented-design-with-matlab.html">Object-Oriented Design with MATLAB</a> (MATLAB).</p></div><div class="clearfix"></div><div itemprop="content"><span id="bvh0zrh-5" class="anchor_target"></span><h3 class="title" id="bvh0zrh-5">Register Add-On</h3><p>To register your add-on library, add the working folder that
+contains <code>+arduinoioaddons</code> to the MATLAB path:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>addpath <span style="color:#A020F0">C:\Work</span></pre></div></div></div><p>Run the command <code>listArduinoLibraries</code>, and
+make sure the <code>JRodrigoTech/UltrasonicDistanceStreamer</code> library
+is available.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>listArduinoLibraries</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>listArduinoLibraries
+
+ans = 
+
+    'Adafruit/MotorShieldV2'
+    'I2C'
+    'JRodrigoTech/UltrasonicDistanceStreamer'
+    'SPI'
+    'Servo'   </pre></div></div></div><ul><span id="zmw57dd0e4478" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Tip:</b>&nbsp;&nbsp;
+
+
+If you do not see your add-on library in the list, see <a href="../../../supportpkg/arduinoio/ug/custom-arduino-library-issues.html">Custom Arduino Library Issues</a>.</p></td></tr></table></ul></div><div class="clearfix"></div><div itemprop="content"><span id="bvh0zrh-6" class="anchor_target"></span><h3 class="title" id="bvh0zrh-6">Run MATLAB Code</h3>
+<p>Read the distance values measured in the last
+1 second from the Arduino library <code>commandHandler</code> into MATLAB.</p>
+<p>Create an <code>arduino</code> object, and include
+the new library. Set <code>ForceBuild</code> to <code>true</code> to
+reprogram the board.</p><div class="code_responsive"><pre class="programlisting">arduinoObj = arduino('COM3','Uno','Libraries','JRodrigoTech/UltrasonicDistanceStreamer','ForceBuild',true);</pre></div><p>Create an add-on object using the <code>JRodrigoTech/UltrasonicDistanceStreamer</code> library.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>dev = addon(arduinoObj,<span style="color:#A020F0">'JRodrigoTech/UltrasonicDistanceStreamer'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>dev = 
+
+  UltrasonicDistanceStreamer with properties:
+
+    Pins: {'D9' 'D8'}</pre></div></div></div><p>Execute the command on the server, and plot the measured
+distance values in the last 1 second in MATLAB.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>plotStream(dev);
+</pre></div></div></div><p>
+<img src="ultrasonicdistance.png" height="420" width="560" alt=""></p><p>This plot shows that the distance to the object from the sensor
+has been continuously changing, which indicates that either the object
+or the sensor is in motion.</p></div>
+<h2 id="zmw57dd0e4544">See Also</h2><h3>Functions</h3><ul class="list-unstyled margined_10"><li><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="../../../supportpkg/arduinoio/ref/addon.html"><span itemprop="name"><code>addon</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="../../../supportpkg/arduinoio/ref/arduino.html"><span itemprop="name"><code>arduino</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="../../../supportpkg/arduinoio/ref/configurepinresource.html"><span itemprop="name"><code>configurePinResource</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="../../../supportpkg/arduinoio/ref/listarduinolibraries.html"><span itemprop="name"><code>listArduinoLibraries</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="../../../supportpkg/arduinoio/ref/sendcommand.html"><span itemprop="name"><code>sendCommand</code></span></a></span></li></ul><h3>Classes</h3><ul class="list-unstyled margined_10"><li><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="../../../supportpkg/arduinoio/ref/arduinoio.librarybase-class.html"><span itemprop="name"><code>arduinoio.LibraryBase</code></span></a></span></li></ul>
+<h2 id="zmw57dd0e4567">Related Examples</h2><ul><li><a href="create-code-to-write-a-string.html">Create HelloWorld Add-On</a></li><li><a href="add-lcd-library.html">Create LCD Add-on</a></li></ul>
+<h2 id="zmw57dd0e4573">More About</h2><ul><li><a href="custom-library-concepts.html">Custom Add-On Library Concepts</a></li></ul>
+
+</div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:07 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>hardwaresupportpkgs/matlab/arduinoio_examples</componentBaseName>
+    <componentFileName>hardwaresupportpkgs/matlab/arduinoio_examples_common_1498154578.zip</componentFileName>
+    <componentName>hardwaresupportpkgs/matlab/arduinoio_examples_common</componentName>
+    <componentVersion>1498154578</componentVersion>
+    <instrset>0</instrset>
+    <locale />
+    <locationId>1</locationId>
+    <numFiles>42</numFiles>
+    <platformList>
+      <platform>glnxa64</platform>
+      <platform>maci64</platform>
+      <platform>win64</platform>
+    </platformList>
+    <releaseFamily>R2017a</releaseFamily>
+    <size>895099</size>
+    <type />
+    <uncompressedBytes>1006045</uncompressedBytes>
+  </component>
+</componentData>
+

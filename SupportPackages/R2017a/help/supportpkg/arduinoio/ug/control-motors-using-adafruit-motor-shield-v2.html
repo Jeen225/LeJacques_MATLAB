@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Control Motors Using Adafruit&reg; Motor Shield V2</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="ug">
+<meta name="infotype" itemprop="infotype" content="ex" />
+
+<meta name="description" itemprop="description" content="Use Adafruit motor shield v2 to control servo motors, DC motors, and stepper motors." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../adafruit-motor-shield-v2.html" itemprop="url"><span itemprop="title">Adafruit Motor Shield V2</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Control Motors Using Adafruit&reg; Motor Shield V2</a></li>
+<li class="nav_scrollspy_title">On this page</li>
+
+<li><a href="#zmw57dd0e2193" class="intrnllnk">Hardware setup</a></li>
+<li><a href="#zmw57dd0e2213" class="intrnllnk">Create shield object</a></li>
+<li><a href="#zmw57dd0e2238" class="intrnllnk">Control servo motor on the shield</a></li>
+<li><a href="#zmw57dd0e2257" class="intrnllnk">Control DC motor on the shield</a></li>
+<li><a href="#zmw57dd0e2278" class="intrnllnk">Control stepper motor on the shield</a></li>
+<li><a href="#zmw57dd0e2292" class="intrnllnk">Clean up</a></li>
+
+
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-topic">
+<span id="bumvvs4-1" class="anchor_target"></span><h2 class="title r2017a" itemprop="title content" id="bumvvs4-1">Control Motors Using Adafruit&reg; Motor Shield V2</h2><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="arduinoio_product-AdafruitMotorShieldV2Example"/><meta itemprop="exampletitle" content="Control Motors Using Adafruit&reg; Motor Shield V2"/></div><span id="AdafruitMotorShieldV2Example" class="anchor_target"></span><div itemprop="content">
+
+<p>This example shows how to use the MATLAB&reg; Support Package for Arduino&reg; Hardware to control servo motors, DC motors and stepper motors using Adafruit motor shield v2.</p>
+
+</div><div class="clearfix"></div><div itemprop="content"><span id="zmw57dd0e2192" class="anchor_target"></span><h3 class="title" id="zmw57dd0e2193">Hardware setup<span id="AdafruitMotorShieldV2Example-1" class="anchor_target"></span></h3><p>1. Attach Adafruit motor shield to your Arduino hardware.</p><p>2. Connect an FS5106B motor to port 1, labeled 'Servo 1' on the shield.</p><p>3. Connect a DC toy/hobby motor to port 1, labeled 'M1' on the shield.</p><p>4. Connect a six-wire Portescap stepper motor to port 1, labeled 'M1' and 'M2' on the shield. Connect the two middle wires on the stepper motor to the center of the port to ground them together. If you are using four-wire or five-wire stepper motor, check your hardware specs for appropriate connections of each wire.</p><p>5. Connect a battery pack that has three AA batteries to the DC jack, labeled with Power and remove the jumper on pins labeled Vin Jumper. This step is optional if your stepper motor does not require a high power supply.</p><p>
+<img src="../../../examples/arduinoio_product/win64/AdafruitMotorShieldV2Example_01.png" alt=""></p><p>
+ </p><span id="zmw57dd0e2212" class="anchor_target"></span><h3 class="title" id="zmw57dd0e2213">Create shield object<span id="AdafruitMotorShieldV2Example-2" class="anchor_target"></span></h3><p>By default, the Adafruit\MotorShieldV2 library is not included in the server code on the board. Create an arduino object and include the Adafruit\MotorShieldV2 library to the hardware.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>   a = arduino(<span style="color:#A020F0">'COM25'</span>, <span style="color:#A020F0">'Uno'</span>, <span style="color:#A020F0">'Libraries'</span>, <span style="color:#A020F0">'Adafruit\MotorShieldV2'</span>)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Updating server code on Arduino Uno (COM25). Please wait.
+
+a = 
+
+  arduino with properties:
+
+                    Port: 'COM25'
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'Adafruit/MotorShieldV2', 'I2C', 'Servo'}
+
+</pre></div></div></div><p>Create an add-on shield object by specifying the required library name parameter:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>   shield = addon(a, <span style="color:#A020F0">'Adafruit\MotorShieldV2'</span>)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>
+shield = 
+
+  motorshieldv2 with properties:
+
+            Pins: A4(SDA), A5(SCL)
+      I2CAddress: 96 (0x60)
+    PWMFrequency: 1600 (Hz)
+
+</pre></div></div></div><p>The I2CAddress of a shield is set to <code>0x60</code> by default if not specified. Search for available I2C addresses on bus 0 to specify a different address.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>   addrs = scanI2CBus(a,0)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>
+addrs = 
+
+    '0x60'
+    '0x70'
+
+</pre></div></div></div><span id="zmw57dd0e2237" class="anchor_target"></span><h3 class="title" id="zmw57dd0e2238">Control servo motor on the shield<span id="AdafruitMotorShieldV2Example-5" class="anchor_target"></span></h3><p>There are two servo motor ports available on each shield. To create a servo motor object at port 1.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>   s = servo(shield, 1)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>
+s = 
+
+  Servo with properties:
+
+         MotorNumber: 1
+                Pins: 10
+    MinPulseDuration: 5.44e-04 (s)
+    MaxPulseDuration: 2.40e-03 (s)
+
+</pre></div></div></div><p>Set the position of the servo motor's shaft to its maximum position.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>   writePosition(s, 1);
+</pre></div></div></div><p>See <a href="../../../supportpkg/arduinoio/examples/control-servo-motors.html">Control Servo Motors</a> example to learn how to use a servo object.</p><span id="zmw57dd0e2256" class="anchor_target"></span><h3 class="title" id="zmw57dd0e2257">Control DC motor on the shield<span id="AdafruitMotorShieldV2Example-8" class="anchor_target"></span></h3><p>There are four DC motor ports available on each shield. Create a DC motor object at port 2.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>   dcm = dcmotor(shield, 2)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>
+dcm = 
+
+  dcmotorv2 with properties:
+
+    MotorNumber: 2 (M2)
+          Speed: 0.00           
+      IsRunning: 0              
+
+</pre></div></div></div><p>First, change the motor speed to <code>0.2</code>. The sign of the value indicates the direction of the motor rotation that also depends on the wiring of the motor.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>   dcm.Speed = 0.2;
+</pre></div></div></div><p>Start the motor and change the speed while it is running. Stop the motor when you are done.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>   start(dcm);
+   dcm.Speed = 0.3;
+   pause(2);
+   dcm.Speed = -0.2;
+   pause(2);
+   stop(dcm);
+</pre></div></div></div><span id="zmw57dd0e2277" class="anchor_target"></span><h3 class="title" id="zmw57dd0e2278">Control stepper motor on the shield<span id="AdafruitMotorShieldV2Example-11" class="anchor_target"></span></h3><p>There are two stepper motor ports available on each shield. To create a stepper motor object at port 2 with 200 steps per revolution.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>   sm = stepper(shield, 2, 200)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>
+sm = 
+
+  stepper with properties:
+
+           MotorNumber: 2              
+    StepsPerRevolution: 200            
+                   RPM: 0              
+              StepType: Single ('Single', 'Double', 'Interleave', 'Microstep')
+
+</pre></div></div></div><p>Set the motor's RPM, e.g revolutions per minute, to 10 and move or step the motor 200 steps in one direction and then another 200 steps in the reverse direction.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>   sm.RPM = 10;
+   move(sm, 200);
+   pause(2);
+   move(sm, -200);
+   release(sm);
+</pre></div></div></div><span id="zmw57dd0e2291" class="anchor_target"></span><h3 class="title" id="zmw57dd0e2292">Clean up<span id="AdafruitMotorShieldV2Example-13" class="anchor_target"></span></h3><p>Once the connection is no longer needed, clear the associated object.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>  clear <span style="color:#A020F0">s</span> <span style="color:#A020F0">dcm</span> <span style="color:#A020F0">sm</span> <span style="color:#A020F0">shield</span> <span style="color:#A020F0">a</span>
+</pre></div></div></div></div>
+</div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:07 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

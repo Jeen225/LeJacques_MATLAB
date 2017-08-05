@@ -1,0 +1,430 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>arduino</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css">
+<meta name="chunktype" content="refpage">
+<meta name="refentity" itemprop="refentity" content="function:arduino"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="fcn">
+<meta name="infotype" itemprop="infotype" content="ref/function" />
+
+<meta name="description" itemprop="description" content="This MATLAB function recreates the last successful connection to the Arduino hardware." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../setup-and-configuration.html" itemprop="url"><span itemprop="title">Setup and Configuration</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+</li>
+<li><a href="../functionlist.html" itemprop="url">Functions</a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">arduino</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<li><a href="#zmw57dd0e789" class="intrnllnk">Syntax</a></li>
+<li><a href="#description" class="intrnllnk">Description</a></li>
+<li><a href="#examples" class="intrnllnk">Examples</a><ul>
+<li><a href="#bvdi3xn" class="intrnllnk">Connect to Arduino Hardware</a></li>
+<li><a href="#buhppoc-2" class="intrnllnk">Specify Port Number and Arduino Board Type</a></li>
+<li><a href="#bvsiono" class="intrnllnk">Connect to Arduino Board Using Adafruit EZ-Link</a></li>
+<li><a href="#bvolo18-1" class="intrnllnk">Specify Bluetooth Address and Arduino Board Type</a></li>
+<li><a href="#bvolo59-1" class="intrnllnk">Specify Bluetooth Device Name and Arduino Board Type</a></li>
+<li><a href="#bvolnpo" class="intrnllnk">Specify IP Address to Connect to an Arduino MKR1000 Board</a></li>
+<li><a href="#bvolnsw-1" class="intrnllnk">Specify IP Address and TCP/IP Port to Connect to an Arduino MKR1000 Board</a></li>
+<li><a href="#bul3xuh-1" class="intrnllnk">Connect to an Arduino on a Mac</a></li>
+<li><a href="#buimn9p-1" class="intrnllnk">Specify an Arduino Library</a></li>
+<li><a href="#bvhc0or" class="intrnllnk">Limit the Arduino Environment to Use Only Two Libraries</a></li>
+</ul>
+</li><li><a href="#buhpnk9-2" class="intrnllnk">Input Arguments</a><ul>
+<li><a href="#input_argument_d0e964" class="intrnllnk">port</a></li>
+<li><a href="#input_argument_d0e989" class="intrnllnk">board</a></li>
+<li><a href="#input_argument_d0e1029" class="intrnllnk">btaddress</a></li>
+<li><a href="#input_argument_d0e1065" class="intrnllnk">btname</a></li>
+<li><a href="#input_argument_d0e1106" class="intrnllnk">ipaddress</a></li>
+<li><a href="#input_argument_d0e1140" class="intrnllnk">tcpipport</a></li>
+</ul>
+</li><li><a href="#namevaluepairs" class="intrnllnk">Name-Value Pair Arguments</a><ul>
+<li><a href="#input_argument_d0e1206" class="intrnllnk">'Libraries'</a></li>
+<li><a href="#input_argument_d0e1287" class="intrnllnk">'ForceBuild'</a></li>
+<li><a href="#input_argument_d0e1366" class="intrnllnk">'TraceOn'</a></li>
+</ul>
+</li><li><a href="#buhpnk9-3" class="intrnllnk">Output Arguments</a><ul>
+<li><a href="#output_argument_d0e1428" class="intrnllnk">a</a></li>
+</ul>
+</li><li><a href="#buhpnk9_seealso" class="intrnllnk">See Also</a></li>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref"><span id="buhpnk9" class="anchor_target"></span><div class="clearfix"></div><div itemprop="content"><h1 class="r2017a" itemprop="title">arduino</h1><!-- SYNCHTO: _buiu8i8.html --><div class="doc_topic_desc"><div class="purpose_container"><p itemprop="purpose">Connect to Arduino hardware</p><div class="switch"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true1">collapse all in page</a></div></div></div></div>
+<div class="ref_sect"><h2 id="zmw57dd0e789">Syntax</h2><div class="syntax_signature"><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis">a = arduino</code></div><div class="code_responsive"><code class="synopsis">a = arduino(port,board)</code></div><div class="code_responsive"><code class="synopsis">a = arduino(<span class="argument_placeholder">___</span>,Name,Value)</code></div><div class="code_responsive"><code class="synopsis">a = arduino(btaddress,board)</code></div><div class="code_responsive"><code class="synopsis">a = arduino(btname,board)</code></div><div class="code_responsive"><code class="synopsis">a = arduino(ipaddress,'MKR1000')</code></div><div class="code_responsive"><code class="synopsis">a = arduino(ipaddress,'MKR1000',tcpipport)</code></div></div></div></div><div class="clear"></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><span id="buhpnk9-1" class="anchor_target"></span><h2 id="description">Description</h2><div class="descriptions"><div class="description_module"><div class="description_element"><p class="syntax_example"><a href="arduino.html#bvdi3xn" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_a" class="intrnllnk"><code>a</code></a> = arduino</code></span> recreates
+the last successful connection to the Arduino<sup>&#x00AE;</sup> hardware. If that
+connection fails, it creates a connection to the first official Arduino hardware
+connected to your host computer via USB. </p></div></div><div class="description_element"><p class="syntax_example"><a href="arduino.html#buhppoc-2" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_a" class="intrnllnk"><code>a</code></a> = arduino(<a href="#inputarg_port" class="intrnllnk"><code>port</code></a>,<a href="#inputarg_board" class="intrnllnk"><code>board</code></a>)</code></span> creates
+a connection to Arduino hardware on the specified serial port.
+The serial port can be either a USB serial port or the Adafruit<sup>&#x00AE;</sup> EZ-Link Bluetooth<sup>&#x00AE;</sup> serial
+port depending on how you have configured the Arduino hardware.</p></div></div><div class="description_element"><p class="syntax_example"><a href="arduino.html#buimn9p-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_a" class="intrnllnk"><code>a</code></a> = arduino(<span class="argument_placeholder">___</span>,<a href="#namevaluepairarguments" class="intrnllnk"><code>Name,Value</code></a>)</code></span> creates
+a connection with additional options specified by one or more <code>Name,Value</code> pair
+arguments.</p></div></div><div class="description_element"><p class="syntax_example"><a href="arduino.html#bvolo18-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_a" class="intrnllnk"><code>a</code></a> = arduino(<a href="#inputarg_btaddress" class="intrnllnk"><code>btaddress</code></a>,<a href="#inputarg_board" class="intrnllnk"><code>board</code></a>)</code></span> uses
+the Bluetooth address of the HC-05 or HC-06 device to create
+a connection to Arduino hardware.</p></div></div><div class="description_element"><p class="syntax_example"><a href="arduino.html#bvolo59-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_a" class="intrnllnk"><code>a</code></a> = arduino(<a href="#inputarg_btname" class="intrnllnk"><code>btname</code></a>,<a href="#inputarg_board" class="intrnllnk"><code>board</code></a>)</code></span> uses
+the name of the HC-05 or HC-06 Bluetooth device to create a connection
+to the Arduino hardware.</p></div></div><div class="description_element"><p class="syntax_example"><a href="arduino.html#bvolnpo" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_a" class="intrnllnk"><code>a</code></a> = arduino(<a href="#inputarg_ipaddress" class="intrnllnk"><code>ipaddress</code></a>,'MKR1000')</code></span> creates
+a connection to the host computer at the specified IP address of the Arduino MKR1000
+board.</p></div></div><div class="description_element"><p class="syntax_example"><a href="arduino.html#bvolnsw-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code><a href="#outputarg_a" class="intrnllnk"><code>a</code></a> = arduino(<a href="#inputarg_ipaddress" class="intrnllnk"><code>ipaddress</code></a>,'MKR1000',<a href="#inputarg_tcpipport" class="intrnllnk"><code>tcpipport</code></a>)</code></span> creates
+a connection to the host computer at the specified IP address and
+TCP/IP remote port of the Arduino MKR1000 board.</p></div></div></div></div><div class="clear"></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><div class="clearfix"></div><div class="examples"><h2 id="examples">Examples</h2><div class="expandableContent" id="expandableExamples"><p class="switch"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true3">collapse all</a></p><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvdi3xn"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvdi3xn" data-target="#expand_panel_body_bvdi3xn" aria-controls="expand_panel_body_bvdi3xn" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvdi3xn">Connect to Arduino Hardware<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvdi3xn" aria-labelledby="expand_panel_heading_bvdi3xn" class="panel-collapse collapse in"><div class="panel-body">
+<p>Autodetect an Arduino Uno.</p>
+<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino()</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+                    Port: 'COM3'
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'Adafruit/MotorShieldV2', 'I2C', 'SPI', 'Servo'}
+</pre></div></div></div><ul><span id="zmw57dd0e1479" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+The auto-detection of Arduino boards interfaced with FTDI
+chips is not supported.</p></td></tr></table></ul></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_buhppoc-2"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_buhppoc-2" data-target="#expand_panel_body_buhppoc-2" aria-controls="expand_panel_body_buhppoc-2" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="buhppoc-2">Specify Port Number and Arduino Board Type<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_buhppoc-2" aria-labelledby="expand_panel_heading_buhppoc-2" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to an Arduino Uno on port 3.</p>
+<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'COM3'</span>,<span style="color:#A020F0">'Uno'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+                    Port: 'COM3'
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'Adafruit/MotorShieldV2', 'I2C', 'SPI', 'Servo'}
+</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvsiono"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvsiono" data-target="#expand_panel_body_bvsiono" aria-controls="expand_panel_body_bvsiono" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvsiono">Connect to Arduino Board Using Adafruit EZ-Link<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvsiono" aria-labelledby="expand_panel_heading_bvsiono" class="panel-collapse collapse in"><div class="panel-body">
+<p>Specify the serial port of Adafruit EZ-Link
+to connect to an Arduino Uno.</p>
+<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'COM6'</span>,<span style="color:#A020F0">'Uno'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+                    Port: 'COM6'
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'I2C'}
+</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvolo18-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvolo18-1" data-target="#expand_panel_body_bvolo18-1" aria-controls="expand_panel_body_bvolo18-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvolo18-1">Specify Bluetooth Address and Arduino Board Type<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvolo18-1" aria-labelledby="expand_panel_heading_bvolo18-1" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to an Arduino Uno using Bluetooth.</p>
+<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'btspp://98D331FB3B77'</span>,<span style="color:#A020F0">'Uno'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+           DeviceAddress: 'btspp://98D331FB3B77'
+                 Channel: 1
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'Adafruit/MotorShieldV2', 'I2C', 'SPI', 'Servo'}
+</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvolo59-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvolo59-1" data-target="#expand_panel_body_bvolo59-1" aria-controls="expand_panel_body_bvolo59-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvolo59-1">Specify Bluetooth Device Name and Arduino Board Type<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvolo59-1" aria-labelledby="expand_panel_heading_bvolo59-1" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to an Arduino Uno using Bluetooth.</p>
+<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'HC-06'</span>,<span style="color:#A020F0">'Uno'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+           DeviceAddress: 'HC-06'
+                 Channel: 1
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'Adafruit/MotorShieldV2', 'I2C', 'SPI', 'Servo'}
+</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvolnpo"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvolnpo" data-target="#expand_panel_body_bvolnpo" aria-controls="expand_panel_body_bvolnpo" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvolnpo">Specify IP Address to Connect to an Arduino MKR1000 Board<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvolnpo" aria-labelledby="expand_panel_heading_bvolnpo" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to an Arduino MKR1000 board using
+WiFi.</p>
+<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'172.31.172.240'</span>,<span style="color:#A020F0">'MKR1000'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+           DeviceAddress: '172.31.172.240'
+                    Port: 9500
+                   Board: 'MKR1000'
+           AvailablePins: {'D0-D14', 'A0-A6'}
+               Libraries: {'I2C', 'SPI', 'Servo'}</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvolnsw-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvolnsw-1" data-target="#expand_panel_body_bvolnsw-1" aria-controls="expand_panel_body_bvolnsw-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvolnsw-1">Specify IP Address and TCP/IP Port to Connect to an Arduino MKR1000 Board<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvolnsw-1" aria-labelledby="expand_panel_heading_bvolnsw-1" class="panel-collapse collapse in"><div class="panel-body"><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'172.31.172.240'</span>,<span style="color:#A020F0">'MKR1000'</span>,9500)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+           DeviceAddress: '172.31.172.240'
+                    Port: 9500
+                   Board: 'MKR1000'
+           AvailablePins: {'D0-D14', 'A0-A6'}
+               Libraries: {'I2C', 'SPI', 'Servo'}</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bul3xuh-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bul3xuh-1" data-target="#expand_panel_body_bul3xuh-1" aria-controls="expand_panel_body_bul3xuh-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bul3xuh-1">Connect to an Arduino on a Mac<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bul3xuh-1" aria-labelledby="expand_panel_heading_bul3xuh-1" class="panel-collapse collapse in"><div class="panel-body">
+<p>Connect to an Arduino Uno on port <code>/dev/tty.usbmodem1421</code>.</p>
+<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'/dev/tty.usbmodem1421'</span>,<span style="color:#A020F0">'Uno'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+                    Port: 'dev/tty.usbmodem1421'
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'Adafruit/MotorShieldV2', 'I2C', 'SPI', 'Servo'}
+</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_buimn9p-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_buimn9p-1" data-target="#expand_panel_body_buimn9p-1" aria-controls="expand_panel_body_buimn9p-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="buimn9p-1">Specify an Arduino Library<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_buimn9p-1" aria-labelledby="expand_panel_heading_buimn9p-1" class="panel-collapse collapse in"><div class="panel-body">
+<p>Limit the Arduino environment to use only
+an I2C library.</p>
+<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'COM3'</span>,<span style="color:#A020F0">'Uno'</span>,<span style="color:#A020F0">'Libraries'</span>,<span style="color:#A020F0">'I2C'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+                    Port: 'COM3'
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'I2C'}</pre></div></div></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvhc0or"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvhc0or" data-target="#expand_panel_body_bvhc0or" aria-controls="expand_panel_body_bvhc0or" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvhc0or">Limit the Arduino Environment to Use Only Two Libraries<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvhc0or" aria-labelledby="expand_panel_heading_bvhc0or" class="panel-collapse collapse in"><div class="panel-body">
+<p>Limit the Arduino environment to use only
+the servo and shift register libraries.</p>
+<div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = arduino(<span style="color:#A020F0">'COM3'</span>,<span style="color:#A020F0">'Uno'</span>,<span style="color:#A020F0">'Libraries'</span>,{<span style="color:#A020F0">'Servo'</span>,<span style="color:#A020F0">'ShiftRegister'</span>})</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>a = 
+
+  arduino with properties:
+
+                    Port: 'COM3'
+                   Board: 'Uno'
+           AvailablePins: {'D2-D13', 'A0-A5'}
+               Libraries: {'Servo','ShiftRegister'}</pre></div></div></div></div></div></div></div></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="buhpnk9-2">Input Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="buhpnk9-2_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e964" data-target="#expand_panel_body_input_argument_d0e964" aria-controls="expand_panel_body_input_argument_d0e964" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_port" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e964"><code>port</code> &#8212; Hardware port<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e964" aria-labelledby="expand_panel_heading_input_argument_d0e964" class="panel-collapse collapse in"><div class="panel-body">
+<p>Hardware port, specified as a character vector.</p>
+<p class="description_valueexample"><strong>Example: </strong><code>a = arduino('COM5')</code></p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e989" data-target="#expand_panel_body_input_argument_d0e989" aria-controls="expand_panel_body_input_argument_d0e989" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_board" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e989"><code>board</code> &#8212; Name of Arduino enabled board<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e989" aria-labelledby="expand_panel_heading_input_argument_d0e989" class="panel-collapse collapse in"><div class="panel-body">
+<p>Name of the Arduino enabled board, specified as a character
+vector. See the <a href="http://www.mathworks.com/hardware-support/arduino-matlab.html" target="_top">list
+of supported boards</a>.</p>
+<p class="description_valueexample"><strong>Example: </strong></p>
+<p><code>a = arduino('COM5','Uno')</code> creates a connection
+to an Arduino Uno board using port 5. </p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e1029" data-target="#expand_panel_body_input_argument_d0e1029" aria-controls="expand_panel_body_input_argument_d0e1029" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_btaddress" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e1029"><code>btaddress</code> &#8212; Bluetooth address of the HC-05 or HC-06 device<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e1029" aria-labelledby="expand_panel_heading_input_argument_d0e1029" class="panel-collapse collapse in"><div class="panel-body">
+<p>Bluetooth address of the HC-05 or HC-06 device, specified as
+a character vector of the form <code>btspp://</code> followed
+by the 12 digit hexadecimal value of the address.</p>
+<p class="description_valueexample"><strong>Example: </strong></p>
+<p><code>a = arduino('btspp://98d331fb3b77','Uno')</code> creates
+a Bluetooth connection to an Arduino Uno board. </p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e1065" data-target="#expand_panel_body_input_argument_d0e1065" aria-controls="expand_panel_body_input_argument_d0e1065" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_btname" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e1065"><code>btname</code> &#8212; Bluetooth name of the device<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e1065" aria-labelledby="expand_panel_heading_input_argument_d0e1065" class="panel-collapse collapse in"><div class="panel-body">
+<p>Bluetooth name of the device, specified as a character
+vector.</p>
+<p class="description_valueexample"><strong>Example: </strong></p>
+<p><code>a = arduino('HC-05','Uno')</code> creates a wireless Bluetooth connection
+to an Arduino Uno board that uses an HC-05 Bluetooth device. </p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e1106" data-target="#expand_panel_body_input_argument_d0e1106" aria-controls="expand_panel_body_input_argument_d0e1106" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_ipaddress" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e1106"><code>ipaddress</code> &#8212; IP address of the Arduino MKR1000 board<br><span class="add_font_color_general remove_bold"><span class="example_desc">character vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e1106" aria-labelledby="expand_panel_heading_input_argument_d0e1106" class="panel-collapse collapse in"><div class="panel-body">
+<p>IP address of the Arduino MKR1000 board, specified as a character
+vector.</p>
+<p class="description_valueexample"><strong>Example: </strong></p>
+<p><code>a = arduino('192.168.1.15','MKR1000')</code> creates
+a WiFi connection to an Arduino MKR1000 board that uses the IP
+address <code>192.168.1.15</code>. </p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e1140" data-target="#expand_panel_body_input_argument_d0e1140" aria-controls="expand_panel_body_input_argument_d0e1140" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_tcpipport" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e1140"><code>tcpipport</code> &#8212; TCP/IP port on Arduino board<br><span class="add_font_color_general remove_bold"><span class="example_desc">numeric</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e1140" aria-labelledby="expand_panel_heading_input_argument_d0e1140" class="panel-collapse collapse in"><div class="panel-body">
+<p>TCP/IP port on the Arduino board, specified as a number.</p>
+<p class="description_valueexample"><strong>Example: </strong></p>
+<p><code>a = arduino('192.168.1.15','MKR1000',9500)</code> creates
+a WiFi connection to an Arduino MKR1000 board that uses the TCP/IP
+port at 9500. </p>
+</div></div></div><span id="namevaluepairarguments" class="anchor_target"></span><h3 id="namevaluepairs" class="bottom_ruled">Name-Value Pair Arguments</h3><span id="buhppoc-1" class="anchor_target"></span><div class="namevaluecontainer"><p>Specify optional comma-separated pairs of <code>Name,Value</code> arguments.
+<code>Name</code> is the argument
+name and <code>Value</code> is the corresponding
+value. <code>Name</code> must appear
+inside single quotes (<code>' '</code>).
+You can specify several name and value pair
+arguments in any order as <code>Name1,Value1,...,NameN,ValueN</code>.</p><span class="example_desc"><strong>Example: </strong> <code>a = arduino('COM3','Uno','Libraries','I2C')</code></span></div><ul><span id="zmw57dd0e1194" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+If you are connecting your Arduino board using WiFi, you cannot
+specify <code>Name,Value</code> arguments.</p></td></tr></table></ul><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="d0e1204_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e1206" data-target="#expand_panel_body_input_argument_d0e1206" aria-controls="expand_panel_body_input_argument_d0e1206" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_Libraries" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e1206"><code>'Libraries'</code> &#8212; Name of Arduino library<br><span class="add_font_color_general remove_bold"><span class="example_desc"><code>{'I2C'  'Servo' 'SPI'}</code> (default) | <code>&#8216;Adafruit/MotorShieldV2'</code> | <code>&#8216;ShiftRegister'</code> | character vector | cell array of character vectors</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e1206" aria-labelledby="expand_panel_heading_input_argument_d0e1206" class="panel-collapse collapse in"><div class="panel-body">
+<p>Name of the Arduino library, specified as the comma-separated
+pair consisting of <code>'Libraries'</code> and a character
+vector or a cell array of character vectors. Libraries installed by
+default extend the Arduino environment.</p><ul><span id="zmw57dd0e1251" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+When you first connect to your Arduino hardware, your Arduino connection
+is created with these default libraries <code>{'I2C'  'Servo' 'SPI'}</code>.
+However, if you create an Arduino connection with libraries other
+than the defaults, your Arduino connection will only have the
+libraries that you specified, even after you disconnect and reconnect
+your Arduino hardware.</p></td></tr></table></ul>
+<p class="description_valueexample"><strong>Example: </strong><code>a = arduino('COM9','Uno','Libraries','spi')</code> limits
+the environment to the specified library.</p><p class="description_valueexample"><strong>Example: </strong><code>a
+= arduino('COM9','Uno','Libraries','Adafruit/MotorShieldV2')</code> limits
+the environment to the Adafruit Motor Shields V2 library and its dependent
+libraries.</p><p class="description_valueexample"><strong>Example: </strong><code>a = arduino('COM9','Uno','Libraries','ShiftRegister')</code> limits
+the environment to shift register library.</p></div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e1287" data-target="#expand_panel_body_input_argument_d0e1287" aria-controls="expand_panel_body_input_argument_d0e1287" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_ForceBuild" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e1287"><code>'ForceBuild'</code> &#8212; Reprogramming of the Arduino board<br><span class="add_font_color_general remove_bold"><span class="example_desc"><code>false</code> (default) | <code>true</code></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e1287" aria-labelledby="expand_panel_heading_input_argument_d0e1287" class="panel-collapse collapse in"><div class="panel-body">
+<p>Reprogramming of the Arduino board, specified as the comma-separated
+pair consisting of <code>'ForceBuild'</code> and either <code>false</code> or <code>true</code>.
+Set <code>'ForceBuild'</code> to <code>true</code> to
+reprogram the board. This setting forces MATLAB<sup>&#x00AE;</sup> to reprogram
+the board with only the specified libraries included in the server.
+Use this to update the Arduino server with different source code
+when you work with custom Arduino libraries.</p>
+<p class="description_valueexample"><strong>Example: </strong><code>a = arduino('COM9','Uno','Libraries','CustomLibrary','ForceBuild',true)</code> reprograms
+the Arduino board using your latest C++ source code for <code>CustomLibrary</code>.</p>
+<ul><span id="zmw57dd0e1349" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+MATLAB does not reprogram the Arduino board and uses
+existing Arduino server if the libraries that you specify match
+with libraries that are already in the existing Arduino server.</p></td></tr></table></ul>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_input_argument_d0e1366" data-target="#expand_panel_body_input_argument_d0e1366" aria-controls="expand_panel_body_input_argument_d0e1366" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_TraceOn" class="anchor_target"></span><h3 class="panel-title" id="input_argument_d0e1366"><code>'TraceOn'</code> &#8212; Program log and Arduino commands log<br><span class="add_font_color_general remove_bold"><span class="example_desc"><code>false</code> (default) | <code>true</code></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_input_argument_d0e1366" aria-labelledby="expand_panel_heading_input_argument_d0e1366" class="panel-collapse collapse in"><div class="panel-body">
+<p>Program log and Arduino commands log, specified as the comma-separated
+pair consisting of <code>'TraceOn'</code> and either <code>false</code> or <code>true</code>.
+If you fail to connect to your Arduino board, set <code>'TraceOn'</code> to <code>true</code> to
+print compilation and upload errors of Arduino IDE at the MATLAB command
+window. You can also set <code>&#8216;TraceOn'</code> to <code>true</code> to
+print the Arduino commands executed on the Arduino board for each
+MATLAB command.</p>
+<p class="description_valueexample"><strong>Example: </strong><code>a = arduino('COM9','Uno','TraceOn',true)</code></p>
+</div></div></div></div></div></div></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="buhpnk9-3">Output Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="buhpnk9-3_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_d0e1428" data-target="#expand_panel_body_output_argument_d0e1428" aria-controls="expand_panel_body_output_argument_d0e1428" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_a" class="anchor_target"></span><h3 class="panel-title" id="output_argument_d0e1428"><code>a</code> &#8212; Arduino hardware connection<br><span class="add_font_color_general remove_bold"><span class="example_desc">arduino object</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_d0e1428" aria-labelledby="expand_panel_heading_output_argument_d0e1428" class="panel-collapse collapse in"><div class="panel-body">
+<p>Arduino hardware connection created using <code>arduino</code>,
+returned as an arduino object.</p>
+</div></div></div></div></div></div><div class="clearfix"></div><div class="ref_sect"><h2 id="buhpnk9_seealso">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="arduinosetup.html"><span itemprop="name"><code>arduinosetup</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="listarduinolibraries.html"><span itemprop="name"><code>listArduinoLibraries</code></span></a></span></p></div><div class="release_introduced"><h4>Introduced in R2014b</h4></div>
+</div></div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:45 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

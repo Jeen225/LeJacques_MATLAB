@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright 2014-2016 The MathWorks, Inc. -->
+<RTTPackageRepository>
+    <ThirdPartyPackage name="Adafruit Motor Shield V2 Library" url="http://www.adafruit.com">
+        <Platform name="PCWIN64" destdir="$[adafruitmotorshieldv2104:destdir]" 
+                  instructionset="adafruitmotorshield_v2_104_win64.xml" 
+                  archive="$[adafruitmotorshieldv2104:archive]" 
+                  downloadurl="$[adafruitmotorshieldv2104:baseurl]" 
+                  removecmd="matlab:arduinoio.setup.uninstall3PLibraries('$(DESTDIR)')"
+                  licenseurl="http://www.mathworks.com/supportpackages/license/adamslv2">
+        </Platform>
+        <Platform name="MACI64" destdir="$[adafruitmotorshieldv2104:destdir]" 
+                  instructionset="adafruitmotorshield_v2_104_maci64.xml" 
+                  archive="$[adafruitmotorshieldv2104:archive]" 
+                  downloadurl="$[adafruitmotorshieldv2104:baseurl]" 
+                  removecmd="matlab:arduinoio.setup.uninstall3PLibraries('$(DESTDIR)')"
+                  licenseurl="http://www.mathworks.com/supportpackages/license/adamslv2">
+        </Platform>
+        <Platform name="GLNXA64" destdir="$[adafruitmotorshieldv2104:destdir]" 
+                  instructionset="adafruitmotorshield_v2_104_glnxa64.xml" 
+                  archive="$[adafruitmotorshieldv2104:archive]" 
+                  downloadurl="$[adafruitmotorshieldv2104:baseurl]" 
+                  removecmd="matlab:arduinoio.setup.uninstall3PLibraries('$(DESTDIR)')"
+                  licenseurl="http://www.mathworks.com/supportpackages/license/adamslv2">
+        </Platform>
+    </ThirdPartyPackage>
+</RTTPackageRepository>

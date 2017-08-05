@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>C++ Header File</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="ug">
+<meta name="infotype" itemprop="infotype" content="ex" />
+
+<meta name="description" itemprop="description" content="Learn how to configure the C++ header file for your custom MATLAB Arduino add-on library." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201706221413" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201706221413" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201706221413" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201706221413" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201706221413" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201706221413" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+<script src="../includes/shared/scripts/overload.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2017a" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Arduino Hardware</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_flyout">Troubleshooting</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../custom-arduino-libraries.html" itemprop="url"><span itemprop="title">Custom Arduino Libraries</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">C++ Header File</a></li>
+<li class="nav_scrollspy_title">On this page</li>
+
+<li><a href="#bu7wvcd" class="intrnllnk">LibraryBase</a></li>
+<li><a href="#bu7wvjo" class="intrnllnk">Constructor</a></li>
+<li><a href="#bu7z3_r" class="intrnllnk">Command Handler</a></li>
+<li><a href="#bvdwycj" class="intrnllnk">Setup</a></li>
+<li><a href="#bvdwzzm" class="intrnllnk">Loop</a></li>
+<li><a href="#bu74ytz" class="intrnllnk">Debugging</a></li>
+</li><li><a href="#zmw57dd0e2895" class="intrnllnk">See Also</a>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-topic">
+<span id="bu7wu4t" class="anchor_target"></span><h2 class="title r2017a" itemprop="title content" id="bu7wu4t">C++ Header File</h2><div class="clearfix"></div><div itemprop="content"><p>The C++ header requires several properties and methods that
+must be overridden from the base class:</p></div><div class="clearfix"></div><div itemprop="content"><ul type="disc"><li><p><a href="c-header-file.html#bu7wvcd" class="intrnllnk">LibraryBase</a></p></li><li><p><a href="c-header-file.html#bu7wvjo" class="intrnllnk">Constructor</a></p></li><li><p><a href="c-header-file.html#bu7z3_r" class="intrnllnk">Command Handler</a></p></li><li><p><a href="c-header-file.html#bu74ytz" class="intrnllnk">Debugging</a></p></li></ul></div><div class="clearfix"></div><div itemprop="content"><ul><span id="zmw57dd0e2624" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+Use only ASCII characters for file include path, C++ class name,
+and variables.</p></td></tr></table></ul></div><div class="clearfix"></div><div itemprop="content"><span id="bu7wvcd" class="anchor_target"></span><h3 class="title" id="bu7wvcd">LibraryBase</h3><p>The <b>LibraryBase</b> class provides
+all the necessary functionality for executing the code from the <a href="matlab-add-on-class.html">MATLAB Add-On Class</a>. At the beginning of
+the file C++ header file, you must include the <code>LibraryBase.h</code> library: </p><div class="code_responsive"><pre class="programlisting">#include "LibraryBase.h" </pre></div><p>You can include additional libraries following <code>LibraryBase.h</code>.
+Typically, these libraries are third-party Arduino<sup>&#x00AE;</sup> libraries
+for your Arduino hardware that provide direct access to specific
+functionality. </p><p>Your base add-on class C++ header must extend the <b>LibraryBase</b> class:</p><div class="code_responsive"><pre class="programlisting">class MyAddon : public LibraryBase {
+    ...
+}</pre></div><p>Extending the <code>LibraryBase.h</code> class provides
+access to the appropriate methods and properties. The following diagram
+shows the typical method inheritance for an add-on:</p><p>
+<img src="umlforsdk_c++.png" height="244" width="572" alt=""></p></div><div class="clearfix"></div><div itemprop="content"><span id="bu7wvjo" class="anchor_target"></span><h3 class="title" id="bu7wvjo">Constructor</h3><p>The add-on constructor defines the name of your add-on library
+and registers the library with the main Arduino program. Your
+add-on class must override the default constructor method of the <a href="c-header-file.html#bu7wvcd" class="intrnllnk">LibraryBase</a>. The constructor uses
+the same name as your add-on class and takes a reference to a <code>MWArduinoClass</code> object.</p><div class="code_responsive"><pre class="programlisting">public:
+   MyAddon(MWArduinoClass&amp; a)
+   {
+ 	
+      libName = "MyAddonPackageFolder/MyAddon";
+      	
+      a.registerLibrary(this);
+   }
+</pre></div><p>The library name property, <code>libName</code>, must
+be the same string defined in the <a href="matlab-add-on-class.html#bu7z6v4">Library Specification</a> of the <a href="matlab-add-on-class.html">MATLAB Add-On Class</a>: </p><p><code>&lt;AddonFolderName&gt;/&lt;AddonName&gt;</code></p><p>The add-on library is registered with the general <code>MWArduinoClass</code> object
+using the <code>registerLibrary</code> method. For example,
+the constructor from the <a href="create-code-to-write-a-string.html">Create HelloWorld Add-On</a> example uses the following constructor:</p><div class="code_responsive"><pre class="programlisting">public:
+        HelloWorld(MWArduinoClass&amp; a)
+        {            
+            libName = "ExampleAddon/HelloWorld";            
+            a.registerLibrary(this);
+        }
+</pre></div></div><div class="clearfix"></div><div itemprop="content"><span id="bu7z3_r" class="anchor_target"></span><h3 class="title" id="bu7z3_r">Command Handler</h3><p>The <code>commandHandler</code> method is the entry point
+for the commands executed in your <a href="matlab-add-on-class.html">MATLAB Add-On Class</a> that were executed by the <a href="../../../supportpkg/arduinoio/ref/sendcommand.html"><code>sendCommand</code></a>. Your add-on class must
+override the default <code>commandHandler</code> method of the <a href="c-header-file.html#bu7wvcd" class="intrnllnk">LibraryBase</a> class. </p><div class="code_responsive"><pre class="programlisting">public:
+   void commandHandler(byte cmdID, byte* dataIn, unsigned int payloadSize)
+   {            
+   
+      switch (cmdID){
+               
+         case 0x01:{  
+            &#8230;                    
+            sendResponseMsg(cmdID, val, 13);
+            break;
+         }
+
+	  &#8230; // Other cases with appropriate cmdIDs  
+
+         default:{
+            // Do nothing
+         }
+      }
+   }
+</pre></div><p>The switch statement uses the command identifiers, <code>cmdID</code>,
+to determine the segment of code to execute. The <code>cmdID</code>s
+must match those defined in the <a href="matlab-add-on-class.html">MATLAB Add-On Class</a>. At the end of each switch statement,
+the <code>commandHandler</code> must call the <code>sendResponseMsg</code> function:</p><div class="code_responsive"><pre class="programlisting">sendResponseMsg(byte commandID, byte* dataOut, unsigned int payloadSize)</pre></div><p>The data assigned to the input arguments <code>dataOut</code>,
+and <code>payloadSize</code> returned to the output arguments
+of the <a href="../../../supportpkg/arduinoio/ref/sendcommand.html"><code>sendCommand</code></a> function.</p><ul><span id="zmw57dd0e2757" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+Execution of the<a href="../../../supportpkg/arduinoio/ref/sendcommand.html"><code>sendCommand</code></a> called
+within the <a href="matlab-add-on-class.html">MATLAB Add-On Class</a> held
+until either a <code>sendResponseMsg</code> executes or the <code>timeout</code> condition
+is reached.</p></td></tr></table></ul><p>The <code>commandHandler</code> method from the <a href="create-code-to-write-a-string.html">Create HelloWorld Add-On</a> example shows
+how a string, <code>&#8216;Hello World!'</code>, can
+be created in the C++ code and returned to the <a href="matlab-add-on-class.html">MATLAB Add-On Class</a> through the <code>commandHandler</code>:</p><div class="code_responsive"><pre class="programlisting">public:
+        void commandHandler(byte cmdID, byte* dataIn, unsigned int payloadSize)
+        {      
+            switch (cmdID){
+                
+                case 0x01:{  
+                    byte val [13] = "Hello World!";
+                    sendResponseMsg(cmdID, val, 13);
+                    break;
+                }
+
+                default:{
+                    // Do nothing
+                }
+            }
+}
+</pre></div></div><div class="clearfix"></div><div itemprop="content"><span id="bvdwycj" class="anchor_target"></span><h3 class="title" id="bvdwycj">Setup</h3><p>The <code>setup</code> method can be used to initialize
+and set the initial values. Your add-on class can override the default <code>setup</code> method
+of the <a href="c-header-file.html#bu7wvcd" class="intrnllnk">LibraryBase</a> class to
+initialize variables. The <a href="add-lcd-library.html">Create LCD Add-on</a> example overrides the default <code>setup</code> method
+to reset the cursor to the first row upon initialization as shown:</p><div class="code_responsive"><pre class="programlisting">public:
+	void setup()
+	{
+		cursorRow=0;
+	}</pre></div></div><div class="clearfix"></div><div itemprop="content"><span id="bvdwzzm" class="anchor_target"></span><h3 class="title" id="bvdwzzm">Loop</h3><p>The <code>loop</code> method can be used to perform certain
+repetitive tasks. Your add-on class can override the default <code>loop</code> method
+of the <a href="c-header-file.html#bu7wvcd" class="intrnllnk">LibraryBase</a> class. The <a href="create-ultrasonic-add-on-to-continuously-stream-distance.html">Create Ultrasonic Add-On to Continuously Stream Distance Values</a> example
+overrides the default <code>loop</code> method to repeatedly
+update the array <code>circularArray</code> in definite time
+intervals <code>deltaT</code> as shown:</p><div class="code_responsive"><pre class="programlisting">public:
+	void loop()
+        {
+            long now = millis();
+            // The circular array updates every 100 ms
+            if(now-lastSampleTime &gt; deltaT)
+            {
+                circularArray[i] = mySensor-&gt;Ranging(1);
+                if (circularArrayIx &gt; 9)
+                {
+                    circularArrayIx = 0;
+                }
+                else
+                    ++circularArrayIx;
+                lastSampleTime = millis();
+            }
+        }</pre></div><ul><span id="zmw57dd0e2834" class="anchor_target"></span><table class="note table table-condensed table-bordered" summary="Note"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+Do not use any blocking operation in the <code>loop</code> method.</p></td></tr></table></ul></div><div class="clearfix"></div><div itemprop="content"><span id="bu74ytz" class="anchor_target"></span><h3 class="title" id="bu74ytz">Debugging</h3><p>The <a href="c-header-file.html#bu7wvcd" class="intrnllnk">LibraryBase</a> also
+provides a convenient function, <code>debugPrint</code>, to
+display messages to the MATLAB<sup>&#x00AE;</sup> command
+line to help in development of your add-on.</p><p>The <code>debugPrint</code> function uses the same syntax
+as the C++ <code>printf</code> function:</p><div class="code_responsive"><pre class="programlisting">debugPrint(MSG_EXAMPLE_DEBUG);</pre></div><p>The debug message must be declared in the C++ header file using
+the following syntax:</p><div class="code_responsive"><pre class="programlisting">const char MSG_EXAMPLE_DEBUG[]     PROGMEM = "This is a debug message.\n";</pre></div><p>where the string <code>PROGMEM</code> is the message displayed.
+Additional information can be included in the debug message using
+format specifiers. To enable <code>debugPrint</code> messages
+to be displayed to the MATLAB command
+line during run-time, you must set the additional Name-Value property
+&#8216;trace' in the <a href="../../../supportpkg/arduinoio/ref/arduino.html"><code>arduino</code></a> function:</p><p>The <a href="create-code-to-write-a-string.html">Create HelloWorld Add-On</a> example
+prints  to the MATLAB command
+line a sample debug message with the last <code>commandID</code> that
+was included using a format specifier:</p><div class="code_responsive"><pre class="programlisting">const char MSG_EXAMPLE_DEBUG[]  PROGMEM = "Example debug message: cmdID %d\n";
+
+...
+
+debugPrint(MSG_EXAMPLE_DEBUG, cmdID);
+</pre></div></div>
+<h2 id="zmw57dd0e2895">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="create-custom-folder-structure.html"><span itemprop="name">Add-On Package Folder</span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="matlab-add-on-class.html"><span itemprop="name">MATLAB Add-On Class</span></a></span></p>
+
+</div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2017a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2017a');">
+</div>
+<!--Last updated: Thu Jun 22 14:13:07 EDT 2017-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../troubleshooting-in-matlab-support-package-for-arduino-hardware.html?s_cid=doc_ftr">Troubleshooting</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><a href="../../../supportpkg/arduino/index.html?s_cid=doc_ftr">Simulink Support Package for Arduino Hardware</a></li><li><a href="../../../supportpkg/raspberrypiio/index.html?s_cid=doc_ftr">MATLAB Support Package for Raspberry Pi Hardware</a></li><li><a href="../../../supportpkg/legomindstormsev3io/index.html?s_cid=doc_ftr">MATLAB Support Package for LEGO MINDSTORMS EV3 Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2017 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>
